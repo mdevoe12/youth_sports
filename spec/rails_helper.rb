@@ -6,8 +6,20 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'support/factory_girl'
-# Add additional requires below this line. Rails is not loaded until this point!
+require 'capybara/rails'
+require 'webmock/rspec'
+require 'vcr'
 
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/cassettes"
+  config.hook_into :webmock
+end
+# Add additional requires below this line. Rails is not loaded until this point!
+Shoulda::Matchers.configure do |config|
+config.integrate do |with|
+  with.test_framework :rspec
+  with.library :rails
+end
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
 # run as spec files by default. This means that files in spec/support that end
@@ -54,10 +66,5 @@ RSpec.configure do |config|
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
-  # config.filter_gems_from_backtrace("gem name")
-  Shoulda::Matchers.configure do |config|
-  config.integrate do |with|
-    with.test_framework :rspec
-    with.library :rails
-  end
+  config.filter_gems_from_backtrace("rack-2.0.3", "railties-5.1.3", "rack-test-0.6.3")
 end
