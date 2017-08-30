@@ -1,6 +1,44 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/player_profile.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/role.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/user_role.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -18,10 +56,6 @@
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/helpers/application_helper.rb": [
-        0,
-        0
-      ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/jobs/application_job.rb": [
         0,
         0
@@ -32,12 +66,25 @@
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/application_record.rb": [
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/admin.rb": [
         0,
+        0
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/coach.rb": [
+        0,
+        0
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/player.rb": [
+        0,
+        0,
+        null,
+        0
+      ],
+      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/recruiter.rb": [
         0,
         0
       ]
     },
-    "timestamp": 1504129141
+    "timestamp": 1504134184
   }
 }
