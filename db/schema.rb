@@ -53,6 +53,17 @@ ActiveRecord::Schema.define(version: 20170831031543) do
     t.index ["player_id"], name: "index_player_profiles_on_player_id"
   end
 
+  create_table "recruiter_profiles", force: :cascade do |t|
+    t.string "username"
+    t.string "institution"
+    t.string "email"
+    t.string "phone_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "recruiter_id"
+    t.index ["recruiter_id"], name: "index_recruiter_profiles_on_recruiter_id"
+  end
+
   create_table "roles", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -80,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170831031543) do
   add_foreign_key "admin_profiles", "users", column: "admin_id"
   add_foreign_key "coach_profiles", "users", column: "coach_id"
   add_foreign_key "player_profiles", "users", column: "player_id"
+  add_foreign_key "recruiter_profiles", "users", column: "recruiter_id"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
 end
