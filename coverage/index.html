@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-30T21:14:41-06:00">2017-08-30T21:14:41-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-31T09:17:18-06:00">2017-08-31T09:17:18-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">44.44%</span></span>
+    (<span class="covered_percent"><span class="red">46.81%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.44
+         0.46
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>16</b> files in total.
-    <b>45</b> relevant lines. 
-    <span class="green"><b>20</b> lines covered</span> and
+    <b>47</b> relevant lines. 
+    <span class="green"><b>22</b> lines covered</span> and
     <span class="red"><b>25</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -173,9 +173,9 @@
       <tr>
         <td class="strong"><a href="#b0bbe265a5698ecd7d602ef43166d324fa48846f" class="src_link" title="app/models/recruiter_profile.rb">app/models/recruiter_profile.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>5</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -266,19 +266,19 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="red">70.37%</span></span>
+    (<span class="covered_percent"><span class="red">72.41%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.7
+         0.72
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>10</b> files in total.
-    <b>27</b> relevant lines. 
-    <span class="green"><b>19</b> lines covered</span> and
+    <b>29</b> relevant lines. 
+    <span class="green"><b>21</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -358,9 +358,9 @@
       <tr>
         <td class="strong"><a href="#b0bbe265a5698ecd7d602ef43166d324fa48846f" class="src_link" title="app/models/recruiter_profile.rb">app/models/recruiter_profile.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>3</td>
-        <td>2</td>
-        <td>2</td>
+        <td>5</td>
+        <td>4</td>
+        <td>4</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -1075,7 +1075,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_one :recruiter_profile</code>
+          <code class="ruby">  has_one :profile, class_name: :RecruiterProfile</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="3">
@@ -1094,8 +1094,8 @@
     <h3>app/models/recruiter_profile.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>2</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
+      <b>4</b> relevant lines. 
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1115,7 +1115,19 @@
           <code class="ruby">  belongs_to :recruiter</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_presence_of :username, :institution, :email, :phone_number</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates_uniqueness_of :username, :email</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">end</code>
