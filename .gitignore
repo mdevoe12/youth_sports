@@ -19,6 +19,3 @@
 .byebug_history
 /coverage/*
 /cassettes/*
-
-# Ignore application configuration
-/config/application.yml
