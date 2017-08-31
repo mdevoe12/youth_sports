@@ -1,4 +1,4 @@
 class Player < User
-  has_one :player_profile
-  
+  belongs_to :team
+  has_many :coaches, through: :team
 end
