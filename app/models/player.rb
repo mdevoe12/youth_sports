@@ -1,4 +1,5 @@
 class Player < User
-  has_one :player_profile
+  
+  has_one :profile, class_name: :PlayerProfile
   
 end
