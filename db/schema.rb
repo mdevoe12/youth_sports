@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831143740) do
+ActiveRecord::Schema.define(version: 20170831185909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170831143740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "coach_id"
+    t.string "password_digest"
     t.index ["coach_id"], name: "index_coach_profiles_on_coach_id"
   end
 
@@ -83,6 +84,8 @@ ActiveRecord::Schema.define(version: 20170831143740) do
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
   end
 
   add_foreign_key "admin_profiles", "users", column: "admin_id"
