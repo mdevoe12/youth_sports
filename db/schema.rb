@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170831192044) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "coach_id"
+    t.string "password_digest"
     t.index ["coach_id"], name: "index_coach_profiles_on_coach_id"
   end
 
@@ -98,8 +99,11 @@ ActiveRecord::Schema.define(version: 20170831192044) do
     t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "provider"
+    t.string "uid"
     t.string "username"
     t.string "password_digest"
+
   end
 
   add_foreign_key "admin_profiles", "users", column: "admin_id"
