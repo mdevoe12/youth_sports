@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20170831143740) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recruiter_id"
+    t.string "password_digest"
     t.index ["recruiter_id"], name: "index_recruiter_profiles_on_recruiter_id"
   end
 
