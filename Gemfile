@@ -45,11 +45,12 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'rspec-rails'
+
   gem 'selenium-webdriver'
   gem 'shoulda-callback-matchers'
   gem 'shoulda-matchers'
   gem 'simplecov'
-
+  gem 'pry'
 end
 
 group :development do
