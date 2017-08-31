@@ -1,90 +1,95 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/helpers/application_helper.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/player_profile.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/role.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/user_role.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/user.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/channels/application_cable/channel.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/channels/application_cable/connection.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/channels/application_cable/connection.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/controllers/application_controller.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/application_controller.rb": [
         0,
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/jobs/application_job.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/jobs/application_job.rb": [
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/mailers/application_mailer.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/admin.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/admin.rb": [
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/coach.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/application_record.rb": [
+        0,
         0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/player.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/coach.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/coach_profile.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/player.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/player_profile.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/recruiter.rb": [
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/role.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/user.rb": [
+        0,
         0,
         0,
         null,
+        0,
+        null,
+        0,
+        0,
+        0,
         0
       ],
-      "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/recruiter.rb": [
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/user_role.rb": [
+        0,
+        0,
         0,
         0
       ]
     },
-    "timestamp": 1504134184
+    "timestamp": 1504147848
   }
 }
