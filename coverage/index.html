@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-30T17:23:22-06:00">2017-08-30T17:23:22-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-08-30T21:14:41-06:00">2017-08-30T21:14:41-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">37.21%</span></span>
+    (<span class="covered_percent"><span class="red">44.44%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.37
+         0.44
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>15</b> files in total.
-    <b>43</b> relevant lines. 
-    <span class="green"><b>16</b> lines covered</span> and
-    <span class="red"><b>27</b> lines missed </span>
+    <b>16</b> files in total.
+    <b>45</b> relevant lines. 
+    <span class="green"><b>20</b> lines covered</span> and
+    <span class="red"><b>25</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -162,12 +162,22 @@
       
       <tr>
         <td class="strong"><a href="#c6d342089c7214aebd16f31938a8a91408b4095b" class="src_link" title="app/models/recruiter.rb">app/models/recruiter.rb</a></td>
-        <td class="red strong">0.0 %</td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#b0bbe265a5698ecd7d602ef43166d324fa48846f" class="src_link" title="app/models/recruiter_profile.rb">app/models/recruiter_profile.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
         <td>2</td>
-        <td>0.0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -256,20 +266,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="red">60.0%</span></span>
+    (<span class="covered_percent"><span class="red">70.37%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.59
+         0.7
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
-    <b>9</b> files in total.
-    <b>25</b> relevant lines. 
-    <span class="green"><b>15</b> lines covered</span> and
-    <span class="red"><b>10</b> lines missed </span>
+    <b>10</b> files in total.
+    <b>27</b> relevant lines. 
+    <span class="green"><b>19</b> lines covered</span> and
+    <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -337,12 +347,22 @@
       
       <tr>
         <td class="strong"><a href="#c6d342089c7214aebd16f31938a8a91408b4095b" class="src_link" title="app/models/recruiter.rb">app/models/recruiter.rb</a></td>
-        <td class="red strong">0.0 %</td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
         <td>2</td>
         <td>2</td>
         <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#b0bbe265a5698ecd7d602ef43166d324fa48846f" class="src_link" title="app/models/recruiter_profile.rb">app/models/recruiter_profile.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>3</td>
         <td>2</td>
-        <td>0.0</td>
+        <td>2</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -1035,24 +1055,67 @@
         <div class="source_table" id="c6d342089c7214aebd16f31938a8a91408b4095b">
   <div class="header">
     <h3>app/models/recruiter.rb</h3>
-    <h4><span class="red">0.0 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>2</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>2</b> lines missed.</span>
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
   <pre>
     <ol>
       
-        <li class="missed" data-hits="0" data-linenumber="1">
-          
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
           
           <code class="ruby">class Recruiter &lt; User</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  has_one :recruiter_profile</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="b0bbe265a5698ecd7d602ef43166d324fa48846f">
+  <div class="header">
+    <h3>app/models/recruiter_profile.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>2</b> relevant lines. 
+      <span class="green"><b>2</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class RecruiterProfile &lt; ApplicationRecord</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :recruiter</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="3">
           
           
           <code class="ruby">end</code>
