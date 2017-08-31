@@ -10,13 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170831031543) do
-
+ActiveRecord::Schema.define(version: 20170831170845) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
 
   create_table "admin_profiles", force: :cascade do |t|
     t.string "username"
@@ -26,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170831031543) do
     t.bigint "admin_id"
     t.index ["admin_id"], name: "index_admin_profiles_on_admin_id"
   end
-    
+
   create_table "coach_profiles", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -61,6 +58,7 @@ ActiveRecord::Schema.define(version: 20170831031543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recruiter_id"
+    t.string "password_digest"
     t.index ["recruiter_id"], name: "index_recruiter_profiles_on_recruiter_id"
   end
 
@@ -86,7 +84,6 @@ ActiveRecord::Schema.define(version: 20170831031543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   add_foreign_key "admin_profiles", "users", column: "admin_id"
   add_foreign_key "coach_profiles", "users", column: "coach_id"
