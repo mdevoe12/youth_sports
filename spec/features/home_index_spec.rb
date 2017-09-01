@@ -4,15 +4,17 @@ describe "#home index" do
   it "goes to the home page" do
     visit "/"
     # expect(current_path).to eq(home)
-    expect(page).to have_content("Login")
     expect(page).to have_content("Sign Up")
+    expect(page).to have_content("Login")
+    expect(page).to have_content("Logout")
 
   end
 
   it "has a nav bar" do
     visit root_path
-    expect(page).to have_link("Login")
     expect(page).to have_link("Sign Up")
+    expect(page).to have_link("Login")
+    expect(page).to have_link("Logout")
 
   end
 
