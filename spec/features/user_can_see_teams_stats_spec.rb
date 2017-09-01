@@ -15,6 +15,8 @@ RSpec.feature 'as an unregistered user when I visit a team stats' do
 
     visit "teams/#{team.id}/stats"
 
+    save_and_open_page
+
     expect(page).to have_content(team.name)
     expect(page).to have_content(coach.first_name)
     expect(page).to have_content(coach.last_name)

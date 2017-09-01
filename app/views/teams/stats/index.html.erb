@@ -1,7 +1,9 @@
 <h1><%= @team.name%>'s Stats'</h1>
 
 
-<%= @team.coaches.each { |coach| "#{coach.first_name} #{coach.last_name}"} %>
+<% @team.coaches.each do |coach| %>
+<li>Coach:<%= "#{coach.first_name} #{coach.last_name}" %></li>
+<% end %>
 <li>Players: <%= @team.players.count %></li>
-<%= @team.total_points %>
-<%= @team.total_fouls %>
+<li>Total Points: <%= @team.total_points %></li>
+<li>Total Fouls: <%= @team.total_fouls %></li>
