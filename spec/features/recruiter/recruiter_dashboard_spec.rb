@@ -16,7 +16,7 @@ RSpec.describe 'Registered recruiter logs in' do
     Prospect.create(player_profile_id: profile2.id, recruiter_profile_id: rec_profile.id)
     Prospect.create(player_profile_id: profile4.id, recruiter_profile_id: rec_profile.id)
     recruiter.prospects
-require "pry"; binding.pry
+# require "pry"; binding.pry
     visit '/dashboard'
 
   end
