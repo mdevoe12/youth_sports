@@ -3,7 +3,5 @@
 
 <%= @team.coaches.each { |coach| "#{coach.first_name} #{coach.last_name}"} %>
 <li>Players: <%= @team.players.count %></li>
-<%= @team.wins %>
-<%= @team.losses %>
 <%= @team.total_points %>
 <%= @team.total_fouls %>
