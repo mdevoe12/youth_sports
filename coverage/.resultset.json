@@ -60,6 +60,21 @@
         null,
         null
       ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_player.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_coach.rb": [
         1,
         1,
@@ -153,17 +168,12 @@
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player.rb": [
-        0,
-        0,
-        0,
-        0,
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player_profile.rb": [
         0,
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player_profile.rb": [
-        0,
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player_stat.rb": [
         0,
         0
       ],
@@ -183,12 +193,6 @@
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_player.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/user_role.rb": [
         0,
         0,
@@ -196,6 +200,6 @@
         0
       ]
     },
-    "timestamp": 1504231980
+    "timestamp": 1504270076
   }
 }
