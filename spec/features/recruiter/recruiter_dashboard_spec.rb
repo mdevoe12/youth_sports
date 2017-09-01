@@ -19,5 +19,8 @@ RSpec.describe 'Registered recruiter logs in' do
 # require "pry"; binding.pry
     visit '/dashboard'
 
+    expect(page).to_not have_link("Morty Smith")
+    expect(page).to have_link("Morty Smith")
+
   end
 end
