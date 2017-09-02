@@ -1,3 +1,3 @@
 class Admin < User
-  has_one :admin_profile
+  has_one :profile, class_name: :AdminProfile
 end

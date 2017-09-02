@@ -1,4 +1,5 @@
 class PlayerProfile < ApplicationRecord
   belongs_to :player
-  # delegate :profile, :to => :player
+  has_many :prospects
+  has_many :player_stats
 end
