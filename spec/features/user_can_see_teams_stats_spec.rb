@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'as an unregistered user when I visit a team stats' do
   scenario 'I can see a teams stats' do
-    coach = create(:user, type: "Coach", first_name: "Bob", last_name: "Bill")
+    coach = create(:user, type: "Coach", first_name: "Bob", last_name: "Bill", password: "123")
     team = create(:team)
-    players = create_list(:user, 3, type: "Player")
+    players = create_list(:user, 3, type: "Player", password: "123")
     Player.all.each do |player|
       PlayerProfile.create(player: player)
       PlayerStat.create(points: 40, fouls: 20, player_profile: PlayerProfile.last)
