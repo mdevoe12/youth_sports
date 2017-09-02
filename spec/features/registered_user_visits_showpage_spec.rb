@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.feature 'registered athlete visits their own show page' do
   describe 'when they land on the dashboard' do
     before (:each) do
-      @player = create(:user, type: "Player")
+      create(:user, :complete, type: 'Player')
+      @player = Player.last
     end
     it 'they see a welcome header with their username' do
       visit player_path(@player)
