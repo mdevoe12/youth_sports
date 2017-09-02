@@ -15,7 +15,10 @@ ActiveRecord::Schema.define(version: 20170901022605) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+
   create_table "admin_profiles", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "admin_id"
@@ -23,6 +26,8 @@ ActiveRecord::Schema.define(version: 20170901022605) do
   end
 
   create_table "coach_profiles", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
     t.string "institution"
     t.string "email"
     t.string "phone_number"
@@ -33,6 +38,7 @@ ActiveRecord::Schema.define(version: 20170901022605) do
   end
 
   create_table "player_profiles", force: :cascade do |t|
+    t.string "username"
     t.string "school"
     t.string "height"
     t.string "weight"
@@ -54,7 +60,7 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
     t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
   end
-  
+
   create_table "player_stats", force: :cascade do |t|
     t.integer "points"
     t.integer "fouls"
@@ -65,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170901022605) do
   end
 
   create_table "recruiter_profiles", force: :cascade do |t|
+    t.string "username"
     t.string "institution"
     t.string "email"
     t.string "phone_number"
@@ -75,28 +82,6 @@ ActiveRecord::Schema.define(version: 20170901022605) do
   end
 
   create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "team_coaches", force: :cascade do |t|
-    t.bigint "team_id"
-    t.bigint "coach_id"
-    t.index ["coach_id"], name: "index_team_coaches_on_coach_id"
-    t.index ["team_id"], name: "index_team_coaches_on_team_id"
-  end
-
-  create_table "team_players", force: :cascade do |t|
-    t.bigint "team_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "player_id"
-    t.index ["player_id"], name: "index_team_players_on_player_id"
-    t.index ["team_id"], name: "index_team_players_on_team_id"
-  end
-
-  create_table "teams", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -121,6 +106,7 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.string "password_digest"
   end
 
+
   add_foreign_key "admin_profiles", "users", column: "admin_id"
   add_foreign_key "coach_profiles", "users", column: "coach_id"
   add_foreign_key "player_profiles", "users", column: "player_id"
@@ -128,10 +114,6 @@ ActiveRecord::Schema.define(version: 20170901022605) do
   add_foreign_key "prospects", "recruiter_profiles"
   add_foreign_key "player_stats", "player_profiles"
   add_foreign_key "recruiter_profiles", "users", column: "recruiter_id"
-  add_foreign_key "team_coaches", "teams"
-  add_foreign_key "team_coaches", "users", column: "coach_id"
-  add_foreign_key "team_players", "teams"
-  add_foreign_key "team_players", "users", column: "player_id"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
 end

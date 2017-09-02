@@ -20,7 +20,7 @@ end
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -28,8 +28,6 @@ gem 'awesome_print'
 gem 'coffee-rails', '~> 4.2'
 gem 'faraday'
 gem 'figaro'
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
 gem 'jbuilder', '~> 2.5'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
