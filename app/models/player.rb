@@ -4,4 +4,5 @@ class Player < User
   has_many :team_coaches, through: :teams
   has_many :coaches, through: :team_coaches
   has_one :profile, class_name: :PlayerProfile
+  has_many :player_stats, through: :profile
 end
