@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get 'auth/failiure', to: redirect('/')
 
   # get 'teams/:id/stats', to: 'stats#index'
-  resources :athletes, as: :players, :controller => :players
+  resources :athletes, as: :players, :controller => :players, only: [:show]
 
   namespace :teams do
     get '/:id/stats', to: 'stats#index'

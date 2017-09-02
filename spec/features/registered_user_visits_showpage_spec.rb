@@ -6,7 +6,7 @@ RSpec.feature 'registered athlete visits their own show page' do
       @player = create(:user, type: "Player")
     end
     it 'they see a welcome header with their username' do
-      visit athlete_show_path(@player)
+      visit player_path(@player)
       expect(current_path).to eq("/athletes/#{@player.id}")
       expect(page).to have_content("Welcome #{@player.username}")
     end
