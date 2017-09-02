@@ -119,8 +119,6 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "password_digest"
-    t.string "provider"
-    t.string "uid"
   end
 
   add_foreign_key "admin_profiles", "users", column: "admin_id"
