@@ -7,10 +7,13 @@ RSpec.feature "recruiter can request to start recruitment process" do
                         first_name: "test",
                         last_name: "test",
                         password: "123")
+    player = create(:user, type: "Player", password: "123")
+    profile = PlayerProfile.create(player_id: player.id)
+    PlayerStat.create(points: 40, fouls: 20, player_profile: profile)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(recruiter)
 
-    visit profiles_player_profile_path
+    visit profiles_path(player)
 
     expect(page).to have_content("Start Recruitment")
   end

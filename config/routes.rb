@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
 
   namespace :profiles do
-    get '/player_profile', to: 'player_profile#show'  
+    get '/player_profile/:id', to: 'player_profiles#show'  
   end
 
   get '/dashboard', to: 'dashboard#index'
