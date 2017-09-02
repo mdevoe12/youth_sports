@@ -15,14 +15,14 @@ RSpec.describe 'Registered recruiter logs in' do
     Prospect.create(player_profile_id: profile1.id, recruiter_profile_id: rec_profile.id)
     Prospect.create(player_profile_id: profile2.id, recruiter_profile_id: rec_profile.id)
     Prospect.create(player_profile_id: profile4.id, recruiter_profile_id: rec_profile.id)
-    #stub login here
+    to_recruit = recruiter.prospects
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(recruiter)
-# require "pry"; binding.pry
+
     visit '/dashboard'
 
     expect(current_path).to eq('/dashboard')
     expect(page).to_not have_link("Jerry Smith")
     expect(page).to have_link("Morty Smith")
-
+    expect(to_recruit.count).to eq(3)
   end
 end
