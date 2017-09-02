@@ -9,25 +9,26 @@
   </head>
 
   <body>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId            : <%= ENV['FACEBOOK_APP_ID'] %>,
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v2.10'
-        });
-        FB.AppEvents.logPageView();
-      };
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <%= link_to 'Login', '/auth/facebook', class: 'navbar-brand' %>
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
 
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      </script>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

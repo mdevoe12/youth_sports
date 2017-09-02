@@ -120,8 +120,11 @@ ActiveRecord::Schema.define(version: 20170831231808) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "password_digest"
-    t.string "provider"
-    t.string "uid"
+    t.string "provider", null: false
+    t.string "uid", null: false
+    t.index ["provider", "uid"], name: "index_users_on_provider_and_uid", unique: true
+    t.index ["provider"], name: "index_users_on_provider"
+    t.index ["uid"], name: "index_users_on_uid"
   end
 
   add_foreign_key "admin_profiles", "users", column: "admin_id"
