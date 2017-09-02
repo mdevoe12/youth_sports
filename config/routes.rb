@@ -8,4 +8,3 @@ Rails.application.routes.draw do
     get '/:id/stats', to: 'stats#index'
   end
 end
--=
