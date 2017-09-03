@@ -3,14 +3,18 @@
   <head>
     <style>
        #map {
+        position: absolute;
+        right: 20px;
         height: 400px;
         width: 50%;
        }
     </style>
   </head>
   <body>
-    <h1><%= player.name %></h1>
-    <h3>Upcoming Games</h3>
+    <h1><%= @player.name %></h1>
+    <div class="">
+      <h3>Upcoming Games</h3>
+    </div>
     <div id="map"></div>
     <script>
       function initMap() {
