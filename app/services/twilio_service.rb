@@ -1,8 +1,8 @@
 require 'twilio-ruby'
 require 'pry'
 
-account_sid = "#{ENV['twilio_sid']}"
-auth_token = "#{ENV['twilio_test_token']}"
+account_sid = ENV['twilio_sid']
+auth_token = ENV['twilio_test_token']
 
   # @client = Twilio::REST::Client.new ENV['twilio_sid'], ENV['twilio_test_token']
   @client = Twilio::REST::Client.new account_sid, auth_token
