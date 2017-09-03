@@ -10,9 +10,11 @@ RSpec.feature 'registered athlete visits their own show page' do
       visit player_path(@player)
       expect(current_path).to eq("/athletes/#{@player.id}")
       expect(page).to have_content("Welcome #{@player.username}")
+      expect(page).to have_css("#ath-profile-pic")
     end
     it "they see their own profile info" do
       visit "/athletes/#{@player.id}"
+      save_and_open_page
       expect(page).to have_content("#{@player.name}")
       expect(page).to have_content("#{@player.school}")
       expect(page).to have_content("#{@player.grade}")

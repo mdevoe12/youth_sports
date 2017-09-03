@@ -1,3 +1,14 @@
 // Place all the styles related to the Players controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+img#ath-profile-pic {
+  width: auto;
+  height: 100px;
+}
+.welcome-bar{
+  border: 2px dotted black;
+  margin: 10px;
+}
+.ath-side-bar{
+  width: 150px; 
+}

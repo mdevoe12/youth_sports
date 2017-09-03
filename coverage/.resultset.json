@@ -5,6 +5,10 @@
         1,
         null
       ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/helpers/players_helper.rb": [
+        1,
+        null
+      ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/helpers/stats_helper.rb": [
         1,
         null
@@ -180,27 +184,27 @@
         1,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
@@ -227,6 +231,16 @@
         1,
         null,
         null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/players_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
         null,
         null
       ],
@@ -313,6 +327,6 @@
         0
       ]
     },
-    "timestamp": 1504392630
+    "timestamp": 1504399472
   }
 }
