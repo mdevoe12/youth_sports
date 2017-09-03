@@ -26,7 +26,7 @@ RSpec.feature "recruiter can request to start recruitment process" do
   end
 
   scenario "system will receive message back" do
-    
+    "I'm a little tea pot short and stout"
   end
 
 end
