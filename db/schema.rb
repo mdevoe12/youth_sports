@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 20170903210756) do
     t.bigint "player_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status"
+    t.integer "status", default: 0
     t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
     t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
   end

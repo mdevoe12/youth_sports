@@ -8,9 +8,13 @@ class TwilioController < ApplicationController
     @message = @client.messages.create({
       to: "+1#{phone}",
       from: "+13157571027",
-      body: 'This is sent from your twilio_service.rb file',
+      body: 'This is a message sent from youth sports',
       status_callback: "http://requestb.in/testingyouthsports"
       })
+
+      Prospect.create(recruiter_profile_id: current_user.profile.id,
+                         player_profile_id: player.profile.id)
+
 
       flash[:notice] = "You've sent a request to the player's guardian."
       redirect_to profiles_path(player)

@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.feature "recruiter can request to start recruitment process" do
   scenario "recruiter clicks start recruitment button" do
-    recruiter = create(:user,
-                        type: "Recruiter",
+    recruiter = User.create(type: "Recruiter",
                         first_name: "test",
                         last_name: "test",
                         password: "123")
-    player = create(:user, type: "Player", password: "123")
+    recr_profile = RecruiterProfile.create(recruiter_id: recruiter.id)
+    player = User.create(type: "Player", password: "123")
     profile = PlayerProfile.create(player_id: player.id, guardian_phone: "6073426730")
     PlayerStat.create(points: 40, fouls: 20, player_profile: profile)
 
@@ -21,6 +21,7 @@ RSpec.feature "recruiter can request to start recruitment process" do
       click_on "Start Recruitment"
 
       expect(current_path).to eq("/profiles/player_profile/#{player.id}")
+      expect(player.profile.prospects.last.status).to eq("in-progress")
       expect(page).to have_content("You've sent a request to the player's guardian.")
     end
   end
