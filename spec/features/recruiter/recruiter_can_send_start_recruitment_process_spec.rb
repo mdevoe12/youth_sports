@@ -25,4 +25,8 @@ RSpec.feature "recruiter can request to start recruitment process" do
     end
   end
 
+  scenario "system will receive message back" do
+    
+  end
+
 end
