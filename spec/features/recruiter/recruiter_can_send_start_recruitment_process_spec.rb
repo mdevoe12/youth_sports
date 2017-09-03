@@ -20,7 +20,7 @@ RSpec.feature "recruiter can request to start recruitment process" do
     VCR.use_cassette("/features/recruiter/recruiter_can_send_start_recruitment_process_spec.rb") do
       click_on "Start Recruitment"
 
-      expect(current_path).to eq(profiles_path)
+      expect(current_path).to eq("/profiles/player_profile/#{player.id}")
       expect(page).to have_content("You've sent a request to the player's guardian.")
     end
   end

@@ -1,6 +1,7 @@
 class TwilioController < ApplicationController
 
   def create
+    player = Player.find(params[:player_id])
     @client = Twilio::REST::Client.new ENV['live_twilio_sid'], ENV['live_twilio_token']
 
     @message = @client.messages.create({

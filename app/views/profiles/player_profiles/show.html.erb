@@ -1,5 +1,5 @@
 <% if flash[:notice] %>
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
-
-<%= button_to 'Start Recruitment', send_text_path, method: :post %>
+<%# binding.pry %>
+<%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post %>
