@@ -35,14 +35,14 @@
         null,
         1,
         null,
-        0,
-        0,
+        3,
+        1,
         null,
         null,
         1,
         null,
-        0,
-        0,
+        3,
+        1,
         null,
         null
       ],
@@ -52,6 +52,78 @@
         null
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/helpers/teams_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/admin_profile.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/coach_profile.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player_profile.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player_stat.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/prospect.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/recruiter_profile.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/recruiter.rb": [
+        1,
+        1,
         1,
         null
       ],
@@ -81,11 +153,29 @@
         null,
         null
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player_profile.rb": [
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/role.rb": [
         1,
         1,
         1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_player.rb": [
         1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/user_role.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/home_controller.rb": [
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player.rb": [
@@ -140,32 +230,70 @@
         null,
         null
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player_stat.rb": [
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/application_controller.rb": [
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        null,
-        1,
-        null
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/profiles/player_profiles_controller.rb": [
         1,
         null,
         1,
         null,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_coach.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/coach.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/teams/stats_controller.rb": [
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null
@@ -182,48 +310,8 @@
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/dashboard_controller.rb": [
-        0,
-        0,
-        null,
-        null,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/home_controller.rb": [
-        0,
-        0,
-        null,
-        0,
-        0
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/profiles_controller.rb": [
         0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/sessions_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/teams/stats_controller.rb": [
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
         0
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/teams_controller.rb": [
@@ -245,95 +333,24 @@
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/admin_profile.rb": [
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/coach.rb": [
-        0,
-        0,
-        0,
-        0,
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/services/twilio_service.rb": [
         0,
         0,
         null,
         0,
         0,
-        0,
+        null,
         null,
         0,
-        0,
-        0,
-        0,
-        0,
-        0,
+        null,
         null,
         0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/coach_profile.rb": [
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/prospect.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/recruiter.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/recruiter_profile.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/role.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_coach.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_player.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/user_role.rb": [
         0,
         0,
         0,
         0
       ]
     },
-    "timestamp": 1504394776
+    "timestamp": 1504401078
   }
 }
