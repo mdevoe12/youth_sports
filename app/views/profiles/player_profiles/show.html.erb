@@ -1,2 +1,5 @@
+<% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+<% end %>
 
-<button type="button" name="button">Start Recruitment</button>
+<%= button_to 'Start Recruitment', send_text_path, method: :post %>

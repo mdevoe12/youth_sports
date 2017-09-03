@@ -15,7 +15,11 @@ RSpec.feature "recruiter can request to start recruitment process" do
 
     visit profiles_path(player)
 
-    expect(page).to have_content("Start Recruitment")
+    expect(page).to have_button("Start Recruitment")
+
+    click_on "Start Recruitment"
+
+    expect(current_path).to eq(profiles_path)
   end
 
 end
