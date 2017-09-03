@@ -38,13 +38,13 @@ http_interactions:
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 03 Sep 2017 18:18:57 GMT
+      - Sun, 03 Sep 2017 19:47:38 GMT
       Strict-Transport-Security:
       - max-age=15768000
       Twilio-Request-Duration:
-      - '0.223'
+      - '0.193'
       Twilio-Request-Id:
-      - RQ72eb166f0d3d4168aea2588daab92189
+      - RQa69c4e1143304efeb199ec51f700cc87
       X-Powered-By:
       - AT-5000
       X-Shenanigans:
@@ -55,15 +55,15 @@ http_interactions:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"sid": "SMe5899e89da974c0cbfebed949f5ee7db", "date_created": "Sun,
-        03 Sep 2017 18:18:57 +0000", "date_updated": "Sun, 03 Sep 2017 18:18:57 +0000",
+      string: '{"sid": "SM940cc3304ea34949880f2c38988632ec", "date_created": "Sun,
+        03 Sep 2017 19:47:38 +0000", "date_updated": "Sun, 03 Sep 2017 19:47:38 +0000",
         "date_sent": null, "account_sid": "ACdd04662d94370e1766d013e658f7bb4d", "to":
         "+16073426730", "from": "+13157571027", "messaging_service_sid": null, "body":
         "Sent from your Twilio trial account - This is sent from your twilio_service.rb
         file", "status": "queued", "num_segments": "1", "num_media": "0", "direction":
         "outbound-api", "api_version": "2010-04-01", "price": null, "price_unit":
-        "USD", "error_code": null, "error_message": null, "uri": "/2010-04-01/Accounts/ACdd04662d94370e1766d013e658f7bb4d/Messages/SMe5899e89da974c0cbfebed949f5ee7db.json",
-        "subresource_uris": {"media": "/2010-04-01/Accounts/ACdd04662d94370e1766d013e658f7bb4d/Messages/SMe5899e89da974c0cbfebed949f5ee7db/Media.json"}}'
+        "USD", "error_code": null, "error_message": null, "uri": "/2010-04-01/Accounts/ACdd04662d94370e1766d013e658f7bb4d/Messages/SM940cc3304ea34949880f2c38988632ec.json",
+        "subresource_uris": {"media": "/2010-04-01/Accounts/ACdd04662d94370e1766d013e658f7bb4d/Messages/SM940cc3304ea34949880f2c38988632ec/Media.json"}}'
     http_version: 
-  recorded_at: Sun, 03 Sep 2017 18:18:57 GMT
+  recorded_at: Sun, 03 Sep 2017 19:47:38 GMT
 recorded_with: VCR 3.0.3

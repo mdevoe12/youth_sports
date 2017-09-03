@@ -2,10 +2,11 @@ class TwilioController < ApplicationController
 
   def create
     player = Player.find(params[:player_id])
+    phone = player.profile.guardian_phone
     @client = Twilio::REST::Client.new ENV['live_twilio_sid'], ENV['live_twilio_token']
 
     @message = @client.messages.create({
-      to: '+16073426730',
+      to: "+1#{phone}",
       from: "+13157571027",
       body: 'This is sent from your twilio_service.rb file',
       status_callback: "http://requestb.in/testingyouthsports"

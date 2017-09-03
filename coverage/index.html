@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-03T12:51:14-06:00">2017-09-03T12:51:14-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-03T13:47:38-06:00">2017-09-03T13:47:38-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">31.66%</span></span>
+    (<span class="covered_percent"><span class="red">32.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>38</b> files in total.
-    <b>199</b> relevant lines. 
-    <span class="green"><b>63</b> lines covered</span> and
+    <b>200</b> relevant lines. 
+    <span class="green"><b>64</b> lines covered</span> and
     <span class="red"><b>136</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -153,9 +153,9 @@
       <tr>
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>7</td>
-        <td>7</td>
+        <td>19</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -439,19 +439,19 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">31.91%</span></span>
+    (<span class="covered_percent"><span class="red">33.33%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.33
+         0.35
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>9</b> files in total.
-    <b>47</b> relevant lines. 
-    <span class="green"><b>15</b> lines covered</span> and
+    <b>48</b> relevant lines. 
+    <span class="green"><b>16</b> lines covered</span> and
     <span class="red"><b>32</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -551,9 +551,9 @@
       <tr>
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>18</td>
-        <td>7</td>
-        <td>7</td>
+        <td>19</td>
+        <td>8</td>
+        <td>8</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -1646,8 +1646,8 @@
     <h3>app/controllers/twilio_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1682,82 +1682,88 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
+          <code class="ruby">    phone = player.profile.guardian_phone</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
           <code class="ruby">    @client = Twilio::REST::Client.new ENV[&#39;live_twilio_sid&#39;], ENV[&#39;live_twilio_token&#39;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">    @message = @client.messages.create({</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">      to: &#39;+16073426730&#39;,</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">      from: &quot;+13157571027&quot;,</code>
+          <code class="ruby">      to: &quot;+1#{phone}&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">      body: &#39;This is sent from your twilio_service.rb file&#39;,</code>
+          <code class="ruby">      from: &quot;+13157571027&quot;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">      status_callback: &quot;http://requestb.in/testingyouthsports&quot;</code>
+          <code class="ruby">      body: &#39;This is sent from your twilio_service.rb file&#39;,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">      })</code>
+          <code class="ruby">      status_callback: &quot;http://requestb.in/testingyouthsports&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">      })</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">      flash[:notice] = &quot;You&#39;ve sent a request to the player&#39;s guardian.&quot;</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
-          <code class="ruby">      redirect_to profiles_path(player)</code>
+          <code class="ruby">      flash[:notice] = &quot;You&#39;ve sent a request to the player&#39;s guardian.&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      redirect_to profiles_path(player)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
