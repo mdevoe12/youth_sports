@@ -12,11 +12,10 @@
     <nav class="navbar navbar-inverse">
       <div class="container">
         <div class="navbar-header">
-          <%= link_to 'Login', '/auth/facebook', class: 'navbar-brand' %>
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav">
-
+            <%= link_to "Login", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/auth/facebook/callback" %>
           </ul>
         </div>
       </div>

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root 'home#index'
-  
-  get 'auth/facebook/callback', to: 'sessions#create'
-  get 'auth/failiure', to: redirect('/')
 
+  get '/auth/facebook/callback', to: 'sessions#create'
+  get '/new_user', to: 'users#new'
+
+  resources :sessions, only: [:create, :destroy]
   resources :personal_messages, only: [:create]
   resources :conversations, only: [:index, :show]
 
@@ -11,5 +12,4 @@ Rails.application.routes.draw do
     get '/:id/messages', to: 'conversations#index'
   end
 
-  delete '/logout', to: 'sessions#destroy'
 end
