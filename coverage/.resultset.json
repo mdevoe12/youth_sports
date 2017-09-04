@@ -1,0 +1,409 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/helpers/stats_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/helpers/team_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/helpers/team/stats_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/team.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/helpers/teams_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/dashboard_controller.rb": [
+        0,
+        0,
+        null,
+        null,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/personal_messages_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/player_dashboard_controller.rb": [
+        0,
+        0,
+        null,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/sessions_controller.rb": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/teams/stats_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/teams_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/users/conversations_controller.rb": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/controllers/users_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/admin.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/admin_profile.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/coach.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/coach_profile.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/conversation.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/personal_message.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/player.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/player_profile.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/player_stat.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/prospect.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/recruiter.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/recruiter_profile.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/role.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/team_coach.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/team_player.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/user.rb": [
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/lessons/youth_sports/app/models/user_role.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1504544258
+  }
+}
