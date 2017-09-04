@@ -12,12 +12,15 @@
   </head>
   <body>
     <h1><%= @player.name %></h1>
-    <div class="">
+    <div id="upcoming">
       <h3>Upcoming Games</h3>
+      <ul>
+        <% @player.upcoming.each do |game| %>
+          <li><%= game.facility_name %></li>
+        <% end %>
+      </ul>
     </div>
     <div id="map"></div>
-    <script type="text/javascript" src="config.js"></script>
-    <script type="text/javascript" src="script.js"></script>
     <script>
       function initMap() {
         var asbury = {lat: 39.680045, lng: -104.971557};
@@ -31,8 +34,8 @@
         });
       }
     </script>
-    <script id="api_url" async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC26DD0ZSYmUHPxH6W4b3OAHvoLh7Qb8aM&callback=initMap">
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=XXX&callback=initMap">
     </script>
   </body>
 </html>
