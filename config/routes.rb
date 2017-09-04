@@ -18,5 +18,5 @@ Rails.application.routes.draw do
   end
 
   post '/send_text', to: 'twilio#create'
-  post '/twilio/sms', to: 'twilio#update'
+  post '/receive_text', to: 'twilio#update'
 end

@@ -1,7 +1,7 @@
 class TwilioController < ApplicationController
   include Webhookable
 
-  after_filter :set_header
+  after_action :set_header
 
   skip_before_action :verify_authenticity_token
 
@@ -25,11 +25,16 @@ class TwilioController < ApplicationController
   end
 
   def update
-    response = Twilio::TwiML::Response.new do |r|
-      r.Say "Thanks for responding...INSERT APPROPRIATE MESSAGE"
-    end
+    binding.pry
+    if params[:Body] == "Yes"
+      
 
-    render_twiml response
+    end
+    # response = Twilio::TwiML::Response.new do |r|
+    #   r.Say "Thanks for responding...INSERT APPROPRIATE MESSAGE"
+    # end
+    #
+    # render_twiml response
   end
 
 end
