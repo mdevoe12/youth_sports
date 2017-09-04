@@ -25,8 +25,10 @@ RSpec.feature "recruiter can request to start recruitment process" do
       expect(page).to have_content("You've sent a request to the player's guardian.")
 
       params = {Body: "Yes", From: "+#{profile.guardian_phone}"}
-      visit receive_text_path
-      binding.pry
+      rack_test_session_wrapper = Capybara.current_session.driver
+      rack_test_session_wrapper.post(receive_text_path, params = params)
+      
+      expect(Player.last.profile.prospects.last.status).to eq("prospect")
     end
   end
 

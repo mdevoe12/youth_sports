@@ -25,13 +25,13 @@ class TwilioController < ApplicationController
   end
 
   def update
-    binding.pry
-    phone = params[:From]
-    phone[0] = ''
-    player = PlayerProfile.find_by(guardian_phone: phone).player
     if params[:Body] == "Yes"
-
-
+      phone = params[:From]
+      phone[0] = ''
+      player_prospects = PlayerProfile.find_by(guardian_phone: phone).prospects[0]
+      player_prospects.status = "prospect"
+      player_prospects.save
+    else
     end
     # response = Twilio::TwiML::Response.new do |r|
     #   r.Say "Thanks for responding...INSERT APPROPRIATE MESSAGE"
