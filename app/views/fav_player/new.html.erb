@@ -1,0 +1,19 @@
+<h1>Create New Pokemon</h1>
+
+<% form_for @pokemon do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :pokemon_type %>
+  <%= f.text_field :pokemon_type %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :regions %>
+  <%= select_tag(:regions, options_for_select(@regions.map {|region| [region.name, region.id] } ))%>
+
+  <%= f.submit "Create Pokemon"%>
+
+<% end %>
