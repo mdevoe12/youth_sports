@@ -26,8 +26,11 @@ class TwilioController < ApplicationController
 
   def update
     binding.pry
+    phone = params[:From]
+    phone[0] = ''
+    player = PlayerProfile.find_by(guardian_phone: phone).player
     if params[:Body] == "Yes"
-      
+
 
     end
     # response = Twilio::TwiML::Response.new do |r|
