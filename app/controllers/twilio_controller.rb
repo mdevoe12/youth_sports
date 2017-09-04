@@ -24,7 +24,7 @@ class TwilioController < ApplicationController
       redirect_to profiles_path(player)
   end
 
-  def edit
+  def update
     response = Twilio::TwiML::Response.new do |r|
       r.Say "Thanks for responding...INSERT APPROPRIATE MESSAGE"
     end
