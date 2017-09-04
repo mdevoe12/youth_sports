@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "recruiter can request to start recruitment process" do
+RSpec.feature "recruiter requests to start recruitment process" do
   before(:each) do
     @recruiter = User.create(type: "Recruiter",
                         first_name: "test",
@@ -14,7 +14,7 @@ RSpec.feature "recruiter can request to start recruitment process" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@recruiter)
   end
 
-  scenario "recruiter clicks start recruitment button and receives yes" do
+  scenario "recruiter starts recruitment" do
     visit profiles_path(@player)
 
     expect(page).to have_button("Start Recruitment")
@@ -26,17 +26,33 @@ RSpec.feature "recruiter can request to start recruitment process" do
       expect(@player.profile.prospects.last.status).to eq("in-progress")
       expect(page).to have_content("You've sent a request to the player's guardian.")
 
-      rack_test_session_wrapper = Capybara.current_session.driver
-      rack_test_session_wrapper.post(receive_text_path,
-      params = {
-        Body: "Yes",
-        From: "+#{@profile.guardian_phone}"})
 
-        expect(Player.last.profile.prospects.last.status).to eq("prospect")
     end
   end
 
-  scenario "test" do
-    binding.pry
+  scenario "guardian responds yes" do
+    Prospect.create(recruiter_profile_id: @recr_profile.id,
+                       player_profile_id: @profile.id)
+
+    rack_test_session_wrapper = Capybara.current_session.driver
+    rack_test_session_wrapper.post(receive_text_path,
+    params = {
+      Body: "Yes",
+      From: "+#{@profile.guardian_phone}"})
+
+      expect(Player.last.profile.prospects.last.status).to eq("prospect")
+  end
+
+  scenario "guardian responds no" do
+    Prospect.create(recruiter_profile_id: @recr_profile.id,
+                       player_profile_id: @profile.id)
+
+    rack_test_session_wrapper = Capybara.current_session.driver
+    rack_test_session_wrapper.post(receive_text_path,
+    params = {
+      Body: "No",
+      From: "+#{@profile.guardian_phone}"})
+
+      expect(Player.last.profile.prospects.last.status).to eq("denied")
   end
 end
