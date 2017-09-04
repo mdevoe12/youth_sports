@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "recruiter requests to start recruitment process" do
+RSpec.feature "recruiter starts recruitment process" do
   before(:each) do
     @recruiter = User.create(type: "Recruiter",
                         first_name: "test",

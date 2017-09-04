@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-04T13:12:14-06:00">2017-09-04T13:12:14-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-04T15:26:23-06:00">2017-09-04T15:26:23-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1814,28 +1814,28 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">    player = Player.find(params[:player_id])</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    phone = player.profile.guardian_phone</code>
+          <code class="ruby">    player = Player.find(params[:player_id])</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    @client = Twilio::REST::Client.new ENV[&#39;live_twilio_sid&#39;], ENV[&#39;live_twilio_token&#39;]</code>
+          <code class="ruby">    phone = player.profile.guardian_phone</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    @client = Twilio::REST::Client.new ENV[&#39;live_twilio_sid&#39;], ENV[&#39;live_twilio_token&#39;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">

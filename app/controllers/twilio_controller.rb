@@ -9,7 +9,6 @@ class TwilioController < ApplicationController
     player = Player.find(params[:player_id])
     phone = player.profile.guardian_phone
     @client = Twilio::REST::Client.new ENV['live_twilio_sid'], ENV['live_twilio_token']
-
     @message = @client.messages.create({
       to: "+1#{phone}",
       from: "+13157571027",
