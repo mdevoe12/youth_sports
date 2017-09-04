@@ -1,9 +1,9 @@
 class TwilioController < ApplicationController
-  include Webhookable
+  # include Webhookable
 
-  after_action :set_header
+  # after_action :set_header
 
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token, only: [:update]
 
   def create
     player = Player.find(params[:player_id])
@@ -25,13 +25,15 @@ class TwilioController < ApplicationController
   end
 
   def update
+    phone = params[:From]
+    phone[0] = ''
+    player_prospects = PlayerProfile.find_by(guardian_phone: phone).prospects[0]
     if params[:Body] == "Yes"
-      phone = params[:From]
-      phone[0] = ''
-      player_prospects = PlayerProfile.find_by(guardian_phone: phone).prospects[0]
       player_prospects.status = "prospect"
       player_prospects.save
-    else
+    elsif params[:Body] == "No"
+      player_prospects.status = "denied"
+      player_prospects.save
     end
     # response = Twilio::TwiML::Response.new do |r|
     #   r.Say "Thanks for responding...INSERT APPROPRIATE MESSAGE"

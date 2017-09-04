@@ -96,11 +96,11 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
   RSpec.configure do |c|
-    c.before(:all) do
+    c.before(:each) do
       DatabaseCleaner.clean
     end
 
-    c.after(:all) do
+    c.after(:each) do
       DatabaseCleaner.clean
     end
   end
