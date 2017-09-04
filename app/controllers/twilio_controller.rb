@@ -1,4 +1,9 @@
 class TwilioController < ApplicationController
+  include Webhookable
+
+  after_filter :set_header
+
+  skip_before_action :verify_authenticity_token
 
   def create
     player = Player.find(params[:player_id])
@@ -8,8 +13,7 @@ class TwilioController < ApplicationController
     @message = @client.messages.create({
       to: "+1#{phone}",
       from: "+13157571027",
-      body: 'This is a message sent from youth sports',
-      status_callback: "http://requestb.in/testingyouthsports"
+      body: 'This is a message sent from youth sports'
       })
 
       Prospect.create(recruiter_profile_id: current_user.profile.id,
@@ -18,6 +22,14 @@ class TwilioController < ApplicationController
 
       flash[:notice] = "You've sent a request to the player's guardian."
       redirect_to profiles_path(player)
+  end
+
+  def edit
+    response = Twilio::TwiML::Response.new do |r|
+      r.Say "Thanks for responding...INSERT APPROPRIATE MESSAGE"
+    end
+
+    render_twiml response
   end
 
 end
