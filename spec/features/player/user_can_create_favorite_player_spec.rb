@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-xdescribe "logged in athlete" do
-  scenario "can see their favorite player's tweets" do
+describe "logged in athlete" do
+  scenario "can create their favorite player" do
     aj = Player.create(first_name: 'AJ',
                             last_name: 'Randall',
                             username: 'aj',
@@ -19,9 +19,11 @@ xdescribe "logged in athlete" do
 
     visit player_dashboard_path
     expect(current_path).to eq('/player_dashboard')
-    save_and_open_page
-    expect(page).to have_link("Click to follow your favorite player")
-    expect(page).to have_content("#{aj.favorite_player.name}")
-    expect(page).to have_content("#{aj.favorite_player.tweets_of_the_week}")
+    expect(page).to have_link("Create/update your favorite player")
+    click_on "Create/update your favorite player"
+
+    expect(current_path).to eq(favorite_players_path)
+    # expect(page).to have_content("#{aj.favorite_player.name}")
+    # expect(page).to have_content("#{aj.favorite_player.tweets_of_the_week}")
   end
 end
