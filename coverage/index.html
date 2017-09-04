@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-04T10:03:53-06:00">2017-09-04T10:03:53-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-04T11:02:23-06:00">2017-09-04T11:02:23-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">40.0%</span></span>
+    (<span class="covered_percent"><span class="red">39.81%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.4
+         0.39
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>39</b> files in total.
-    <b>215</b> relevant lines. 
+    <b>216</b> relevant lines. 
     <span class="green"><b>86</b> lines covered</span> and
-    <span class="red"><b>129</b> lines missed </span>
+    <span class="red"><b>130</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -162,12 +162,12 @@
       
       <tr>
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
-        <td class="red strong">76.47 %</td>
-        <td>36</td>
-        <td>17</td>
+        <td class="red strong">72.22 %</td>
+        <td>43</td>
+        <td>18</td>
         <td>13</td>
-        <td>4</td>
-        <td>0.8</td>
+        <td>5</td>
+        <td>0.7</td>
       </tr>
       
       <tr>
@@ -449,20 +449,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">41.27%</span></span>
+    (<span class="covered_percent"><span class="red">40.63%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.43
+         0.41
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>10</b> files in total.
-    <b>63</b> relevant lines. 
+    <b>64</b> relevant lines. 
     <span class="green"><b>26</b> lines covered</span> and
-    <span class="red"><b>37</b> lines missed </span>
+    <span class="red"><b>38</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -570,12 +570,12 @@
       
       <tr>
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
-        <td class="red strong">76.47 %</td>
-        <td>36</td>
-        <td>17</td>
+        <td class="red strong">72.22 %</td>
+        <td>43</td>
+        <td>18</td>
         <td>13</td>
-        <td>4</td>
-        <td>0.8</td>
+        <td>5</td>
+        <td>0.7</td>
       </tr>
       
     </tbody>
@@ -1755,11 +1755,11 @@
         <div class="source_table" id="23d51da4df82e14f6eed1f263a1d5805f4bbbd55">
   <div class="header">
     <h3>app/controllers/twilio_controller.rb</h3>
-    <h4><span class="red">76.47 %</span> covered</h4>
+    <h4><span class="red">72.22 %</span> covered</h4>
     <div>
-      <b>17</b> relevant lines. 
+      <b>18</b> relevant lines. 
       <span class="green"><b>13</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
   
@@ -1937,46 +1937,88 @@
         <li class="missed" data-hits="0" data-linenumber="29">
           
           
-          <code class="ruby">    response = Twilio::TwiML::Response.new do |r|</code>
+          <code class="ruby">    phone = params[:From]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">      r.Say &quot;Thanks for responding...INSERT APPROPRIATE MESSAGE&quot;</code>
+          <code class="ruby">    phone[0] = &#39;&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="missed" data-hits="0" data-linenumber="31">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">    player = PlayerProfile.find_by(guardian_phone: phone).player</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="missed" data-hits="0" data-linenumber="32">
+          
+          
+          <code class="ruby">    if params[:Body] == &quot;Yes&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="33">
-          
-          
-          <code class="ruby">    render_twiml response</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="35">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
+          
+          
+          <code class="ruby">    # response = Twilio::TwiML::Response.new do |r|</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">    #   r.Say &quot;Thanks for responding...INSERT APPROPRIATE MESSAGE&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby">    # end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
+          
+          
+          <code class="ruby">    #</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="40">
+          
+          
+          <code class="ruby">    # render_twiml response</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="42">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
           
           
           <code class="ruby">end</code>
