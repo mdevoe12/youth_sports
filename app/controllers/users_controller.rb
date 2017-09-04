@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def new
-    byebug
+    # byebug
+    @user = User.new
+    binding.pry
   end
 end
