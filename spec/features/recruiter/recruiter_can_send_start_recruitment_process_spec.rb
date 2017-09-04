@@ -25,8 +25,6 @@ RSpec.feature "recruiter requests to start recruitment process" do
       expect(current_path).to eq("/profiles/player_profile/#{@player.id}")
       expect(@player.profile.prospects.last.status).to eq("in-progress")
       expect(page).to have_content("You've sent a request to the player's guardian.")
-
-
     end
   end
 
@@ -40,7 +38,7 @@ RSpec.feature "recruiter requests to start recruitment process" do
       Body: "Yes",
       From: "+#{@profile.guardian_phone}"})
 
-      expect(Player.last.profile.prospects.last.status).to eq("prospect")
+    expect(Player.last.profile.prospects.last.status).to eq("prospect")
   end
 
   scenario "guardian responds no" do
@@ -53,6 +51,6 @@ RSpec.feature "recruiter requests to start recruitment process" do
       Body: "No",
       From: "+#{@profile.guardian_phone}"})
 
-      expect(Player.last.profile.prospects.last.status).to eq("denied")
+    expect(Player.last.profile.prospects.last.status).to eq("denied")
   end
 end
