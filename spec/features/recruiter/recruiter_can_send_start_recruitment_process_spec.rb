@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "recruiter can request to start recruitment process" do
-  scenario "recruiter clicks start recruitment button and receives yes" do
+  before(:each) do
     @recruiter = User.create(type: "Recruiter",
                         first_name: "test",
                         last_name: "test",
@@ -12,7 +12,9 @@ RSpec.feature "recruiter can request to start recruitment process" do
     PlayerStat.create(points: 40, fouls: 20, player_profile: @profile)
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@recruiter)
+  end
 
+  scenario "recruiter clicks start recruitment button and receives yes" do
     visit profiles_path(@player)
 
     expect(page).to have_button("Start Recruitment")
