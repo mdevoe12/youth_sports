@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'A logged in recruiter clicks on a player name' do
-  scenario 'and sees that players profile page with map of upcoming games' do
+  scenario 'and sees that players profile page with map and list of upcoming games' do
     recruiter = Recruiter.create(first_name: 'Mister', last_name: 'Meseeks', username: 'existenceispain', password_digest: 'lookatme!')
     rec_profile = RecruiterProfile.create(institution: 'Smith Garage', email: 'meseeks@box.com', recruiter_id: recruiter.id)
     player1 = Player.create(first_name: 'Morty', last_name: 'Smith', username: 'onetruemorty', password_digest: 'ohgeez!')
@@ -12,9 +12,10 @@ RSpec.describe 'A logged in recruiter clicks on a player name' do
 
     visit '/dashboard'
     click_on 'Morty Smith'
-save_and_open_page
+
     expect(current_path).to eq(player_profile_path(profile1))
     expect(page).to have_content('Morty Smith')
     expect(page).to have_css('div#map')
+    
   end
 end
