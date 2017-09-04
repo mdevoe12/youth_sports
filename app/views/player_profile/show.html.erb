@@ -16,21 +16,23 @@
       <h3>Upcoming Games</h3>
     </div>
     <div id="map"></div>
+    <script type="text/javascript" src="config.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <script>
       function initMap() {
-        var uluru = {lat: 39.680041, lng: -104.971595};
+        var asbury = {lat: 39.680045, lng: -104.971557};
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 12,
-          center: uluru
+          center: asbury
         });
         var marker = new google.maps.Marker({
-          position: uluru,
+          position: asbury,
           map: map
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=XXX&callback=initMap">
+    <script id="api_url" async defer
+    ng-src="https://maps.googleapis.com/maps/api/js?key=XXX&callback=initMap">
     </script>
   </body>
 </html>

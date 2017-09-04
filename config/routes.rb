@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
-  get '/player_profile', to: 'player_profile#show'
+  get '/:id/player_profile', to: 'player_profile#show', as: 'player_profile'
 
   get '/dashboard', to: 'dashboard#index'
 
