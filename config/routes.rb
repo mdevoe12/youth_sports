@@ -48,9 +48,9 @@ Rails.application.routes.draw do
   # internal api
   namespace :api do
     namespace :v1 do
-      get 'players/:id/points', to: 'players_points#show'
-      get 'players/:id/fouls', to: 'players_fouls#show' 
-      get 'players/:id/stats', to: 'players_stats#show'
+      get 'players/:id/points', to: 'player_points#show'
+      get 'players/:id/fouls', to: 'player_fouls#show'
+      get 'players/:id/stats', to: 'player_stats#show'
     end
   end
 end
