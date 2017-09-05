@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901022605) do
+
+ActiveRecord::Schema.define(version: 20170903210756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,6 +80,7 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.bigint "player_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
     t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
   end

@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
-  get '/player_profile', to: 'player_profile#show'
+  namespace :profiles do
+    get '/player_profile/:id', to: 'player_profiles#show'
+  end
 
   get '/dashboard', to: 'dashboard#index'
-
   get 'auth/facebook/callback', to: 'sessions#create'
   get 'auth/failiure', to: redirect('/')
 
@@ -30,4 +31,6 @@ Rails.application.routes.draw do
     get '/:id/stats', to: 'stats#index'
   end
 
+  post '/send_text', to: 'twilio#create'
+  post '/receive_text', to: 'twilio#update'
 end
