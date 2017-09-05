@@ -244,8 +244,6 @@
         null,
         null,
         null,
-        null,
-        null,
         null
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/prospect.rb": [
@@ -402,6 +400,6 @@
         0
       ]
     },
-    "timestamp": 1504571669
+    "timestamp": 1504572375
   }
 }
