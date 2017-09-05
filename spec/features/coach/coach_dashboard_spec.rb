@@ -16,12 +16,11 @@ describe "#coach_dashboard_index" do
     expect(current_path).to eq("/coach")
     expect(page).to have_content("Hello #{coach.type} #{coach.first_name}")
 
-    # save_and_open_page
 
     within ".h2" do
       expect(page).to have_content("Institution: Eagles")
     end
-    
+
     # expect(page).to have_css(".email")
     # expect(page).to have_css(".phone_number")
   end
