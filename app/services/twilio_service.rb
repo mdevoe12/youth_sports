@@ -4,15 +4,13 @@ class TwilioService
     @client = Twilio::REST::Client.new ENV['twilio_sid'], ENV['twilio_token']
   end
 
-  def self.send_recruiter_request(phone_num)
+  def self.send_recruiter_request(message)
     connect
-    message = {
-          to: "+1#{phone_num}",
-          from: "+13157571027",
-          body: 'A recruiter is interested in your athlete. Please respond
-                 with Yes if you are interested or No if you are not.'
-          }
-    @client.messages.create(message)
+    @client.messages.create({
+                        to: message.to,
+                        from: message.from,
+                        body: message.body
+      })
   end
 
 end
