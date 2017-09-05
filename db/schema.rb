@@ -43,6 +43,33 @@ ActiveRecord::Schema.define(version: 20170903210756) do
     t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
   end
 
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_teams", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_teams_on_game_id"
+    t.index ["team_id"], name: "index_game_teams_on_team_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "facility_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.index ["facility_id"], name: "index_games_on_facility_id"
+  end
+
   create_table "personal_messages", force: :cascade do |t|
     t.text "body"
     t.bigint "conversation_id"
@@ -144,6 +171,9 @@ ActiveRecord::Schema.define(version: 20170903210756) do
 
   add_foreign_key "admin_profiles", "users", column: "admin_id"
   add_foreign_key "coach_profiles", "users", column: "coach_id"
+  add_foreign_key "game_teams", "games"
+  add_foreign_key "game_teams", "teams"
+  add_foreign_key "games", "facilities"
   add_foreign_key "personal_messages", "conversations"
   add_foreign_key "personal_messages", "users"
   add_foreign_key "player_profiles", "users", column: "player_id"
