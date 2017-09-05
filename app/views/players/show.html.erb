@@ -1,9 +1,11 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-12 welcome-bar">
-      <h1>Welcome <%= @player.username %></h1>
-    </div>
+    <% if @player.id == current_user.id %>
+      <div class="col-md-12 welcome-bar">
+        <h1>Welcome <%= @player.username.capitalize %></h1>
+      </div>
+    <% end %>
   </div>
   <div class="row">
     <div class="col-md-3 ath-side-bar">
@@ -11,6 +13,9 @@
         <%= image_tag("players/bball_prof.png", :id => "ath-profile-pic") %>
       </div>
       <div class="col-md-8">
+        <% if current_user.id == @player.id %>
+        <%= link_to "Edit Profile", edit_player_path(@player) %>
+        <% end %>
         <h3><%= @player.name %></h3>
         <h4><%= @player.school %></h4>
         <h4><%= @player.grade %></h4>
