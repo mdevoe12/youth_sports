@@ -17,7 +17,5 @@ class SessionsController < ApplicationController
 
     redirect_to root_path
 
-    ## Use this path once profile views exist
-    # redirect_to "/users/players/:id/profile"
   end
 end

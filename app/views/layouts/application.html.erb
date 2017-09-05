@@ -14,7 +14,18 @@
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav">
-            <%= link_to "Login", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/auth/facebook/callback" %>
+            <body>
+
+              <ul>
+                <li><a href="#Sign up">Sign Up as a Recruiter</a></li>
+                <li><a href="#Sign up">  <%= link_to "Sign Up as an Athlete", new_player_path %> </a></li>
+                <li><a href="#Sign up">Sign Up as a Coach</a></li>
+                <li><a href="#Login">Login</a></li>
+                <li><a href="#Logout">Logout</a></li>
+              </ul>
+
+            </body>
+            <%= link_to "Login with facebook", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/auth/facebook/callback" %>
           </ul>
         </div>
       </div>
