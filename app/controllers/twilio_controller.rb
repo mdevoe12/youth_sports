@@ -5,16 +5,17 @@ class TwilioController < ApplicationController
   def create
     player = Player.find(params[:player_id])
     phone_num = player.profile.guardian_phone
-    TwilioService.send_recruiter_request(phone_num)
-    # message = TwilioMessage.new
+    TwilioMessage.create_for_guardian(params[:player_id])
     # TwilioMessage.send_recruiter_request(phone_num)
+    # TwilioService.send_recruiter_request(phone_num)
+    # message = TwilioMessage.new
 
     Prospect.create(recruiter_profile_id: current_user.profile.id,
                          player_profile_id: player.profile.id)
 
 
-      flash[:notice] = "You've sent a request to the player's guardian."
-      redirect_to profiles_path(player)
+    flash[:notice] = "You've sent a request to the player's guardian."
+    redirect_to profiles_path(player)
   end
 
   def update

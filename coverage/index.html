@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-05T08:26:43-06:00">2017-09-05T08:26:43-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-05T08:37:40-06:00">2017-09-05T08:37:40-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">42.15%</span></span>
+    (<span class="covered_percent"><span class="red">44.44%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.44
+         0.46
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>40</b> files in total.
-    <b>223</b> relevant lines. 
-    <span class="green"><b>94</b> lines covered</span> and
-    <span class="red"><b>129</b> lines missed </span>
+    <b>225</b> relevant lines. 
+    <span class="green"><b>100</b> lines covered</span> and
+    <span class="red"><b>125</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -153,7 +153,7 @@
       <tr>
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>32</td>
+        <td>33</td>
         <td>19</td>
         <td>19</td>
         <td>0</td>
@@ -412,12 +412,12 @@
       
       <tr>
         <td class="strong"><a href="#3428bddac74c452e39718caaedf9709e536951e7" class="src_link" title="app/models/twilio_message.rb">app/models/twilio_message.rb</a></td>
-        <td class="red strong">0.0 %</td>
-        <td>8</td>
-        <td>5</td>
-        <td>0</td>
-        <td>5</td>
-        <td>0.0</td>
+        <td class="yellow strong">85.71 %</td>
+        <td>13</td>
+        <td>7</td>
+        <td>6</td>
+        <td>1</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -571,7 +571,7 @@
       <tr>
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>32</td>
+        <td>33</td>
         <td>19</td>
         <td>19</td>
         <td>0</td>
@@ -586,20 +586,20 @@
           <div class="file_list_container" id="Models">
   <h2>
     <span class="group_name">Models</span>
-    (<span class="covered_percent"><span class="red">38.52%</span></span>
+    (<span class="covered_percent"><span class="red">42.34%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.38
+         0.42
        </span>
     </span> hits/line)
   </h2>
   <a name="Models"></a>
   <div>
     <b>18</b> files in total.
-    <b>135</b> relevant lines. 
-    <span class="green"><b>52</b> lines covered</span> and
-    <span class="red"><b>83</b> lines missed </span>
+    <b>137</b> relevant lines. 
+    <span class="green"><b>58</b> lines covered</span> and
+    <span class="red"><b>79</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -767,12 +767,12 @@
       
       <tr>
         <td class="strong"><a href="#3428bddac74c452e39718caaedf9709e536951e7" class="src_link" title="app/models/twilio_message.rb">app/models/twilio_message.rb</a></td>
-        <td class="red strong">0.0 %</td>
-        <td>8</td>
-        <td>5</td>
-        <td>0</td>
-        <td>5</td>
-        <td>0.0</td>
+        <td class="yellow strong">85.71 %</td>
+        <td>13</td>
+        <td>7</td>
+        <td>6</td>
+        <td>1</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -1740,43 +1740,43 @@
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    TwilioService.send_recruiter_request(phone_num)</code>
+          <code class="ruby">    TwilioMessage.create_for_guardian(params[:player_id])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
-          <code class="ruby">    # message = TwilioMessage.new</code>
+          <code class="ruby">    # TwilioMessage.send_recruiter_request(phone_num)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">    # TwilioMessage.send_recruiter_request(phone_num)</code>
+          <code class="ruby">    # TwilioService.send_recruiter_request(phone_num)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
+          <code class="ruby">    # message = TwilioMessage.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">    Prospect.create(recruiter_profile_id: current_user.profile.id,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">                         player_profile_id: player.profile.id)</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">                         player_profile_id: player.profile.id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -1785,103 +1785,109 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      flash[:notice] = &quot;You&#39;ve sent a request to the player&#39;s guardian.&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      redirect_to profiles_path(player)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
-          <code class="ruby">  def update</code>
+          <code class="ruby">    flash[:notice] = &quot;You&#39;ve sent a request to the player&#39;s guardian.&quot;</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    phone = params[:From]</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="22">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    phone[0] = &#39;&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="23">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    player_prospects = PlayerProfile.find_by(guardian_phone: phone).prospects[0]</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="24">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    if params[:Body] == &quot;Yes&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
-          <code class="ruby">      player_prospects.status = &quot;prospect&quot;</code>
+          <code class="ruby">    redirect_to profiles_path(player)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      player_prospects.save</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="27">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    elsif params[:Body] == &quot;No&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      player_prospects.status = &quot;denied&quot;</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      player_prospects.save</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="30">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="31">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">  end</code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    phone = params[:From]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="23">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    phone[0] = &#39;&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    player_prospects = PlayerProfile.find_by(guardian_phone: phone).prospects[0]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="25">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    if params[:Body] == &quot;Yes&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      player_prospects.status = &quot;prospect&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      player_prospects.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    elsif params[:Body] == &quot;No&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      player_prospects.status = &quot;denied&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="30">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      player_prospects.save</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
           
           
           <code class="ruby">end</code>
@@ -3432,19 +3438,19 @@
         <div class="source_table" id="3428bddac74c452e39718caaedf9709e536951e7">
   <div class="header">
     <h3>app/models/twilio_message.rb</h3>
-    <h4><span class="red">0.0 %</span> covered</h4>
+    <h4><span class="yellow">85.71 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>5</b> lines missed.</span>
+      <b>7</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
   <pre>
     <ol>
       
-        <li class="missed" data-hits="0" data-linenumber="1">
-          
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
           
           <code class="ruby">class TwilioMessage</code>
         </li>
@@ -3455,37 +3461,67 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="3">
-          
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
           <code class="ruby">  def self.send_recruiter_request(phone_num)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby">    # TwilioMessage.new</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="5">
+        <li class="missed" data-hits="0" data-linenumber="4">
           
           
           <code class="ruby">    TwilioService.send_recruiter_request(phone_num)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="5">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def self.create_for_guardian(player_info)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    player = Player.find(player_info)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    phone_num = player.profile.guardian_phone</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    TwilioService.send_recruiter_request(phone_num)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">end</code>

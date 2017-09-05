@@ -200,6 +200,7 @@
         null,
         null,
         null,
+        null,
         1,
         null,
         null,
@@ -214,6 +215,21 @@
         2,
         2,
         1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/twilio_message.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
         1,
         1,
         1,
@@ -389,16 +405,6 @@
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/twilio_message.rb": [
-        0,
-        null,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/user_role.rb": [
         0,
         0,
@@ -406,6 +412,6 @@
         0
       ]
     },
-    "timestamp": 1504621603
+    "timestamp": 1504622260
   }
 }
