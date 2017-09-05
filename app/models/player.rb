@@ -47,4 +47,8 @@ class Player < User
       self.teams.first
     end
   end
+
+  def upcoming
+    self.team.games.where(status: "upcoming")
+  end
 end
