@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-05T08:58:50-06:00">2017-09-05T08:58:50-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-05T13:27:03-06:00">2017-09-05T13:27:03-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -413,7 +413,7 @@
       <tr>
         <td class="strong"><a href="#3428bddac74c452e39718caaedf9709e536951e7" class="src_link" title="app/models/twilio_message.rb">app/models/twilio_message.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>27</td>
+        <td>22</td>
         <td>11</td>
         <td>11</td>
         <td>0</td>
@@ -443,7 +443,7 @@
       <tr>
         <td class="strong"><a href="#1fb9fae655acd54d0935a54f2095a6043220cd92" class="src_link" title="app/services/twilio_service.rb">app/services/twilio_service.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>23</td>
+        <td>16</td>
         <td>6</td>
         <td>6</td>
         <td>0</td>
@@ -768,7 +768,7 @@
       <tr>
         <td class="strong"><a href="#3428bddac74c452e39718caaedf9709e536951e7" class="src_link" title="app/models/twilio_message.rb">app/models/twilio_message.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>27</td>
+        <td>22</td>
         <td>11</td>
         <td>11</td>
         <td>0</td>
@@ -1103,7 +1103,7 @@
       <tr>
         <td class="strong"><a href="#1fb9fae655acd54d0935a54f2095a6043220cd92" class="src_link" title="app/services/twilio_service.rb">app/services/twilio_service.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>23</td>
+        <td>16</td>
         <td>6</td>
         <td>6</td>
         <td>0</td>
@@ -3464,94 +3464,64 @@
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">              # to: &quot;+1#{phone_num}&quot;,</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">              # from: &quot;+13157571027&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">              # body: &#39;A recruiter is interested in your athlete. Please respond</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">              #        with Yes if you are interested or No if you are not.&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="16">
-          
-          
-          <code class="ruby">              # }</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.create_for_guardian(player, recruiter)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="20">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">    phone_num = player.profile.guardian_phone</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="21">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">    message = TwilioMessage.new(phone_num)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="22">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">    TwilioService.send_recruiter_request(message)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="18">
           <span class="hits">1</span>
           
           <code class="ruby">    Prospect.create(recruiter_profile_id: recruiter.profile.id,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">                         player_profile_id: player.profile.id)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="25">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">end</code>
@@ -3830,91 +3800,49 @@
           <code class="ruby">    connect</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby">    # binding.pry</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">    # message = {</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="11">
-          
-          
-          <code class="ruby">    #       to: &quot;+1#{phone_num}&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="12">
-          
-          
-          <code class="ruby">    #       from: &quot;+13157571027&quot;,</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="13">
-          
-          
-          <code class="ruby">    #       body: &#39;A recruiter is interested in your athlete. Please respond</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="14">
-          
-          
-          <code class="ruby">    #              with Yes if you are interested or No if you are not.&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="15">
-          
-          
-          <code class="ruby">    #       }</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="16">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">    @client.messages.create({</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">                        to: message.to,</code>
+          <code class="ruby">                          to: message.to,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby">                        from: message.from,</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">                        body: message.body</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
-          <code class="ruby">      })</code>
+          <code class="ruby">                           })</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">end</code>

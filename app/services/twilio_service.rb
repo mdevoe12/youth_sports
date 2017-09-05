@@ -7,10 +7,10 @@ class TwilioService
   def self.send_recruiter_request(message)
     connect
     @client.messages.create({
-                        to: message.to,
+                          to: message.to,
                         from: message.from,
                         body: message.body
-      })
+                           })
   end
 
 end
