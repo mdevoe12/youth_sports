@@ -3,15 +3,16 @@ class TwilioController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:update]
 
   def create
+    # binding.pry
     player = Player.find(params[:player_id])
-    phone_num = player.profile.guardian_phone
-    TwilioMessage.create_for_guardian(params[:player_id])
+    # phone_num = player.profile.guardian_phone
+    TwilioMessage.create_for_guardian(player, current_user)
     # TwilioMessage.send_recruiter_request(phone_num)
     # TwilioService.send_recruiter_request(phone_num)
     # message = TwilioMessage.new
 
-    Prospect.create(recruiter_profile_id: current_user.profile.id,
-                         player_profile_id: player.profile.id)
+    # Prospect.create(recruiter_profile_id: current_user.profile.id,
+    #                      player_profile_id: player.profile.id)
 
 
     flash[:notice] = "You've sent a request to the player's guardian."
