@@ -10,18 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170903210756) do
+ActiveRecord::Schema.define(version: 20170905232559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admin_profiles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "admin_id"
-    t.index ["admin_id"], name: "index_admin_profiles_on_admin_id"
-  end
 
   create_table "coach_profiles", force: :cascade do |t|
     t.string "institution"
@@ -173,7 +165,6 @@ ActiveRecord::Schema.define(version: 20170903210756) do
     t.datetime "oauth_expires_at"
   end
 
-  add_foreign_key "admin_profiles", "users", column: "admin_id"
   add_foreign_key "coach_profiles", "users", column: "coach_id"
   add_foreign_key "game_teams", "games"
   add_foreign_key "game_teams", "teams"
