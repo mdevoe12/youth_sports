@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-04T15:26:23-06:00">2017-09-04T15:26:23-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-04T16:11:26-06:00">2017-09-04T16:11:26-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">39.82%</span></span>
+    (<span class="covered_percent"><span class="red">40.09%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.41
+         0.42
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>39</b> files in total.
-    <b>221</b> relevant lines. 
-    <span class="green"><b>88</b> lines covered</span> and
+    <b>222</b> relevant lines. 
+    <span class="green"><b>89</b> lines covered</span> and
     <span class="red"><b>133</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -164,8 +164,8 @@
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>45</td>
-        <td>20</td>
-        <td>20</td>
+        <td>21</td>
+        <td>21</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -449,19 +449,19 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">40.58%</span></span>
+    (<span class="covered_percent"><span class="red">41.43%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.47
+         0.48
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>10</b> files in total.
-    <b>69</b> relevant lines. 
-    <span class="green"><b>28</b> lines covered</span> and
+    <b>70</b> relevant lines. 
+    <span class="green"><b>29</b> lines covered</span> and
     <span class="red"><b>41</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -572,8 +572,8 @@
         <td class="strong"><a href="#23d51da4df82e14f6eed1f263a1d5805f4bbbd55" class="src_link" title="app/controllers/twilio_controller.rb">app/controllers/twilio_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>45</td>
-        <td>20</td>
-        <td>20</td>
+        <td>21</td>
+        <td>21</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -1757,8 +1757,8 @@
     <h3>app/controllers/twilio_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>20</b> relevant lines. 
-      <span class="green"><b>20</b> lines covered</span> and
+      <b>21</b> relevant lines. 
+      <span class="green"><b>21</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1814,28 +1814,28 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">    player = Player.find(params[:player_id])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">    phone = player.profile.guardian_phone</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">    @client = Twilio::REST::Client.new ENV[&#39;live_twilio_sid&#39;], ENV[&#39;live_twilio_token&#39;]</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    session[&quot;unique_id&quot;] ||= &quot;abc123&quot;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
