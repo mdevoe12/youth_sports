@@ -6,12 +6,13 @@ class TwilioService
 
   def self.send_recruiter_request(phone_num)
     connect
-    @client.messages.create({
+    message = {
           to: "+1#{phone_num}",
           from: "+13157571027",
           body: 'A recruiter is interested in your athlete. Please respond
                  with Yes if you are interested or No if you are not.'
-          })
+          }
+    @client.messages.create(message)
   end
 
 end
