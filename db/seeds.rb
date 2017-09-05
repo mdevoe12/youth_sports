@@ -1,15 +1,99 @@
 start = Time.now
 
+Admin.create(first_name: "Josh",
+              last_name: "Dao",
+               username: "admin@admin.com",
+               password: "password")
+
+
 Role.create(name: "Player")
 Role.create(name: "Coach")
 Role.create(name: "Recruiter")
 Role.create(name: "Admin")
 
+Facility.create(
+  :name => "Coors field",
+  :address => "2001 Blake St, Denver, CO 80205",
+  :latitude => 39.755940,
+  :longitude => -104.994157,
+  )
+
+Facility.create(
+  :name => "Pepsi Center",
+  :address => "1000 Chopper Cir, Denver, CO 8020",
+  :latitude => 39.748676,
+  :longitude => -105.007667,
+  )
+
+Facility.create(
+  :name => "Mile High Stadium",
+  :address => "2027 Old West Colfax Ave, Denver, CO 80204",
+  :latitude => 39.739938,
+  :longitude => -105.016511,
+  )
+
+Facility.create(
+  :name => "Asbury Elementary",
+  :address => "1320 E Asbury Ave, Denver, CO 80210",
+  :latitude => 39.680066,
+  :longitude => -104.971606,
+  )
+
+Facility.create(
+  :name => "Calvary Baptist",
+  :address => "6500 E Girard Ave, Denver, CO 80224",
+  :latitude => 39.653363,
+  :longitude => -104.912454,
+  )
+
+Facility.create(
+  :name => "Carson Elementary",
+  :address => "5420 E 1st Ave, Denver, CO 80220",
+  :latitude => 39.717422,
+  :longitude => -104.924011,
+  )
+
+Facility.create(
+  :name => "Hamilton Middle School",
+  :address => "8600 E Dartmouth Ave, Denver, CO 80231",
+  :latitude => 39.659913,
+  :longitude => -104.891947,
+  )
+
+Facility.create(
+  :name => "Heritage Elementary",
+  :address => "6867 East Heritage Place, Centennial, CO 80111",
+  :latitude => 39.597097,
+  :longitude => -104.910516,
+  )
+
+Facility.create(
+  :name => "Highline Elementary",
+  :address => "11000 E Exposition Ave, Aurora, CO 80012",
+  :latitude => 39.702919,
+  :longitude => -104.858894,
+  )
+
+Facility.create(
+  :name => "Holm Elementary",
+  :address => "3185 S Willow St, Denver, CO 80231",
+  :latitude => 39.657640,
+  :longitude => -104.892134,
+  )
+
+
+
+team_count = 1
+
 40.times do
-    team = Team.create(
-    name: Faker::Team.name
-    )
+  team = Team.create(
+  name: Faker::Team.name
+  )
+  puts "creating team #{team_count}"
+  team_count += 1
 end
+
+game_count = 1
 
 100.times do
   game = Game.create(
@@ -18,11 +102,17 @@ end
   :date => Time.now
   )
 
-  
+  GameTeam.create(
+  :game_id => game.id,
+  :team_id => Team.pluck(:id).sample
+  )
+
+  puts "creating game #{game_count}"
+  game_count += 1
 end
 
-
 player_count = 1
+
 500.times do
   player = Player.create(
     :first_name => Faker::Name.first_name,
@@ -58,6 +148,7 @@ player_count = 1
 end
 
 coach_recruiter_count = 1
+
 40.times do
   coach = Coach.create(
     :first_name => Faker::Name.first_name,
@@ -80,27 +171,27 @@ coach_recruiter_count = 1
     :coach_id => coach.id
   )
 
-    recruiter = Recruiter.create(
-      :first_name => Faker::Name.first_name,
-      :last_name  => Faker::Name.last_name,
-      :username   => Faker::Internet.safe_email,
-      :password   => Faker::Internet.password(8)
-      )
-
-    recruiter.roles << Role.find_by(name: "Recruiter")
-
-    recruiter_profile = RecruiterProfile.create(
-      :institution => Faker::GameOfThrones.house,
-      :email => Faker::Internet.safe_email,
-      :phone_number => "1234545456",
-      :recruiter_id => recruiter.id
+  recruiter = Recruiter.create(
+    :first_name => Faker::Name.first_name,
+    :last_name  => Faker::Name.last_name,
+    :username   => Faker::Internet.safe_email,
+    :password   => Faker::Internet.password(8)
     )
 
-    Prospect.create(
-      :recruiter_profile_id => recruiter_profile.id,
-      :player_profile_id => Player.pluck(:id).sample,
-      :status => rand(0..3)
-    )
+  recruiter.roles << Role.find_by(name: "Recruiter")
+
+  recruiter_profile = RecruiterProfile.create(
+    :institution => Faker::GameOfThrones.house,
+    :email => Faker::Internet.safe_email,
+    :phone_number => "1234545456",
+    :recruiter_id => recruiter.id
+  )
+
+  Prospect.create(
+    :recruiter_profile_id => recruiter_profile.id,
+    :player_profile_id => Player.pluck(:id).sample,
+    :status => rand(0..3)
+  )
 
   puts "creating coach/recruiter #{coach_recruiter_count}"
   coach_recruiter_count +=1
