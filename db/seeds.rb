@@ -82,7 +82,6 @@ Facility.create(
   )
 
 
-
 team_count = 1
 
 40.times do
@@ -97,7 +96,7 @@ game_count = 1
 
 100.times do
   game = Game.create(
-  :facility_id => ,
+  :facility_id => Facility.pluck(:id).sample,
   :status => rand(0..1),
   :date => Time.now
   )
@@ -189,7 +188,7 @@ coach_recruiter_count = 1
 
   Prospect.create(
     :recruiter_profile_id => recruiter_profile.id,
-    :player_profile_id => Player.pluck(:id).sample,
+    :player_profile_id => PlayerProfile.pluck(:id).sample,
     :status => rand(0..3)
   )
 
