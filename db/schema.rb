@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170901022605) do
-
+ActiveRecord::Schema.define(version: 20170903210756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,16 +65,6 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.index ["player_id"], name: "index_player_profiles_on_player_id"
   end
 
-
-  create_table "prospects", force: :cascade do |t|
-    t.bigint "recruiter_profile_id"
-    t.bigint "player_profile_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
-    t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
-  end
-  
   create_table "player_stats", force: :cascade do |t|
     t.integer "points"
     t.integer "fouls"
@@ -84,6 +72,16 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["player_profile_id"], name: "index_player_stats_on_player_profile_id"
+  end
+
+  create_table "prospects", force: :cascade do |t|
+    t.bigint "recruiter_profile_id"
+    t.bigint "player_profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
+    t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
   end
 
   create_table "recruiter_profiles", force: :cascade do |t|
@@ -152,9 +150,9 @@ ActiveRecord::Schema.define(version: 20170901022605) do
   add_foreign_key "personal_messages", "conversations"
   add_foreign_key "personal_messages", "users"
   add_foreign_key "player_profiles", "users", column: "player_id"
+  add_foreign_key "player_stats", "player_profiles"
   add_foreign_key "prospects", "player_profiles"
   add_foreign_key "prospects", "recruiter_profiles"
-  add_foreign_key "player_stats", "player_profiles"
   add_foreign_key "recruiter_profiles", "users", column: "recruiter_id"
   add_foreign_key "team_coaches", "teams"
   add_foreign_key "team_coaches", "users", column: "coach_id"
