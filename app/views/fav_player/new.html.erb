@@ -1,18 +1,19 @@
-<h1>Create New Pokemon</h1>
+<h1>Create Favorite Player</h1>
 
-<% form_for @pokemon do |f| %>
+<% form_for @favorite_player do |f| %>
 
   <%= f.label :name %>
   <%= f.text_field :name %>
 
-  <%= f.label :pokemon_type %>
-  <%= f.text_field :pokemon_type %>
+  <%= f.label :position %>
+  <%= f.text_field :position %>
 
-  <%= f.label :image %>
-  <%= f.text_field :image %>
+  <%= f.label :team %>
+  <%= f.text_field :team %>
 
-  <%= f.label :regions %>
-  <%= select_tag(:regions, options_for_select(@regions.map {|region| [region.name, region.id] } ))%>
+  <%= f.label :stats %>
+  <%= f.text_field :stats %>
+
 
   <%= f.submit "Create Pokemon"%>
 
