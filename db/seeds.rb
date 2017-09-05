@@ -1,3 +1,7 @@
+require 'database_cleaner'
+
+DatabaseCleaner.clean_with(:truncation)
+
 start = Time.now
 
 Role.create(name: "Player")
@@ -82,20 +86,57 @@ Facility.create(
   :longitude => -104.892134,
   )
 
+coach_recruiter_count = 1
+  100.times do
+    team = Team.create(
+    name: Faker::Team.name
+    )
 
-team_count = 1
+    coach = Coach.create(
+      :first_name => Faker::Name.first_name,
+      :last_name  => Faker::Name.last_name,
+      :username   => Faker::Internet.safe_email,
+      :password   => Faker::Internet.password(8)
+    )
 
-40.times do
-  team = Team.create(
-  name: Faker::Team.name
-  )
-  puts "creating team #{team_count}"
-  team_count += 1
-end
+    coach.roles << Role.find_by(name: "Coach")
+
+    CoachProfile.create(
+      :institution => Faker::GameOfThrones.house,
+      :email => Faker::Internet.safe_email,
+      :phone_number => "1234545456",
+      :coach_id => coach.id
+      )
+
+    TeamCoach.create(
+      :team_id => team.id,
+      :coach_id => coach.id
+    )
+
+    recruiter = Recruiter.create(
+      :first_name => Faker::Name.first_name,
+      :last_name  => Faker::Name.last_name,
+      :username   => Faker::Internet.safe_email,
+      :password   => Faker::Internet.password(8)
+      )
+
+    recruiter.roles << Role.find_by(name: "Recruiter")
+
+    recruiter_profile = RecruiterProfile.create(
+      :institution => Faker::GameOfThrones.house,
+      :email => Faker::Internet.safe_email,
+      :phone_number => "1234545456",
+      :recruiter_id => recruiter.id
+    )
+
+    puts "creating coach/recruiter #{coach_recruiter_count}"
+    coach_recruiter_count +=1
+  end
+
 
 game_count = 1
 
-100.times do
+400.times do
   game = Game.create(
   :facility_id => Facility.pluck(:id).sample,
   :status => rand(0..1),
@@ -113,7 +154,7 @@ end
 
 player_count = 1
 
-500.times do
+800.times do
   player = Player.create(
     :first_name => Faker::Name.first_name,
     :last_name  => Faker::Name.last_name,
@@ -147,56 +188,17 @@ player_count = 1
   player_count += 1
 end
 
-coach_recruiter_count = 1
 
-40.times do
-  coach = Coach.create(
-    :first_name => Faker::Name.first_name,
-    :last_name  => Faker::Name.last_name,
-    :username   => Faker::Internet.safe_email,
-    :password   => Faker::Internet.password(8)
-  )
 
-  coach.roles << Role.find_by(name: "Coach")
-
-  CoachProfile.create(
-    :institution => Faker::GameOfThrones.house,
-    :email => Faker::Internet.safe_email,
-    :phone_number => "1234545456",
-    :coach_id => coach.id
-    )
-
-  TeamCoach.create(
-    :team_id => Team.pluck(:id).sample,
-    :coach_id => coach.id
-  )
-
-  recruiter = Recruiter.create(
-    :first_name => Faker::Name.first_name,
-    :last_name  => Faker::Name.last_name,
-    :username   => Faker::Internet.safe_email,
-    :password   => Faker::Internet.password(8)
-    )
-
-  recruiter.roles << Role.find_by(name: "Recruiter")
-
-  recruiter_profile = RecruiterProfile.create(
-    :institution => Faker::GameOfThrones.house,
-    :email => Faker::Internet.safe_email,
-    :phone_number => "1234545456",
-    :recruiter_id => recruiter.id
-  )
-
+100.times do
   Prospect.create(
-    :recruiter_profile_id => recruiter_profile.id,
+    :recruiter_profile_id => RecruiterProfile.pluck(:id).sample,
     :player_profile_id => PlayerProfile.pluck(:id).sample,
     :status => rand(0..3)
   )
-
-  puts "creating coach/recruiter #{coach_recruiter_count}"
-  coach_recruiter_count +=1
 end
+
 
 end_time = Time.now
 
-puts "#{end_time - start}"
+puts "It took #{end_time.round(2) - start.round(2)} seconds to seed."
