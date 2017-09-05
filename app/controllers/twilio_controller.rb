@@ -4,13 +4,15 @@ class TwilioController < ApplicationController
 
   def create
     player = Player.find(params[:player_id])
-    phone = player.profile.guardian_phone
-    @client = Twilio::REST::Client.new ENV['live_twilio_sid'], ENV['live_twilio_token']
-    @message = @client.messages.create({
-      to: "+1#{phone}",
-      from: "+13157571027",
-      body: 'This is a message sent from youth sports'
-      })
+    phone_num = player.profile.guardian_phone
+    # @client = Twilio::REST::Client.new ENV['twilio_sid'], ENV['twilio_token']
+    @client = TwilioService.send_guardian_request(phone_num)
+    # @message = @client.messages.create({
+    #   to: "+1#{phone}",
+    #   from: "+13157571027",
+    #   body: 'A recruiter is interested in your athlete. Please respond
+    #          with Yes if you are interested or No if you are not.'
+    #   })
 
       Prospect.create(recruiter_profile_id: current_user.profile.id,
                          player_profile_id: player.profile.id)
