@@ -7,4 +7,9 @@ class Game < ApplicationRecord
   def facility_name
     self.facility.name
   end
+
+  def coords
+    { lat: self.facility.latitude,
+      lng: self.facility.longitude }
+  end
 end

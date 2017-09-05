@@ -2,37 +2,35 @@
 <html>
   <head>
     <style>
-       #map {
+      #map {
         position: absolute;
-        right: 20px;
+        left: 20px;
         height: 400px;
         width: 50%;
-       }
+      }
     </style>
   </head>
   <body>
     <h1><%= @player.name %></h1>
-    <div id="upcoming">
+    <div>
       <h3>Upcoming Games</h3>
-      <ul>
+      <ul class="upcoming">
         <% @player.upcoming.each do |game| %>
-          <li><%= game.facility_name %></li>
+          <li>
+            <button id="facility_name" type="button" onclick="updateMap(<%= game.coords[:lat] %>, <%= game.coords[:lng] %>)">
+              <%= game.facility_name %>
+            </button>
+          </li>
         <% end %>
       </ul>
     </div>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var asbury = {lat: 39.680045, lng: -104.971557};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 12,
-          center: asbury
-        });
-        var marker = new google.maps.Marker({
-          position: asbury,
-          map: map
-        });
-      }
+    <div class="container">
+      <div class="game_info">
+        Sun, 5 October 2017, 7:30 pm VS: Vikings
+      </div>
+      <div id="map"></div>
+    </div>
+    <script src="../../../mapScript.js">
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=XXX&callback=initMap">
