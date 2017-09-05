@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     get '/:id/messages', to: 'conversations#index'
   end
 
-  resources :players, only: [:new, :create, :show]
+  resources :players, only: [:new, :create, :update]
+  get '/players/:id', to: 'players#show'
   resources :player_dashboard, only: [:show]
 
   get '/login', to: 'sessions#new'

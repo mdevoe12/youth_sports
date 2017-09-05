@@ -7,6 +7,7 @@ RSpec.feature "home page visitation"  do
                               last_name: 'Randall',
                               username: 'aj',
                               password_digest: 'aj')
+      # profile = PlayerProfile()
       visit root_path
 
       click_on "Sign Up as an Athlete"
@@ -22,9 +23,9 @@ RSpec.feature "home page visitation"  do
       fill_in "player[confirmation_password]", with: "aj"
       click_on "Create Account"
 
-      expect(current_path).to eq(player_dashboard_path(aj.id))
-      expect(page).to have_content("Brandon")
-      expect(page).to have_content("B1")
+      expect(current_path).to eq(player_path(aj.id))
+      expect(page).to have_content("AJ")
+      expect(page).to have_content("Randall")
 
     end
   end

@@ -12,6 +12,7 @@ describe "#coach_dashboard_index" do
                                   phone_number: "123",
                                   coach_id: coach.id)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(coach)
+    
     visit "/coach"
     expect(current_path).to eq("/coach")
     expect(page).to have_content("Hello #{coach.type} #{coach.first_name}")
