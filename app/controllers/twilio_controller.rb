@@ -1,7 +1,4 @@
 class TwilioController < ApplicationController
-  # include Webhookable
-
-  # after_action :set_header
 
   skip_before_action :verify_authenticity_token, only: [:update]
 
@@ -9,7 +6,6 @@ class TwilioController < ApplicationController
     player = Player.find(params[:player_id])
     phone = player.profile.guardian_phone
     @client = Twilio::REST::Client.new ENV['live_twilio_sid'], ENV['live_twilio_token']
-    # session["unique_id"] ||= "abc123"
     @message = @client.messages.create({
       to: "+1#{phone}",
       from: "+13157571027",
@@ -35,11 +31,5 @@ class TwilioController < ApplicationController
       player_prospects.status = "denied"
       player_prospects.save
     end
-    # response = Twilio::TwiML::Response.new do |r|
-    #   r.Say "Thanks for responding...INSERT APPROPRIATE MESSAGE"
-    # end
-    #
-    # render_twiml response
   end
-
 end
