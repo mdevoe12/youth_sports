@@ -1,18 +1,29 @@
-
+start = Time.now
 
 Role.create(name: "Player")
 Role.create(name: "Coach")
 Role.create(name: "Recruiter")
 Role.create(name: "Admin")
 
-4.times do
+40.times do
     team = Team.create(
     name: Faker::Team.name
     )
 end
 
+100.times do
+  game = Game.create(
+  :facility_id => ,
+  :status => rand(0..1),
+  :date => Time.now
+  )
 
-10.times do
+  
+end
+
+
+player_count = 1
+500.times do
   player = Player.create(
     :first_name => Faker::Name.first_name,
     :last_name  => Faker::Name.last_name,
@@ -42,9 +53,12 @@ end
     :team_id => Team.pluck(:id).sample,
     :player_id => player.id
   )
+  puts "creating player #{player_count}"
+  player_count += 1
 end
 
-10.times do
+coach_recruiter_count = 1
+40.times do
   coach = Coach.create(
     :first_name => Faker::Name.first_name,
     :last_name  => Faker::Name.last_name,
@@ -87,4 +101,11 @@ end
       :player_profile_id => Player.pluck(:id).sample,
       :status => rand(0..3)
     )
+
+  puts "creating coach/recruiter #{coach_recruiter_count}"
+  coach_recruiter_count +=1
 end
+
+end_time = Time.now
+
+puts "#{end_time - start}"
