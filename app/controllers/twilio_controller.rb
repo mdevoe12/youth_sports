@@ -5,7 +5,10 @@ class TwilioController < ApplicationController
   def create
     player = Player.find(params[:player_id])
     phone_num = player.profile.guardian_phone
-    TwilioService.send_recruiter_request(phone_num)
+    # TwilioService.send_recruiter_request(phone_num)
+    # message = Message.new
+    TwilioMessage.send_recruiter_request(phone_num)
+
     Prospect.create(recruiter_profile_id: current_user.profile.id,
                          player_profile_id: player.profile.id)
 
