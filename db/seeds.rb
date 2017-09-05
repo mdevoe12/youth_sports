@@ -1,15 +1,16 @@
 start = Time.now
 
-Admin.create(first_name: "Josh",
-              last_name: "Dao",
-               username: "admin@admin.com",
-               password: "password")
-
-
 Role.create(name: "Player")
 Role.create(name: "Coach")
 Role.create(name: "Recruiter")
 Role.create(name: "Admin")
+
+admin = Admin.create(first_name: "Josh",
+last_name: "Dao",
+username: "admin@admin.com",
+password: "password")
+
+admin.roles << Role.find_by(name: "Admin")
 
 Facility.create(
   :name => "Coors field",
