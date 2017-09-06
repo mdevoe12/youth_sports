@@ -32,7 +32,7 @@ RSpec.describe 'A logged in recruiter clicks on a player name' do
       visit '/dashboard'
       click_on 'Morty Smith'
 save_and_open_page
-      expect(current_path).to eq(player_path(profile1))
+      expect(current_path).to eq(player_profile_path(profile1))
       expect(page).to have_content('Morty Smith')
       expect(page).to have_css('div#map')
       expect(upcoming.count).to eq(3)

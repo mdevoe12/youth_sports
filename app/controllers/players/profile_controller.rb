@@ -6,7 +6,6 @@ class Players::ProfileController < ApplicationController
   end
 
   def create
-    byebug
   end
 
   def show
