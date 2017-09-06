@@ -107,7 +107,7 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -161,6 +161,7 @@
         1,
         1,
         1,
+        1,
         null,
         1,
         0,
@@ -175,6 +176,7 @@
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/player_stat.rb": [
         1,
         1,
+        1,
         null,
         1,
         0,
@@ -189,9 +191,39 @@
         null,
         1,
         0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_points_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
         0,
         null,
-        0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/point.rb": [
+        1,
+        1,
+        11,
+        11,
+        11,
+        null,
+        null,
+        1,
+        1,
+        11,
         null,
         null,
         null
@@ -208,13 +240,6 @@
         0,
         0
       ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_points_controller.rb": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_stats_controller.rb": [
         0,
         0,
@@ -222,17 +247,6 @@
         0,
         0,
         0,
-        0
-      ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/application_controller.rb": [
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
         0
       ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/coach_dashboard_controller.rb": [
@@ -555,13 +569,6 @@
         0,
         0
       ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/point.rb": [
-        0,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/prospect.rb": [
         0,
         0,
@@ -665,6 +672,6 @@
         0
       ]
     },
-    "timestamp": 1504673929
+    "timestamp": 1504677378
   }
 }

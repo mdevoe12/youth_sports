@@ -6,15 +6,17 @@ describe 'Player Api points endpoint' do
     PlayerProfile.create(player: @player)
     10.times do |i|
       Facility.create(name: "Village--#{i}")
-      Game.create(facility: Facility.last)
-      PlayerStat.create(created_at: "2017-09-05", :points => rand(0..10), :fouls => rand(0..5), player_profile_id: @player.profile.id, :game_id => rand(0..10))
+      game = Game.create(facility: Facility.last)
+      PlayerStat.create(created_at: "2017-09-05", :points => rand(0..10), :fouls => rand(0..5), player_profile_id: @player.profile.id, :game_id => game.id)
     end
-    PlayerStat.create(created_at: "2016-09-05", :points => rand(0..10), :fouls => rand(0..5), player_profile_id: @player.profile.id)
+    game = Game.create(facility: Facility.first)
+    PlayerStat.create(created_at: "2016-09-05", :points => rand(0..10), :fouls => rand(0..5), player_profile_id: @player.profile.id, :game_id => game.id)
   end
   it "it returns list of points" do
-    get "/players/#{@player.id}/points"
+    get "/api/v1/players/#{@player.id}/points"
     expect(response).to be_success
     points = JSON.parse(response.body)
+    byebug
     expect(points.count).to eq(10)
   end
 end

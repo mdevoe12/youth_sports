@@ -173,11 +173,11 @@ player_count = 1
     :guardian_phone => "15555555555",
     :player_id => player.id
   )
-
+  
   PlayerStat.create(
     :points => rand(1..30),
     :fouls => rand(0..5),
-    :player_profile_id => player_profile.id
+    :player_profile_id => player_profile.id,
     :game_id => rand(0..400)
   )
 

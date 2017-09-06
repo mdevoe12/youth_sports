@@ -36,6 +36,12 @@
       <li><a href="#Login">Login</a></li>
       <li><a href="#Logout">Logout</a></li>
     </ul>
+    <script>
+      $.get("http://localhost:3000/api/v1/players/1001/stats")
+      .then(function(data){
+        debugger
+      })
+    </script>
 
   </body>
 </html>

@@ -1,5 +1,6 @@
 class Api::V1::PlayerPointsController < ApplicationController
   def show
-    render json: Points.new(PlayerStat)
+    @player = Player.find(params[:id])
+    render json: Point.create_points(player.stats)
   end
 end
