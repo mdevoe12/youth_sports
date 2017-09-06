@@ -9,11 +9,3 @@ function initMap() {
     map: map
   });
 }
-
-function updateMap(lat, lng) {
-  var gameLat = lat
-  var gameLng = lng
-  var marker = new google.maps.Marker({
-    position: {lat: gameLat, lng: gameLng}
-  })
-}

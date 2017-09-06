@@ -2,46 +2,38 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/auth/facebook/callback', to: 'sessions#create'
-
-
-  resources :sessions, only: [:create, :destroy]
-  resources :personal_messages, only: [:create]
-  resources :conversations, only: [:index, :show]
-
   namespace :users do
     get '/:id/messages', to: 'conversations#index'
   end
 
-  resources :players, only: [:new, :create, :update]
-  get '/players/:id', to: 'players#show'
-  resources :player_dashboard, only: [:show]
-
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  get "/logout", to: 'sessions#destroy'
-
-
-  get '/player_profile', to: 'player_profile#show'
-  get '/player_dashboard', to: 'player_dashboard#show'
-
-  namespace :profiles do
-    get '/player_profile/:id', to: 'player_profiles#show'
+  namespace :player do
+    get '/:id/profile', to: 'profile#show'
+    get '/profile/new', to: 'profile#new'
+    get '/:id/favorite_player', to: 'favorite_player#create'
+    patch '/:id/profile/edit', to: 'players#edit'
   end
 
-
-  get '/dashboard', to: 'dashboard#index'
-  get 'auth/facebook/callback', to: 'sessions#create'
-  get 'auth/failiure', to: redirect('/')
-  get '/coach', to: 'coach_dashboard#show'
-  get '/favorite_player', to: 'favorite_player#create'
-  # get 'teams/:id/stats', to: 'stats#index'
-  resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
-  patch 'player_profile', to: 'players#update'
   namespace :teams do
     get '/:id/stats', to: 'stats#index'
   end
 
+  get '/logout', to: 'sessions#destroy'
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
+
+  resources :sessions, only: [:create, :destroy]
+  resources :personal_messages, only: [:create]
+  resources :conversations, only: [:index, :show]
+  resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
+  resources :players, only: [:new, :create, :update]
+  resources :recruiters, only: [:new, :create, :update]
+  resources :dashboard, only: [:index]
+
+  # internal api
+  namespace :api do
+    namespace :v1 do
+      get 'players/:id/stats', to: 'player_stats#show'
+    end
+  end
+
 end

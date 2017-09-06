@@ -1,4 +1,14 @@
-class PlayerProfileController < ApplicationController
+class Players::ProfileController < ApplicationController
+
+  def new
+    @player_id = params["player_id"]
+    @player_profile = PlayerProfile.new
+  end
+
+  def create
+    byebug
+  end
+
   def show
     @player_profile.find_by(params[:id])
     if current_user.type == "Recruiter"
@@ -6,4 +16,5 @@ class PlayerProfileController < ApplicationController
     else
     end
   end
+
 end
