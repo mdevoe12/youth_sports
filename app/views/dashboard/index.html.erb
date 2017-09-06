@@ -1,3 +1,12 @@
+
+
+<% if current_user.type == "Recruiter" %>
+  <%= render partial: 'dashboard/recruiter' %>
+<% elsif current_user.type == "Coach" %>
+  <%= render partial: 'dashboard/coach' %>
+<% end %>
+
+
 <!-- <div class="container">
   <div class="col-sm-12">
     <h2><%= current_user.prospects.count %> Prospects</h2>
@@ -11,4 +20,3 @@
     <% end %>
   </div>
 </div> -->
-<%= render partial: 'dashboard/recruiter' %>
