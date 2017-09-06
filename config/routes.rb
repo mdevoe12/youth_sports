@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback', to: 'sessions#create'
   get '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/twitter', as: :twitter_login
 
 
   resources :sessions, only: [:create, :destroy]

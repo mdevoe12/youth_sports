@@ -5,7 +5,6 @@ describe "players dashboard" do
     OmniAuth.config.test_mode = true
     OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
     })
-    binding.pry
 
     visit player_dashboard_path
     click_link "Sign in with Twitter"
