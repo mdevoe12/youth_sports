@@ -69,6 +69,30 @@
         1,
         null
       ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/twilio_message.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/user.rb": [
         1,
         1,
@@ -183,79 +207,6 @@
         null,
         null
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/application_controller.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/profiles/player_profiles_controller.rb": [
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        null
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/twilio_controller.rb": [
-        1,
-        null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/twilio_message.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/services/twilio_service.rb": [
         1,
         null,
@@ -305,6 +256,17 @@
         0,
         0,
         0,
+        0
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/application_controller.rb": [
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
         0
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/coach_dashboard_controller.rb": [
@@ -424,6 +386,15 @@
         0,
         0
       ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/profiles/player_profiles_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/profiles_controller.rb": [
         0,
         0
@@ -461,6 +432,32 @@
         0
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/teams_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/twilio_controller.rb": [
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0
       ],
@@ -650,6 +647,6 @@
         0
       ]
     },
-    "timestamp": 1504661233
+    "timestamp": 1504662172
   }
 }

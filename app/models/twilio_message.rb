@@ -17,6 +17,6 @@ class TwilioMessage
     phone_num = player.profile.guardian_phone
     message = TwilioMessage.new(phone_num)
     TwilioService.send_recruiter_request(message)
-    recruiter.profile.prospects.create(player_profile: player.profile)
+    recruiter.profile.prospects.create(player_profile: player.profile, token: message.token)
   end
 end
