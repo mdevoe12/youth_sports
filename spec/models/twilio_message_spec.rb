@@ -12,4 +12,5 @@ RSpec.describe TwilioMessage do
       expect(message.token.length).to eq(5)
     end
   end
+  
 end
