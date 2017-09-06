@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905232559) do
+ActiveRecord::Schema.define(version: 20170906014408) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20170905232559) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0
+    t.string "token"
     t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
     t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
   end
@@ -159,6 +160,10 @@ ActiveRecord::Schema.define(version: 20170905232559) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "password_digest"
+    t.string "provider"
+    t.string "uid"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
   end
 
   add_foreign_key "coach_profiles", "users", column: "coach_id"
