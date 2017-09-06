@@ -3,7 +3,7 @@
     <h2><%= current_user.prospects.count %> Prospects</h2>
     <hr>
     <% current_user.prospects.each do |prospect| %>
-      <h4> <%= link_to prospect.name, player_path(prospect.player_profile) %> </h4>
+      <h4> <%= link_to prospect.name, player_profile_path(prospect.player_profile) %> </h4>
         <h5>
           <%= prospect.player_profile.school %>,
           Grade level: <%= prospect.player_profile.grade_level %>
