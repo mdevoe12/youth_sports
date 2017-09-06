@@ -27,4 +27,12 @@ Rails.application.routes.draw do
   resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
   resources :players, only: [:new, :create, :update]
   resources :dashboard, only: [:index]
+
+  # internal api
+  namespace :api do
+    namespace :v1 do
+      get 'players/:id/stats', to: 'player_stats#show'
+    end
+  end
+
 end
