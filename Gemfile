@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'awesome_print'
 gem 'coffee-rails', '~> 4.2'
+gem 'faker'
 gem 'faraday'
 gem 'figaro'
 gem 'jbuilder', '~> 2.5'
