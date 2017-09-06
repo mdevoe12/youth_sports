@@ -6,9 +6,9 @@ class PlayerProfilesController < ApplicationController
   end
 
   def create
-    @player_profile = PlayerProfile.new(params)
+    @player_profile = PlayerProfile.new(profile_params)
     if @player_profile.save
-      redirect_to player_profile_path(@player_profile)
+      redirect_to player_profile_path(@player_profile.id)
     end
   end
 
@@ -22,6 +22,11 @@ class PlayerProfilesController < ApplicationController
     end
   end
 
-  #create private params for create
+  private
+
+  def profile_params
+    params.require(:player_profile).permit(:school, :height, :weight, :grade_level,
+    :gpa, :guardian_phone, :player_id)
+  end
 
 end

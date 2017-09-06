@@ -1,11 +1,11 @@
-class Users::ConversationsController < ApplicationController
+class ConversationsController < ApplicationController
   before_action :set_conversation, except: [:index]
   before_action :check_participating, except: [:index
 
   def new
     redirect_to conversation_path(@conversation) and return
     if @conversation
-      @personal_message = current_user.personal_messages.built
+      @personal_message = current_user.personal_messages.build
     end
   end
 
