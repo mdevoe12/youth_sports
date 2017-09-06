@@ -12,9 +12,7 @@ class TwilioController < ApplicationController
   def update
     response = params[:Body].split
     player_prospect = (Prospect.find_by(token: response[0]))
-    # binding.pry
     player_prospect.update_prospect(response, player_prospect)
-
   end
 
 end
