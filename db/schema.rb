@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170901022605) do
-
+ActiveRecord::Schema.define(version: 20170905134328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +40,33 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
     t.index ["author_id"], name: "index_conversations_on_author_id"
     t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "game_teams", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_teams_on_game_id"
+    t.index ["team_id"], name: "index_game_teams_on_team_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "facility_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.index ["facility_id"], name: "index_games_on_facility_id"
   end
 
   create_table "personal_messages", force: :cascade do |t|
@@ -81,6 +106,7 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.bigint "player_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
     t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
   end
@@ -142,15 +168,15 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.string "password_digest"
     t.string "provider"
     t.string "uid"
-<<<<<<< HEAD
-=======
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
->>>>>>> development
   end
 
   add_foreign_key "admin_profiles", "users", column: "admin_id"
   add_foreign_key "coach_profiles", "users", column: "coach_id"
+  add_foreign_key "game_teams", "games"
+  add_foreign_key "game_teams", "teams"
+  add_foreign_key "games", "facilities"
   add_foreign_key "personal_messages", "conversations"
   add_foreign_key "personal_messages", "users"
   add_foreign_key "player_profiles", "users", column: "player_id"

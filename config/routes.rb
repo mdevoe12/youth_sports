@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get '/auth/facebook/callback', to: 'sessions#create'
+  get '/auth/twitter/callback', to: 'sessions#create'
 
 
   resources :sessions, only: [:create, :destroy]

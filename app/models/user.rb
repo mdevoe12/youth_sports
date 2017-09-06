@@ -3,6 +3,11 @@ class User < ApplicationRecord
   has_many :user_roles
   has_many :roles, through: :user_roles
 
+
+def twitter_resp
+  @twi_resp = request.env['omniauth.auth']
+end
+
   self.inheritance_column = :type
 
   def self.types

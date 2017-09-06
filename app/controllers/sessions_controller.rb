@@ -1,10 +1,24 @@
 class SessionsController < ApplicationController
   def create
+
     @response = Faraday.get("https://graph.facebook.com/v2.10/oauth/access_token?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/auth/facebook/callback&client_secret=#{ENV['FACEBOOK_APP_SECRET']}&code=#{params["code"]}")
+
+    twitter_response = request.env['omniauth.auth']
+    if current_user = Player.from_omniauth(twitter_response)
+      session[:user_id] = user.id
+    end
+
+
+    binding.pry
+    @twitter_response = Faraday.get("https://api.twitter.com/1.1/users/show.json")
+    # @twitter_response = Faraday.get("https://api.twitter.com/1.1/users/show.json?screen_name=@kingJames")
+    # else
+    # end
 
     token = @response.body.split(/\W+/)[2]
 
     oauth_response = Faraday.get("https://graph.facebook.com/debug_token?input_token=#{token}&access_token=#{ENV['FACEBOOK_APP_ID']}|#{ENV['FACEBOOK_APP_SECRET']}")
+
 
     auth = JSON.parse(oauth_response.body)
     user = User.find_or_create_by(uid: auth["data"]["user_id"])
