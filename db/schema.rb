@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170905232559) do
+ActiveRecord::Schema.define(version: 20170906045754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(version: 20170905232559) do
     t.bigint "player_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_player_stats_on_game_id"
     t.index ["player_profile_id"], name: "index_player_stats_on_player_profile_id"
   end
 
@@ -168,6 +170,7 @@ ActiveRecord::Schema.define(version: 20170905232559) do
   add_foreign_key "personal_messages", "conversations"
   add_foreign_key "personal_messages", "users"
   add_foreign_key "player_profiles", "users", column: "player_id"
+  add_foreign_key "player_stats", "games"
   add_foreign_key "player_stats", "player_profiles"
   add_foreign_key "prospects", "player_profiles"
   add_foreign_key "prospects", "recruiter_profiles"
