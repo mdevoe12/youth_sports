@@ -44,4 +44,11 @@ Rails.application.routes.draw do
 
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
+
+  # internal api
+  namespace :api do
+    namespace :v1 do
+      get 'players/:id/stats', to: 'player_stats#show'
+    end
+  end
 end
