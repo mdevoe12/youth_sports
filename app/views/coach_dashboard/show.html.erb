@@ -1,0 +1,13 @@
+<h1>Hello <%= current_user.type %> <%= current_user.first_name %></h1>
+
+<p class="institution">
+  <h2 class="h2">Institution: <%= current_user.profile.institution %></h2>
+</p>
+
+<p class="email">
+  <h2>Email: <%= current_user.email%></h2>
+</p>
+
+<p class="phone_number">
+  <h2>Phone Number: <%= current_user.profile.phone_number %></h2>
+</p>

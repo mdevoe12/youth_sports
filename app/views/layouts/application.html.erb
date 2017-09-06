@@ -3,31 +3,40 @@
   <head>
     <title>YouthSports</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId            : <%= ENV['FACEBOOK_APP_ID'] %>,
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v2.10'
-        });
-        FB.AppEvents.logPageView();
-      };
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+        </div>
+        <div id="navbar">
+          <ul class="nav navbar-nav">
+            <body>
 
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      </script>
+              <ul>
+                <li><%= link_to "Sign Up as a Athlete", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/players/new" %></li>
+                <li><%= link_to "Sign Up as an Recruiter"%></li>
+                <li><a href="#Login">Login</a></li>
+                <li><a href="#Logout">Logout</a></li>
+              </ul>
+
+            </body>
+            <%= link_to "Login with facebook", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/auth/facebook/callback" %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
