@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   patch '/player_profiles/:id', to: 'players#update'
   root 'home#index'
 
+
+  get '/auth/facebook/callback', to: 'sessions#create'
+  get '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/twitter', as: :twitter_login
+
+
   namespace :users do
     get '/:id/messages', to: 'conversations#index'
     get '/:id/favorite_player', to: 'favorite_player#create'
