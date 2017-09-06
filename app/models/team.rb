@@ -3,6 +3,8 @@ class Team < ApplicationRecord
   has_many :coaches, through: :team_coaches
   has_many :team_players
   has_many :players, through: :team_players
+  has_many :game_teams
+  has_many :games, through: :game_teams
 
 
   def total_points

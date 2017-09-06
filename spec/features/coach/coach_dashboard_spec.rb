@@ -12,8 +12,8 @@ describe "#coach_dashboard_index" do
                                   coach_id: coach.id)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(coach)
 
-    visit "/coach"
-    expect(current_path).to eq("/coach")
+    visit "/dashboard"
+    expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Hello #{coach.type} #{coach.first_name}")
 
 
