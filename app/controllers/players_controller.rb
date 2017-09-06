@@ -34,10 +34,10 @@ class PlayersController < ApplicationController
   end
 
   def update
-    player_profile = PlayerProfile.find(params[:format])
+    player_profile = PlayerProfile.find(params[:id])
     player_profile.update(update_params)
     @player = Player.find(player_profile.player_id)
-    redirect_to player_path(@player)
+    redirect_to "/athletes/#{@player.id}"
   end
 
   private
