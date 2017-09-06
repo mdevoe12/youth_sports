@@ -6,11 +6,15 @@ class TwilioService
 
   def self.send_recruiter_request(message)
     connect
-    @client.messages.create({
-                          to: message.to,
-                        from: message.from,
-                        body: message.body
-                           })
+    @client.messages.create(build_message(message))
+  end
+
+  def self.build_message(message)
+    {
+     to: message.to,
+     from: message.from,
+     body: message.body
+    }
   end
 
 end

@@ -10,15 +10,7 @@ class TwilioController < ApplicationController
   end
 
   def update
-    phone = params[:From]
-    phone[0] = ''
-    player_prospects = PlayerProfile.find_by(guardian_phone: phone).prospects[0]
-    if params[:Body] == "Yes"
-      player_prospects.status = "prospect"
-      player_prospects.save
-    elsif params[:Body] == "No"
-      player_prospects.status = "denied"
-      player_prospects.save
-    end
+    Prospect.find_player_prospect(params[:Body])
   end
+
 end
