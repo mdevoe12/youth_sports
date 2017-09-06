@@ -12,10 +12,9 @@ class TwilioController < ApplicationController
   def update
     response = params[:Body].split
     player_prospect = (Prospect.find_by(token: response[0]))
-    if response[1] == "yes"
-      player_prospect.update(status: "prospect")
-    elsif response[1] == "no"
-      player_prospect.update(status: "denied")
-    end
+    # binding.pry
+    player_prospect.update_prospect(response, player_prospect)
+
   end
+
 end

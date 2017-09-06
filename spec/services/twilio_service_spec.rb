@@ -21,5 +21,12 @@ RSpec.describe TwilioService do
         expect(request.uri).to eq("/2010-04-01/Accounts/#{ENV['twilio_sid']}/Messages/#{request.sid}.json")
       end
     end
+
+    it "builds proper message" do
+      message = TwilioMessage.new("12345")
+
+      expect(message.to).to eq("+12345")
+      expect(message.from).to eq("+13157571027")
+    end
   end
 end
