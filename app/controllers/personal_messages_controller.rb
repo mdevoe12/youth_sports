@@ -1,13 +1,22 @@
 class PersonalMessagesController < ApplicationController
   before_action :find_conversation!
 
+  def new
+    redirect_to conversation_path(@conversation) and return
+    if @conversation
+      @personal_message = current_user.personal_messages.build
+    end
+  end
+
   def create
+    @conversation ||= Conversation.create(author_id: current_user.id,
+    receiver_id: @receiver.id)
     @personal_message = current_user.personal_messages.build(personal_message_params)
-    @personal_message.conversation_id = @conversation.id
+    @personal_message.conversation_id = @conversation.id = @conversation.id
     @personal_message.save!
 
     flash[:success] = "Your message was sent"
-    redirect_to "conversations#index"
+    redirect_to conversation_path(@conversation)
   end
 
   private
@@ -17,8 +26,14 @@ class PersonalMessagesController < ApplicationController
   end
 
   def find_conversation!
-    @conversation = Conversation.find_by(id: params[:conversation_id])
-    redirect_to("conversations#index") and return unless @conversation &&
-    @converstion.participates?(current_user)
+    if params[:reciever_id]
+      @receiver = User.find_by(id: params[:reciever_id])
+      redirect_to conversations_path and return unless @receiver
+      @conversation = Conversation.between(current_user.id, @receiver.id)[0]
+    else
+      @conversation = Conversation.find_by(id: params[:conversation_id])
+      redirect_to("conversations#index") and return unless @conversation &&
+      @converstion.participates?(current_user)
+    end
   end
 end

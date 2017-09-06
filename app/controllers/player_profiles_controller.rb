@@ -6,6 +6,10 @@ class PlayerProfilesController < ApplicationController
   end
 
   def create
+    @player_profile = PlayerProfile.new(params)
+    if @player_profile.save
+      redirect_to player_profile_path(@player_profile)
+    end
   end
 
   def show
@@ -17,5 +21,7 @@ class PlayerProfilesController < ApplicationController
     else
     end
   end
+
+  #create private params for create
 
 end

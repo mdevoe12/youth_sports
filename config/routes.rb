@@ -16,10 +16,11 @@ Rails.application.routes.draw do
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
 
+  resources :users, only: [:index]
   resources :players, only: [:new, :create, :update]
   resources :player_profiles, only: [:new, :create, :show]
   resources :sessions, only: [:create, :destroy]
-  resources :personal_messages, only: [:create]
+  resources :personal_messages, only: [:new, :create]
   resources :conversations, only: [:index, :show]
   resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
   resources :dashboard, only: [:index]
