@@ -40,6 +40,42 @@
         1,
         null
       ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/coach.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/player.rb": [
         1,
         1,
@@ -122,7 +158,7 @@
         1,
         null,
         1,
-        1,
+        0,
         null,
         null,
         1,
@@ -165,6 +201,12 @@
         null
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_player.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_coach.rb": [
         1,
         1,
         1,
@@ -440,42 +482,6 @@
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/coach.rb": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/coach_profile.rb": [
         0,
         0,
@@ -568,12 +574,6 @@
         0,
         0
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_coach.rb": [
-        0,
-        0,
-        0,
-        0
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/twilio_message.rb": [
         0,
         null,
@@ -651,6 +651,6 @@
         0
       ]
     },
-    "timestamp": 1504738795
+    "timestamp": 1504739204
   }
 }
