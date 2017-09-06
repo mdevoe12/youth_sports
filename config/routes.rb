@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     get '/:id/profile', to: 'profile#show'
     get '/profile/new', to: 'profile#new'
     get '/:id/favorite_player', to: 'favorite_player#create'
-    patch 'profile', to: 'players#update'
+    patch '/:id/profile/edit', to: 'players#edit'
   end
 
   namespace :teams do
@@ -26,5 +26,5 @@ Rails.application.routes.draw do
   resources :conversations, only: [:index, :show]
   resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
   resources :players, only: [:new, :create, :update]
-  resources :dashboard, only: [:show]
+  resources :dashboard, only: [:index]
 end
