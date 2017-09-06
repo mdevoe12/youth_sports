@@ -15,7 +15,7 @@ RSpec.feature "recruiter starts recruitment process" do
   end
 
   scenario "recruiter starts recruitment" do
-    visit profiles_path(@player)
+    visit player_path(@player)
 
     expect(page).to have_button("Start Recruitment")
 
