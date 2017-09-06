@@ -6,11 +6,11 @@ class TwilioMessage
               :token
 
   def initialize(phone_num)
+    @token = "#{rand(97..122).chr}#{rand(1000..9999)}"
     @to = "+#{phone_num}"
     @from = "+13157571027"
-    @body = 'A recruiter is interested in your athlete. Please respond
-           with Yes if you are interested or No if you are not.'
-    @token = "#{rand(97..122).chr}#{rand(1000..9999)}"
+    @body = "A recruiter is interested in your athlete. Please respond with
+             '#{@token} yes' if you approve or '#{@token} no' otherwise."
   end
 
   def self.create_for_guardian(player, recruiter)

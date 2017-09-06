@@ -28,14 +28,15 @@ RSpec.feature "recruiter starts recruitment process" do
     end
   end
 
-  scenario "guardian responds yes" do
+  scenario "guardian responds with token" do
     Prospect.create(recruiter_profile_id: @recr_profile.id,
-                       player_profile_id: @profile.id)
+                       player_profile_id: @profile.id,
+                                   token: "y1234")
 
     rack_test_session_wrapper = Capybara.current_session.driver
     rack_test_session_wrapper.post(receive_text_path,
     params = {
-      Body: "Yes",
+      Body: "y1234 yes",
       From: "+#{@profile.guardian_phone}"})
 
     expect(Player.last.profile.prospects.last.status).to eq("prospect")
@@ -43,12 +44,13 @@ RSpec.feature "recruiter starts recruitment process" do
 
   scenario "guardian responds no" do
     Prospect.create(recruiter_profile_id: @recr_profile.id,
-                       player_profile_id: @profile.id)
+                       player_profile_id: @profile.id,
+                                   token: "y1234")
 
     rack_test_session_wrapper = Capybara.current_session.driver
     rack_test_session_wrapper.post(receive_text_path,
     params = {
-      Body: "No",
+      Body: "y1234 no",
       From: "+#{@profile.guardian_phone}"})
 
     expect(Player.last.profile.prospects.last.status).to eq("denied")

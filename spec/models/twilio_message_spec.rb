@@ -23,11 +23,12 @@ RSpec.describe TwilioMessage do
       @player = User.create(type: "Player", password: "123")
       @profile = PlayerProfile.create(player_id: @player.id, guardian_phone: "16073426730")
       PlayerStat.create(points: 40, fouls: 20, player_profile: @profile)
-      # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@recruiter)
 
-      TwilioMessage.create_for_guardian(@player, @recruiter)
+      VCR.use_cassette("/models/twilio_message_spec.rb") do
+        TwilioMessage.create_for_guardian(@player, @recruiter)
 
-      expect(@player.profile.prospects.last.status).to eq("in-progress")
+        expect(@player.profile.prospects.last.status).to eq("in-progress")
+      end
     end
   end
 
