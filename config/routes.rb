@@ -23,6 +23,7 @@ Rails.application.routes.draw do
 
 
   get '/player_profile', to: 'player_profile#show'
+  get '/player_profile/new', to: 'player_profile#new'
   get '/player_dashboard', to: 'player_dashboard#show'
 
   namespace :profiles do
@@ -44,4 +45,5 @@ Rails.application.routes.draw do
 
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
+
 end
