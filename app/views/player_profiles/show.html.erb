@@ -35,5 +35,9 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?callback=initMap">
     </script>
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+    <%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post %>
   </body>
 </html>

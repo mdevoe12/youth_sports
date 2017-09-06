@@ -14,7 +14,7 @@ RSpec.feature 'player visits their own page' do
       click_link("Edit Profile")
       fill_in "player_profile_weight", with: "200lbs"
       click_on("Update Profile")
-      expect(current_path).to eq(player_path(@player1))
+      expect(current_path).to eq("/athletes/#{@player.id}")
       expect(page).to have_content("200lbs")
       expect(page).to_not have_content("105lbs")
     end

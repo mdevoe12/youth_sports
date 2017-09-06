@@ -5,66 +5,6 @@
         1,
         null
       ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/players_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/profiles_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/profiles/player_profiles_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/stats_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/team_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/team/stats_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/models/team.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        null,
-        3,
-        1,
-        null,
-        null,
-        1,
-        null,
-        3,
-        1,
-        null,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/models/application_record.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/teams_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/helpers/twilio_helper.rb": [
-        1,
-        null
-      ],
       "/Users/mossy/turing/3module/projects/youth_sports/app/controllers/sessions_controller.rb": [
         1,
         1,
@@ -99,12 +39,12 @@
         null,
         null
       ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/models/admin_profile.rb": [
+      "/Users/mossy/turing/3module/projects/youth_sports/app/models/coach_profile.rb": [
         1,
         1,
         null
       ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/models/coach_profile.rb": [
+      "/Users/mossy/turing/3module/projects/youth_sports/app/models/application_record.rb": [
         1,
         1,
         null
@@ -143,12 +83,12 @@
         1,
         null,
         1,
-        0,
+        3,
         null,
         null,
         1,
         null,
-        0,
+        6,
         null,
         null
       ],
@@ -188,7 +128,7 @@
         1,
         null,
         1,
-        2,
+        8,
         null,
         1,
         null,
@@ -230,6 +170,29 @@
         1,
         1,
         1,
+        null
+      ],
+      "/Users/mossy/turing/3module/projects/youth_sports/app/models/team.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        3,
+        1,
+        null,
+        null,
+        1,
+        null,
+        3,
+        1,
+        null,
         null
       ],
       "/Users/mossy/turing/3module/projects/youth_sports/app/models/user_role.rb": [
@@ -316,31 +279,27 @@
         1,
         null,
         1,
-        7,
+        9,
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
-        7,
+        8,
         null,
         null,
         1,
-        7,
-        null,
-        null,
-        1,
-        0,
+        8,
         null,
         null,
         1,
@@ -352,13 +311,17 @@
         null,
         null,
         1,
+        0,
+        null,
+        null,
         1,
-        1,
+        2,
+        2,
         null,
         null,
         null,
         1,
-        1,
+        2,
         null,
         null
       ],
@@ -390,7 +353,7 @@
         null,
         null,
         1,
-        6,
+        7,
         null,
         null,
         1,
@@ -399,10 +362,10 @@
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         1,
@@ -412,7 +375,30 @@
         null,
         null,
         1,
+        1,
+        null,
+        null
+      ],
+      "/Users/mossy/turing/3module/projects/youth_sports/app/controllers/player_profiles_controller.rb": [
+        1,
+        null,
+        1,
         0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        2,
+        null,
+        null,
+        null,
         null,
         null
       ],
@@ -453,11 +439,6 @@
         1,
         1,
         null,
-        null
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/models/admin.rb": [
-        1,
-        1,
         null
       ],
       "/Users/mossy/turing/3module/projects/youth_sports/app/channels/application_cable/channel.rb": [
@@ -502,27 +483,6 @@
         0,
         0,
         0,
-        0
-      ],
-      "/Users/mossy/turing/3module/projects/youth_sports/app/controllers/players/profile_controller.rb": [
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
         0
       ],
       "/Users/mossy/turing/3module/projects/youth_sports/app/controllers/teams_controller.rb": [
@@ -571,6 +531,16 @@
         0,
         0
       ],
+      "/Users/mossy/turing/3module/projects/youth_sports/app/models/admin.rb": [
+        0,
+        0,
+        0
+      ],
+      "/Users/mossy/turing/3module/projects/youth_sports/app/models/admin_profile.rb": [
+        0,
+        0,
+        0
+      ],
       "/Users/mossy/turing/3module/projects/youth_sports/app/models/twilio_message.rb": [
         0,
         null,
@@ -607,6 +577,6 @@
         0
       ]
     },
-    "timestamp": 1504675213
+    "timestamp": 1504697195
   }
 }

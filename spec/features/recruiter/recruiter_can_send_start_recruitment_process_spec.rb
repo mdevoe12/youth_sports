@@ -7,7 +7,7 @@ RSpec.feature "recruiter starts recruitment process" do
                         last_name: "test",
                         password: "123")
     @recr_profile = RecruiterProfile.create(recruiter_id: @recruiter.id)
-    @player = User.create(type: "Player", password: "123")
+    @player = User.create(type: "Player", first_name: "Henry", last_name: "Ford", password: "123")
     @profile = PlayerProfile.create(player_id: @player.id, guardian_phone: "16073426730")
     PlayerStat.create(points: 40, fouls: 20, player_profile: @profile)
 
@@ -15,7 +15,7 @@ RSpec.feature "recruiter starts recruitment process" do
   end
 
   scenario "recruiter starts recruitment" do
-    visit profiles_path(@player)
+    visit player_profile_path(@profile)
 
     expect(page).to have_button("Start Recruitment")
 

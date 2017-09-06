@@ -28,10 +28,8 @@ RSpec.describe 'A logged in recruiter clicks on a player name' do
       GameTeam.create(game_id: game4.id, team_id: team2.id)
       upcoming = player1.upcoming
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(recruiter)
-
       visit '/dashboard'
       click_on 'Morty Smith'
-save_and_open_page
       expect(current_path).to eq(player_profile_path(profile1))
       expect(page).to have_content('Morty Smith')
       expect(page).to have_css('div#map')

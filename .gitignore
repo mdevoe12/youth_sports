@@ -16,7 +16,7 @@
 /node_modules
 /yarn-error.log
 
-.byebug_history
+/.byebug_history
 /coverage/*
 /coverage/*.*
 /coverage/.last_run.json
