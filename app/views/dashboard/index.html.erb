@@ -1,7 +1,10 @@
 
-
 <% if current_user.type == "Recruiter" %>
   <%= render partial: 'dashboard/recruiter' %>
 <% elsif current_user.type == "Coach" %>
   <%= render partial: 'dashboard/coach' %>
+<% elsif current_user.type == 'Player' %>
+  <% render partial: 'dashboard/player' %>
+<% else %>
+  <%= render partial: 'dashboard/admin' %>
 <% end %>
