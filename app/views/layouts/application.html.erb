@@ -38,8 +38,8 @@
       </div>
       <% end %>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield %>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </html>
