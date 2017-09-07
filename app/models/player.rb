@@ -5,8 +5,7 @@ class Player < User
   has_many :coaches, through: :team_coaches
   has_one :profile, class_name: :PlayerProfile
   has_many :player_stats, through: :profile
-
-
+  has_one :favorite_player, class_name: :FavoritePlayer
 
   def name
     self.first_name + " " + self.last_name

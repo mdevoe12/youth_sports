@@ -14,16 +14,23 @@ describe "logged in athlete" do
                                     gpa: 4.0,
                                     guardian_phone: '7202436470',
                                     player_id: aj.id)
+    lebron = FavoritePlayer.create(id: 1, screen_name: "@KingJames", created_at: "2017-09-07 17:26:58", updated_at: "2017-09-07 17:26:58", player_id: aj.id)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(aj)
+    allow_any_instance_of(ApplicationController)
+    .to receive(:current_user).and_return(aj)
 
     visit player_dashboard_path(aj)
     expect(current_path).to eq("/player_dashboard/#{aj.id}")
     expect(page).to have_link("Create/update your favorite player")
-    click_on "Create/update your favorite player"
+    click_on ("Create/update your favorite player")
+    expect(current_path).to eq("/favorite_players/new")
 
-    expect(current_path).to eq(new_favorite_players_path)
-    # expect(page).to have_content("#{aj.favorite_player.name}")
-    # expect(page).to have_content("#{aj.favorite_player.tweets_of_the_week}")
+    expect(page).to have_content("Enter Your Favorite Player's Twitter Screen Name To Follow Their Tweets")
+    fill_in 'Screen name', with: '@KingJames'
+    click_on "submit favorite player screen name"
+    expect(current_path).to eq("/player_dashboard/#{aj.id}")
+
+    expect(page).to have_content("#{aj.favorite_player.screen_name}")
+    # expect(page).to have_content "tweets: #{aj.favorite_player.tweets}"
   end
 end
