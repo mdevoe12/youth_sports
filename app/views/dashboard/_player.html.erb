@@ -7,7 +7,11 @@
   <h2><%= link_to "Create/update your favorite player", new_favorite_player_path %></h2>
 
   <h3>Favorite Player:</h3>
-  <li><%= current_user.favorite_player.screen_name %></li>
+  <% if current_user.favorite_player.nil? %>
+    <%= "No favorite player selected" %>
+  <% else %>
+    <li><%= current_user.favorite_player.screen_name %></li>
+  <% end %>
 
     <% current_user.teams.each do |team| %>
       <li><%= team.name %></li>
