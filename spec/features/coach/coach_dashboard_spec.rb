@@ -14,12 +14,9 @@ describe "#coach_dashboard_index" do
 
     visit "/dashboard"
     expect(current_path).to eq("/dashboard")
-    expect(page).to have_content("Hello #{coach.type} #{coach.first_name}")
+    expect(page).to have_content("Hello Coach #{coach.first_name}")
+    expect(page).to have_content("Institution: Eagles")
 
-
-    within ".h2" do
-      expect(page).to have_content("Institution: Eagles")
-    end
 
     # expect(page).to have_css(".email")
     # expect(page).to have_css(".phone_number")
