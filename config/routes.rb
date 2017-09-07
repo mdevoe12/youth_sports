@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
 
-  patch '/player_profiles/:id', to: 'players#update'
   root 'home#index'
+  patch '/player_profiles/:id', to: 'players#update'
+  resources :users, only: [:index]
 
-
-  get '/auth/facebook/callback', to: 'sessions#create'
   get '/auth/twitter/callback', to: 'sessions#create'
   get '/auth/twitter', as: :twitter_login
   get '/favorite_player', to: 'favorite_player#create'
@@ -18,15 +17,19 @@ Rails.application.routes.draw do
     get '/:id/stats', to: 'stats#index'
   end
 
-  get '/logout', to: 'sessions#destroy'
+  get  '/:id/messages', to: 'conversations#index'
+  get  '/:id/favorite_player', to: 'favorite_player#create'
+  get  '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get  '/logout', to: 'sessions#destroy'
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
 
   resources :players, only: [:new, :create, :update]
   resources :player_profiles, only: [:new, :create, :show]
-  resources :sessions, only: [:create, :destroy]
-  resources :personal_messages, only: [:create]
-  resources :conversations, only: [:index, :show]
+  # resources :sessions, only: [:create, :destroy]
+  resources :personal_messages, only: [:new, :create]
+  resources :conversations, only: [:new, :index, :show]
   resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
   resources :recruiters, only: [:new, :create, :update]
   resources :recruiter_profiles, only: [:new, :create, :show]
