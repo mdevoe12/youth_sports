@@ -1,9 +1,9 @@
-
 <div class="container">
   <div class="row">
     <% if @player.id == current_user.id %>
       <div class="col-md-12 welcome-bar">
         <h1>Welcome <%= @player.username.capitalize %></h1>
+        <h3 id="id"><%= @player.id %></h3>
       </div>
     <% end %>
   </div>
@@ -26,6 +26,8 @@
     </div>
     <div class="col-md-9 ath-profile-stats">
       <h1>stats</h1>
+      <canvas id="ath-profile-stats" width="600" height="600"></canvas>
+      <% javascript_tag 'charts/stats.js'%>
     </div>
   </div>
 </div>

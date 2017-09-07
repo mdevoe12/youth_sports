@@ -150,29 +150,6 @@
         1,
         null
       ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/facility.rb": [
-        1,
-        1,
-        null
-      ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/game.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        null,
-        0,
-        null,
-        null
-      ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/player_stat.rb": [
         1,
         1,
@@ -194,7 +171,26 @@
         null,
         null
       ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_points_controller.rb": [
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/game.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_stats_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -213,21 +209,6 @@
         null,
         null
       ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/point.rb": [
-        1,
-        1,
-        11,
-        11,
-        11,
-        null,
-        null,
-        1,
-        1,
-        11,
-        null,
-        null,
-        null
-      ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/channels/application_cable/channel.rb": [
         0,
         0,
@@ -240,8 +221,7 @@
         0,
         0
       ],
-      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_stats_controller.rb": [
-        0,
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_points_controller.rb": [
         0,
         0,
         0,
@@ -556,6 +536,11 @@
         0,
         0
       ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/facility.rb": [
+        0,
+        0,
+        0
+      ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/game_team.rb": [
         0,
         0,
@@ -563,6 +548,21 @@
         0
       ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/personal_message.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/point.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
         0,
         0,
         0,
@@ -653,6 +653,20 @@
         0,
         0
       ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/services/player_stats_helper.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
       "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/services/twilio_service.rb": [
         0,
         null,
@@ -672,6 +686,6 @@
         0
       ]
     },
-    "timestamp": 1504677378
+    "timestamp": 1504737971
   }
 }
