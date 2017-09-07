@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   resources :player_profiles, only: [:new, :create, :show]
   resources :coach_profiles, only: [:show]
   resources :personal_messages, only: [:new, :create]
-  resources :conversations, only: [:new, :index, :show]
+  resources :conversations, only: [:index, :show]
   resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
   resources :recruiters, only: [:new, :create, :update]
   resources :recruiter_profiles, only: [:new, :create, :show]

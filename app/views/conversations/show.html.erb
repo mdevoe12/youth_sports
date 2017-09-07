@@ -1,4 +1,4 @@
-<h1>Chatting with <%= @conversation.with(current_user),name %></h1>
+<h1>Chatting with <%= @conversation.with(current_user).username %></h1>
 
 <div id="converation-main">
   <div id="conversation-body">
@@ -6,10 +6,9 @@
   </div>
 
   <%= form_for @personal_message do |f| %>
-    <%= hidden_filed_tag 'conversation_id', @conversation.id %>
-    <%= f.label :body %>
+    <%= hidden_field_tag 'conversation_id', @conversation.id %>
     <%= f.text_area :body %>
 
-    <%= f.submit %>
+    <%= f.submit "send"%>
   <% end %>
 </div>
