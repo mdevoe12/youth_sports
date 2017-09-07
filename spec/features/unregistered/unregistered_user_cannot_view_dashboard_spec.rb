@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature "unregistered user" do
-  scenario "cannot view /dashboard" do
+RSpec.feature "unregistered user cannot" do
+  scenario "view /dashboard" do
     visit '/dashboard'
 
     expect(page).to have_content("The page you were looking for doesn't exist.")
@@ -21,6 +21,15 @@ RSpec.feature "unregistered user" do
     profile = CoachProfile.create(coach_id: coach.id)
 
     visit coach_profile_path(profile.id)
+
+    expect(page).to have_content("The page you were looking for doesn't exist.")
+  end
+
+  scenario "cannot view recruiter profile" do
+    recr = Recruiter.create(first_name: "harry", last_name: "henderson", password: "123")
+    profile = RecruiterProfile.create(recruiter_id: recr.id)
+
+    visit recruiter_profile_path(profile.id)
 
     expect(page).to have_content("The page you were looking for doesn't exist.")
   end
