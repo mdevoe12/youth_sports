@@ -162,6 +162,7 @@ player_count = 1
     :password   => Faker::Internet.password(8)
   )
 
+  favorite_player = FavoritePlayer.create(screen_name: "@KingJames", player_id: player.id)
   player.roles << Role.find_by(name: "Player")
 
   player_profile = PlayerProfile.create(
