@@ -1,2 +1,0 @@
-module Team::StatsHelper
-end
