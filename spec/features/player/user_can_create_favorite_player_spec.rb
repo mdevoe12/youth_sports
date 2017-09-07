@@ -17,12 +17,12 @@ describe "logged in athlete" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(aj)
 
-    visit player_dashboard_path
-    expect(current_path).to eq('/player_dashboard')
+    visit player_dashboard_path(aj)
+    expect(current_path).to eq("/player_dashboard/#{aj.id}")
     expect(page).to have_link("Create/update your favorite player")
     click_on "Create/update your favorite player"
 
-    expect(current_path).to eq(favorite_players_path)
+    expect(current_path).to eq(new_favorite_players_path)
     # expect(page).to have_content("#{aj.favorite_player.name}")
     # expect(page).to have_content("#{aj.favorite_player.tweets_of_the_week}")
   end

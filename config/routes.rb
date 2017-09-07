@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'sessions#create'
   get '/auth/twitter/callback', to: 'sessions#create'
   get '/auth/twitter', as: :twitter_login
-  get '/favorite_player', to: 'favorite_player#create'
+  resources :favorite_player, only: [:create, :new]
 
   resources :sessions, only: [:create, :destroy]
   resources :personal_messages, only: [:create]
