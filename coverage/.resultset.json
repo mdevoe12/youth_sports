@@ -114,6 +114,11 @@
         1,
         null
       ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/favorite_player.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/application_controller.rb": [
         1,
         1,
@@ -129,7 +134,7 @@
         1,
         null,
         1,
-        2,
+        4,
         null,
         null,
         null
@@ -221,17 +226,12 @@
         null,
         null,
         1,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/favorite_player.rb": [
         1,
         1,
+        null,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/channels/application_cable/channel.rb": [
@@ -949,6 +949,6 @@
         0
       ]
     },
-    "timestamp": 1504822619
+    "timestamp": 1504823081
   }
 }

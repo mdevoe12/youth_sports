@@ -20,6 +20,7 @@ describe "a registered player" do
     visit '/dashboard'
 
     click_on "Create/update your favorite player"
+    save_and_open_page
 
     fill_in 'screen_name', with: '@KingJames'
     click_on "submit favorite player screen name"
