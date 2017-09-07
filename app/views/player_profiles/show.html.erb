@@ -12,18 +12,18 @@
   </head>
   <body>
     <h1><%= @player.name %></h1>
-    <div>
-      <h3>Upcoming Games</h3>
-      <% unless @player.teams.count == 0 %>
-      <ul class="upcoming">
-        <% @player.upcoming.map do |game| %>
-          <li class="game">
-            <%= game.when %> VS: <%= game.vs(@player) %>
-          </li>
-        <% end %>
-      </ul>
-      <% end %>
-    </div>
+    <% unless @player.teams.count == 0 %>
+      <div>
+        <h3>Upcoming Games</h3>
+        <ul class="upcoming">
+          <% @player.upcoming.map do |game| %>
+            <li class="game">
+              <%= game.when %> VS: <%= game.vs(@player) %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
     <div class="container">
       <div id="map"></div>
     </div>
