@@ -1,4 +1,7 @@
 class RecruiterProfilesController < ApplicationController
+
+  before_action :player_check
+
   def new
     @recruiter_id = params["recruiter_id"]
     @recruiter_profile = RecruiterProfile.new
@@ -20,10 +23,17 @@ class RecruiterProfilesController < ApplicationController
     else
     end
   end
-end
 
-private
 
-def recruiter_params
-  params.require(:recruiter_profile).permit(:institution, :email, :phone_number, :uid, :recruiter_id)
+  private
+
+  def recruiter_params
+    params.require(:recruiter_profile).permit(:institution, :email, :phone_number, :uid, :recruiter_id)
+  end
+
+  def player_check
+    render file: 'public/404.html', layout: true, status: 404 if current_user.type == "Player"
+
+  end
+
 end

@@ -15,7 +15,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     if @player.save
-      redirect_to controller: 'player_profile', action: 'new', player_id: @player.id
+      redirect_to controller: 'player_profiles', action: 'new', player_id: @player.id
     else
       render :new
     end

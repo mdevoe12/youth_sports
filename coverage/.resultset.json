@@ -1,6 +1,7 @@
 {
   "RSpec": {
     "coverage": {
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/helpers/api/v1/player_stats_helper.rb": [
         1,
         null
@@ -21,15 +22,70 @@
         1,
         1,
         null,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/helpers/api/v1/player_stats_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/helpers/stats_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_stats_controller.rb": [
+        1,
+        1,
+        5,
+        2,
+        null,
+        3,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/application_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        5,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/sessions_controller.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         1,
         null,
         1,
         null,
+<<<<<<< HEAD
+=======
+        null,
+        1,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
         0,
+<<<<<<< HEAD
         0,
+=======
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         null,
@@ -37,37 +93,81 @@
         null,
         1,
         0,
+<<<<<<< HEAD
         null,
         null
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/application_record.rb": [
+=======
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/coach_profile.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/recruiter_profile.rb": [
         1,
         1,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/application_record.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/player.rb": [
         1,
         1,
         1,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/conversation.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         1,
         1,
         1,
         1,
         null,
         null,
+<<<<<<< HEAD
         null,
         1,
         1,
         null,
         null,
         1,
+=======
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        null,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         null,
         null,
@@ -78,6 +178,7 @@
         1,
         0,
         null,
+<<<<<<< HEAD
         null,
         1,
         0,
@@ -86,12 +187,64 @@
         1,
         0,
         null,
+=======
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/facility.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/game.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        null,
+        0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/game_team.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/personal_message.rb": [
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/player_profile.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/player_stat.rb": [
+        1,
+        1,
+        1,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         null,
         1,
         0,
         null,
         null,
         1,
+<<<<<<< HEAD
         0,
         null,
         null,
@@ -112,12 +265,54 @@
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/player_profile.rb": [
         1,
+=======
+        3,
+        null,
+        null,
+        3,
+        null,
+        null,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/prospect.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        null,
+        null,
+        1,
+        2,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/recruiter_profile.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         1,
         1,
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/prospect.rb": [
         1,
         1,
@@ -136,6 +331,27 @@
         null,
         null,
         1,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/recruiter.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/user.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        0,
+        0,
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
@@ -143,20 +359,43 @@
         null,
         null,
         null,
+<<<<<<< HEAD
         null
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/facility.rb": [
+=======
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/role.rb": [
+        1,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         1,
         1,
         null
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/game.rb": [
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/team_player.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/team.rb": [
+        1,
+        1,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         1,
         1,
         1,
         1,
         1,
         null,
+<<<<<<< HEAD
         1,
         0,
         null,
@@ -171,10 +410,62 @@
         null,
         1,
         0,
+=======
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/twilio_message.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        5,
+        5,
+        5,
+        5,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/user_role.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/services/twilio_service.rb": [
+        1,
+        null,
+        1,
+        4,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         null,
         null,
         1,
         3,
+<<<<<<< HEAD
         null,
         null,
         1,
@@ -185,26 +476,82 @@
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/team.rb": [
         1,
         1,
-        1,
-        1,
-        1,
-        1,
-        1,
+=======
+        3,
         null,
         null,
         1,
         null,
+        null,
+        null,
+        null,
+        3,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/admin.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/dashboard_controller.rb": [
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/coach.rb": [
+        1,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        1,
+        1,
+        1,
+        1,
+        1,
+<<<<<<< HEAD
+        null,
+        null,
+        1,
+        null,
+=======
+        null,
+        1,
+        2,
+        null,
+        null,
+        1,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         null,
         null,
+<<<<<<< HEAD
         1,
         null,
         0,
+=======
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         null,
         null
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/team_player.rb": [
         1,
         1,
@@ -345,42 +692,278 @@
         0
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/controllers/players/favorite_player_controller.rb": [
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/home_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/player.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        14,
+        null,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        8,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/team_coach.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/players_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        7,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/player_profiles_controller.rb": [
+        1,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/twilio_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/teams/stats_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/api/v1/player_points_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/point.rb": [
+        1,
+        1,
+        10,
+        10,
+        10,
+        null,
+        null,
+        1,
+        1,
+        10,
+        null,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/services/player_stats_service.rb": [
+        1,
+        null,
+        1,
+        3,
+        3,
+        3,
+        null,
+        null,
+        1,
+        35,
+        35,
+        3,
+        3,
+        3,
+        3,
+        3,
+        null,
+        null
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/channels/application_cable/channel.rb": [
         0,
         0,
         0,
         0
       ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/channels/application_cable/connection.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        0,
+        0,
+        0,
+        0
+      ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/controllers/players_controller.rb": [
         0,
         null,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/conversations_controller.rb": [
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         null,
         0,
+<<<<<<< HEAD
         null,
         0,
         null,
+=======
         0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
@@ -389,11 +972,21 @@
         0,
         0,
         0,
+<<<<<<< HEAD
+        0,
+        0,
+=======
+        null,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
         null,
         0,
+<<<<<<< HEAD
+        0,
+=======
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         null,
         0,
         0,
@@ -402,11 +995,54 @@
         0,
         0,
         0,
+        0,
+        null,
+<<<<<<< HEAD
+        0,
+        0,
+=======
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/personal_messages_controller.rb": [
+        0,
+        0,
+        null,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        0,
+        0,
+        0,
+        0,
+<<<<<<< HEAD
+        null,
+        0,
+        null,
+=======
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+<<<<<<< HEAD
         0
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/controllers/recruiter_profiles_controller.rb": [
         0,
         0,
+=======
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+<<<<<<< HEAD
+        0,
         0,
         0,
         0,
@@ -415,19 +1051,21 @@
         0,
         0,
         0,
-        0,
-        0,
+=======
+        null,
         0,
         null,
         0,
         0,
         0,
+        null,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
         0,
         0,
-        0,
+<<<<<<< HEAD
         null,
         0,
         null,
@@ -436,6 +1074,9 @@
         0
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/controllers/recruiters/profile_controller.rb": [
+=======
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
@@ -443,23 +1084,34 @@
         0,
         0
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/controllers/recruiters_controller.rb": [
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/player_dashboard_controller.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
         null,
+<<<<<<< HEAD
         0,
+=======
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         null,
         0,
         null,
         0,
+<<<<<<< HEAD
         0,
         0,
         0,
+=======
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         null,
         0,
         0,
         0,
+<<<<<<< HEAD
         0,
         0,
         0,
@@ -496,10 +1148,18 @@
         0,
         0,
         null,
+=======
+        null,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/player_profile_controller.rb": [
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         null,
         0,
         0,
+<<<<<<< HEAD
         0,
         0
       ],
@@ -520,6 +1180,17 @@
         0,
         null,
         0,
+=======
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/players/favorite_player_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/recruiter_profiles_controller.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
@@ -529,6 +1200,7 @@
         0,
         0,
         0,
+<<<<<<< HEAD
         null,
         0
       ],
@@ -537,6 +1209,9 @@
         0,
         0,
         null,
+=======
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
@@ -544,6 +1219,7 @@
         0,
         0,
         0,
+<<<<<<< HEAD
         null,
         0,
         null,
@@ -551,11 +1227,16 @@
         0,
         0,
         null,
+=======
+        0,
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
         0,
         null,
+<<<<<<< HEAD
         0
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/controllers/users_controller.rb": [
@@ -580,10 +1261,23 @@
         0
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/admin_profile.rb": [
+=======
+        0,
+        null,
         0,
         0,
         0
       ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/recruiters/profile_controller.rb": [
+        0,
+        0,
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        0,
+        0,
+        0
+      ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/coach.rb": [
         0,
         0,
@@ -592,6 +1286,17 @@
         0,
         0,
         null,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/recruiters_controller.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        0,
+        0,
+        0,
+        null,
+        0,
+<<<<<<< HEAD
+        0,
+        0,
         0,
         0,
         0,
@@ -599,25 +1304,26 @@
         0,
         0,
         0,
+=======
+        null,
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
+        null,
         0,
         0,
+        0,
+<<<<<<< HEAD
+        null,
+        0,
+        0,
+=======
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         null,
         0,
         0,
         0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        0,
+<<<<<<< HEAD
         0
       ],
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/coach_profile.rb": [
@@ -634,19 +1340,28 @@
         null,
         0,
         null,
+=======
+        0,
+        0,
+        0,
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
         null,
         0,
+<<<<<<< HEAD
         0,
         0,
+=======
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         null,
         0,
         0,
         0,
         0
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/personal_message.rb": [
         0,
         0,
@@ -665,6 +1380,13 @@
         0,
         0,
         0,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/teams_controller.rb": [
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/controllers/users_controller.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
@@ -672,6 +1394,7 @@
         0,
         0,
         0,
+<<<<<<< HEAD
         0,
         0,
         0,
@@ -709,18 +1432,35 @@
         0,
         0,
         0,
+=======
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/mailers/application_mailer.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0,
         0
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/models/user_role.rb": [
         0,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/models/admin_profile.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         0,
         0
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/service/twitter_service.rb": [
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/service/twitter_service.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         null,
         0,
@@ -743,6 +1483,7 @@
         null,
         0
       ],
+<<<<<<< HEAD
       "/Users/jimszalewski/turing/3module/projects/youth_sports/app/services/googlemaps_service.rb": [
         0,
         null,
@@ -764,6 +1505,9 @@
         0,
         0,
         0,
+=======
+      "/Users/thedanielvogelsang/TuringFolder/3module/projects/youth_sports/app/services/googlemaps_service.rb": [
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
         0,
         null,
         0,
@@ -772,11 +1516,18 @@
         0,
         0,
         0,
+<<<<<<< HEAD
         0,
         null,
         0
       ]
     },
     "timestamp": 1504810837
+=======
+        0
+      ]
+    },
+    "timestamp": 1504811602
+>>>>>>> 9da24c10c47d88b978cf77b652a4ea8ccc9aa4d7
   }
 }

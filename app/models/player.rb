@@ -51,6 +51,8 @@ class Player < User
   end
 
   def upcoming
-    self.team.games.where(status: "upcoming")
+    unless self.teams.count > 1
+      self.team.games.where(status: "upcoming")
+    end
   end
 end
