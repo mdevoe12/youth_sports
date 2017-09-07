@@ -20,6 +20,7 @@ describe "logged in athlete" do
     .to receive(:current_user).and_return(aj)
 
     visit '/dashboard'
+
     expect(current_path).to eq('/dashboard')
     expect(page).to have_link("Create/update your favorite player")
     click_on ("Create/update your favorite player")
@@ -28,8 +29,8 @@ describe "logged in athlete" do
     expect(page).to have_content("Enter Your Favorite Player's Twitter Screen Name To Follow Their Tweets")
     fill_in 'Screen name', with: '@KingJames'
     click_on "submit favorite player screen name"
+    save_and_open_page
     expect(current_path).to eq("/dashboard")
-
     expect(page).to have_content("#{aj.favorite_player.screen_name}")
     # expect(page).to have_content "tweets: #{aj.favorite_player.tweets}"
   end
