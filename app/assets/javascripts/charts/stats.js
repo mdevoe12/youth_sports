@@ -1,10 +1,9 @@
 
-
 $.ajax({
   url: "/api/v1/players/stats",
   method: 'GET',
   data: {
-    id: 1001,
+    id: 800,
     games: 10
   }
 }).done(function(post){

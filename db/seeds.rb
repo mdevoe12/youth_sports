@@ -12,7 +12,7 @@ Role.create(name: "Admin")
 admin = Admin.create(first_name: "Josh",
 last_name: "Dao",
 username: "admin@admin.com",
-password: "password")
+password_digest: "password")
 
 admin.roles << Role.find_by(name: "Admin")
 
@@ -177,7 +177,7 @@ player_count = 1
   PlayerStat.create(
     :points => rand(1..30),
     :fouls => rand(0..5),
-    :player_profile_id => player_profile.id
+    :player_profile_id => player_profile.id,
     :game_id => rand(0..400)
   )
 
