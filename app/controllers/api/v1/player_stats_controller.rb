@@ -1,5 +1,6 @@
 class Api::V1::PlayerStatsController < ApplicationController
   def show
+    byebug
     if params[:id].nil?
       render file: 'public/404' if params[:id].nil?
     else
