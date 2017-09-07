@@ -26,7 +26,7 @@ RSpec.describe 'A logged in player' do
                                     guardian_phone: '3205555555',
                                     player_id: player.id)
 
-    Prospect.create(player_profile_id: profile.id,
+    Prospect.create(   player_profile_id: profile.id,
                     recruiter_profile_id: rec_profile.id,
                                   status: "prospect")
     team = Team.create(name: "Gherkins")
@@ -36,6 +36,7 @@ RSpec.describe 'A logged in player' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(player)
 
     visit '/dashboard'
+
 
     expect(page).to have_content("Hello #{player.first_name}")
     expect(page).to have_content(team.name)
