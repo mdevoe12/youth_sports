@@ -235,14 +235,14 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
-    twitter (4.4.2)
-      faraday (~> 0.8)
-      multi_json (~> 1.3)
-      simple_oauth (~> 0.2)
     twilio-ruby (5.2.1)
       faraday (~> 0.9)
       jwt (~> 1.5)
       libxml-ruby (>= 2.0, < 4.0)
+    twitter (4.4.2)
+      faraday (~> 0.8)
+      multi_json (~> 1.3)
+      simple_oauth (~> 0.2)
     tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
@@ -296,11 +296,8 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
-<<<<<<< HEAD
-  twitter
-=======
   twilio-ruby
->>>>>>> development
+  twitter
   tzinfo-data
   uglifier (>= 1.3.0)
   vcr
