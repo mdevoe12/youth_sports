@@ -1,6 +1,6 @@
 class PlayerProfileController < ApplicationController
   def show
-    binding.pry
+    # binding.pry
     @player_profile.find_by(params[:id])
   end
 end
