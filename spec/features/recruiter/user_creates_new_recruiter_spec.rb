@@ -8,8 +8,9 @@ RSpec.describe 'A new user clicks "Sign Up as a Reruiter" from the home page' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(recruiter)
 
       visit '/'
-      save_and_open_page
+
       expect(page).to have_link("Sign Up as a Recruiter")
+
 
     end
   end

@@ -5,9 +5,10 @@ class RecruiterProfilesController < ApplicationController
   end
 
   def create
+    require "pry"; binding.pry
     @recruiter_profile = RecruiterProfile.create(recruiter_params)
     if @recruiter_profile.save
-      redirect_to recruiter_profile_path(@recruiter_profile.id)
+      redirect_to dashboard_index_path(current_user)
     end
   end
 
