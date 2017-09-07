@@ -1,6 +1,14 @@
 require 'rails_helper'
 
 RSpec.feature "unregistered user" do
+  scenario "click login and seed login page" do
+    visit root_path
+
+    click_on "Login"
+
+    expect(page).to have_content("Username")
+    expect(page).to have_content("Password")
+  end
   scenario "can see team stats page" do
     coach = create(:user, type: "Coach", first_name: "Bob", last_name: "Bill", password: "123")
     team = create(:team)
