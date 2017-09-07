@@ -13,6 +13,7 @@ describe "#coach_dashboard_index" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(coach)
 
     visit "/dashboard"
+
     expect(current_path).to eq("/dashboard")
     expect(page).to have_content("Hello Coach #{coach.first_name}")
     expect(page).to have_content("Institution: Eagles")
