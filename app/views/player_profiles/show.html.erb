@@ -4,7 +4,7 @@
     <style>
       #map {
         position: absolute;
-        left: 20px;
+        right: 20px;
         height: 400px;
         width: 50%;
       }
@@ -17,8 +17,8 @@
       <ul class="upcoming">
         <% byebug %>
         <% @player.upcoming.each do |game| %>
-          <li>
-            <button id="facility_name" type="button" onclick="updateMap(<%= game.coords[:lat] %>, <%= game.coords[:lng] %>)">
+          <li class="game">
+            <button id="facility_name" type="button">
               <%= game.facility_name %>
             </button>
           </li>

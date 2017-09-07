@@ -1,0 +1,23 @@
+<%= "Hello" %>
+
+
+<div class="container">
+  <div class="col-sm-12">
+  <h1>  <%= "Hello #{current_user.first_name}" %></h1>
+
+    <% current_user.teams.each do |team| %>
+      <li><%= team.name %></li>
+    <% end %>
+
+    <% current_user.coaches.each do |coach| %>
+      <li><%= coach.name %></li>
+    <% end %>
+
+    <li><%= current_user.profile.school %>
+    <%= current_user.profile.height %>
+    <%= current_user.profile.weight %>
+    <%= current_user.profile.grade_level %>
+    <%= current_user.profile.gpa %>
+    <%= current_user.profile.guardian_phone %></li>
+  </div>
+</div>
