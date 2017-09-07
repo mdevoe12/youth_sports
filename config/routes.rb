@@ -27,6 +27,7 @@ Rails.application.routes.draw do
 
   resources :players, only: [:new, :create, :update]
   resources :player_profiles, only: [:new, :create, :show]
+  resources :coach_profiles, only: [:show]
   # resources :sessions, only: [:create, :destroy]
   resources :personal_messages, only: [:new, :create]
   resources :conversations, only: [:new, :index, :show]
