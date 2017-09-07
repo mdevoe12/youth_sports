@@ -14,7 +14,8 @@ class RecruitersController < ApplicationController
   def create
     @recruiter = Recruiter.new(recruiter_params)
     if @recruiter.save
-      redirect_to controller: 'recruiter_profile', action: 'new', recruiter_id: @recruiter.id
+      session[:user_id] = @recruiter.id
+      redirect_to controller: 'recruiter_profiles', action: 'new', recruiter_id: @recruiter.id
     else
       render :new
     end
