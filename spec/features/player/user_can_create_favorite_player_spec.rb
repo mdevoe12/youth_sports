@@ -19,13 +19,8 @@ describe "logged in athlete" do
     allow_any_instance_of(ApplicationController)
     .to receive(:current_user).and_return(aj)
 
-<<<<<<< HEAD
     visit '/dashboard'
     expect(current_path).to eq('/dashboard')
-=======
-    visit player_dashboard_path(aj)
-    expect(current_path).to eq("/player_dashboard/#{aj.id}")
->>>>>>> 09_user_can_use_twitter_for_oauth
     expect(page).to have_link("Create/update your favorite player")
     click_on ("Create/update your favorite player")
     expect(current_path).to eq("/favorite_players/new")

@@ -30,13 +30,13 @@ RSpec.describe 'A logged in recruiter clicks on a player name' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(recruiter)
       visit '/dashboard'
       click_on 'Morty Smith'
-      save_and_open_page
       expect(current_path).to eq(player_profile_path(profile1))
       expect(page).to have_content('Morty Smith')
       expect(page).to have_css('div#map')
       expect(upcoming.count).to eq(3)
       within(first('.upcoming')) do
-        expect(page).to have_css('#facility_name')
+        expect(page).to have_css('#when')
+        expect(page).to have_css('#vs')
       end
       # games should be sorted by date
     end
