@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get 'players/stats', to: 'player_stats#show'
+      get 'players/points', to: 'player_points#show'
     end
   end
 

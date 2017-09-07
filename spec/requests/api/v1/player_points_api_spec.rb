@@ -9,8 +9,6 @@ describe 'Player Api points endpoint' do
       game = Game.create(facility: Facility.last)
       PlayerStat.create(created_at: "2017-09-05", :points => rand(0..10), :fouls => rand(0..5), player_profile_id: @player.profile.id, :game_id => game.id)
     end
-    game = Game.create(facility: Facility.first)
-    PlayerStat.create(created_at: "2016-09-05", :points => rand(0..10), :fouls => rand(0..5), player_profile_id: @player.profile.id, :game_id => game.id)
   end
   it "it returns list of points" do
     get "/api/v1/players/points?id=#{@player.id}"
