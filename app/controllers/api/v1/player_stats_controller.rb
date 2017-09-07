@@ -1,4 +1,6 @@
 class Api::V1::PlayerStatsController < ApplicationController
+  skip_before_action :authorize!
+
   def show
     if params[:id].nil?
       render file: 'public/404' if params[:id].nil?
