@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
+
+  def authorize
+    raise ActionController::RoutingError.new('Not Found') if current_user.nil?
+  end
+
 end
