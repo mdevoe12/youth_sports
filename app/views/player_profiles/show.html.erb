@@ -15,7 +15,15 @@
     <div>
       <h3>Upcoming Games</h3>
       <ul class="upcoming">
-        
+        <% unless @player.teams.count == 0 %>
+          <% @player.upcoming.each do |game| %>
+            <li class="game">
+              <button id="facility_name" type="button">
+                <%= game.facility_name %>
+              </button>
+            </li>
+          <% end %>
+        <% end %>
       </ul>
     </div>
     <div class="container">
