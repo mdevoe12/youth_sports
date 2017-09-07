@@ -41,7 +41,7 @@
         1,
         null,
         1,
-        30,
+        28,
         null,
         null,
         null
@@ -502,28 +502,6 @@
         null,
         null
       ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_coach.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/favorite_players_controller.rb": [
-        1,
-        null,
-        1,
-        2,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        1,
-        null,
-        null,
-        null
-      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/recruiter_profiles_controller.rb": [
         1,
         null,
@@ -561,6 +539,28 @@
         1,
         1,
         null,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/team_coach.rb": [
+        1,
+        1,
+        1,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/favorite_players_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
         null,
         null,
         null
@@ -949,6 +949,6 @@
         0
       ]
     },
-    "timestamp": 1504823476
+    "timestamp": 1504823572
   }
 }
