@@ -4,7 +4,8 @@
 <div class="container">
   <div class="col-sm-12">
   <h1>  <%= "Hello #{current_user.first_name}" %></h1>
-
+  <h2><%= link_to "Create/update your favorite player", new_favorite_player_path %></h2>
+  
     <% current_user.teams.each do |team| %>
       <li><%= team.name %></li>
     <% end %>

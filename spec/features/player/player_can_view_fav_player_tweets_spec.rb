@@ -17,7 +17,10 @@ describe "a registered player" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(aj)
 
-    visit player_dashboard_path(aj)
+    visit '/dashboard'
+
+    click_on "Create/update your favorite player"
+
     fill_in 'screen_name', with: '@KingJames'
     click_on "submit favorite player screen name"
 
