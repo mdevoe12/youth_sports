@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   resources :personal_messages, only: [:create]
   resources :conversations, only: [:index, :show]
   resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
+  resources :recruiters, only: [:new, :create, :update]
+  resources :recruiter_profiles, only: [:new, :create, :show]
   resources :dashboard, only: [:index]
 
   # internal api
