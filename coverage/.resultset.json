@@ -15,6 +15,9 @@
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/dashboard_controller.rb": [
         1,
+        null,
+        null,
+        null,
         1,
         null,
         null
@@ -23,9 +26,10 @@
         1,
         1,
         1,
+        1,
         null,
         1,
-        1,
+        2,
         0,
         null,
         null,
@@ -33,7 +37,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -94,6 +98,9 @@
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/home_controller.rb": [
         0,
+        null,
+        0,
+        null,
         null,
         0,
         null,
@@ -837,6 +844,6 @@
         0
       ]
     },
-    "timestamp": 1504798521
+    "timestamp": 1504802940
   }
 }

@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
+  before_action :authorize!
 
   def current_user
     if session[:user_id] != nil
@@ -10,8 +11,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def authorize
-    raise ActionController::RoutingError.new('Not Found') if current_user.nil?
+  def authorize!
+    render file: 'public/404.html', layout: true, status: 404 if current_user.nil?
   end
 
 end
