@@ -15,19 +15,14 @@
     <div>
       <h3>Upcoming Games</h3>
       <ul class="upcoming">
-        <% @player.upcoming.each do |game| %>
+        <% @player.upcoming.map do |game| %>
           <li class="game">
-            <button id="facility_name" type="button" onclick="updateMap(<%= game.lat %>, <%= game.lng %>)">
-              <%= game.when %>
-              VS: <%= game.vs(@player) %>
-            </button>
+            <%= game.when %> VS: <%= game.vs(@player) %>
           </li>
         <% end %>
       </ul>
     </div>
     <div class="container">
-      <div class="game_info">
-      </div>
       <div id="map"></div>
     </div>
     <script src="../../mapScript.js"></script>
