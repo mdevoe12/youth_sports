@@ -6,6 +6,8 @@ class Player < User
   has_one :profile, class_name: :PlayerProfile
   has_many :player_stats, through: :profile
 
+
+
   def name
     self.first_name + " " + self.last_name
   end

@@ -15,7 +15,7 @@ class PlayersController < ApplicationController
   def create
     @player = Player.new(player_params)
     if @player.save
-      redirect_to controller: 'player_profile', action: 'new', player_id: @player.id
+      redirect_to controller: 'player_profiles', action: 'new', player_id: @player.id
     else
       render :new
     end
@@ -34,10 +34,10 @@ class PlayersController < ApplicationController
   end
 
   def update
-    player_profile = PlayerProfile.find(params[:format])
+    player_profile = PlayerProfile.find(params[:id])
     player_profile.update(update_params)
     @player = Player.find(player_profile.player_id)
-    redirect_to player_path(@player)
+    redirect_to "/athletes/#{@player.id}"
   end
 
   private

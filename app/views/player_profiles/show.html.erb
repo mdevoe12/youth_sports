@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        position: absolute;
+        right: 20px;
+        height: 400px;
+        width: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><%= @player.name %></h1>
+    <div>
+      <h3>Upcoming Games</h3>
+      <ul class="upcoming">
+        <% @player.upcoming.each do |game| %>
+          <li class="game">
+            <button id="facility_name" type="button">
+              <%= game.facility_name %>
+            </button>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="container">
+      <div class="game_info">
+        Sun, 5 October 2017, 7:30 pm VS: Vikings
+      </div>
+      <div id="map"></div>
+    </div>
+    <script src="../../../mapScript.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+    </script>
+    <% if flash[:notice] %>
+      <div class="notice"><%= flash[:notice] %></div>
+    <% end %>
+    <%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post %>
+  </body>
+</html>
