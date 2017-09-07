@@ -10,7 +10,7 @@ RSpec.feature "recruiter starts recruitment process" do
     @player = User.create(type: "Player", first_name: "Henry", last_name: "Ford", password: "123")
     @profile = PlayerProfile.create(player_id: @player.id, guardian_phone: "16073426730")
     PlayerStat.create(points: 40, fouls: 20, player_profile: @profile)
-
+    Prospect.create(recruiter_profile_id: @recr_profile.id, player_profile_id: @profile.id)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@recruiter)
   end
 
@@ -22,7 +22,7 @@ RSpec.feature "recruiter starts recruitment process" do
     VCR.use_cassette("/features/recruiter/recruiter_can_send_start_recruitment_process_spec.rb") do
       click_on "Start Recruitment"
 
-      expect(current_path).to eq("/profiles/player_profile/#{@player.id}")
+      expect(current_path).to eq("/player_profiles/#{@profile.id}")
       expect(@player.profile.prospects.last.status).to eq("in-progress")
       expect(page).to have_content("You've sent a request to the player's guardian.")
     end
