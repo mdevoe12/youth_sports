@@ -12,7 +12,7 @@ Role.create(name: "Admin")
 admin = Admin.create(first_name: "Josh",
 last_name: "Dao",
 username: "admin@admin.com",
-password: "password")
+password_digest: "password")
 
 admin.roles << Role.find_by(name: "Admin")
 
