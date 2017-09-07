@@ -4,7 +4,6 @@
     <title>YouthSports</title>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -14,15 +13,18 @@
         </div>
         <div id="navbar">
           <ul class="nav navbar-nav">
-            <body>
+            <div>
               <ul>
-                <li><%= link_to "Sign Up as an Athlete", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/players/new" %></li>
-                <li><%= link_to "Sign Up as a Recruiter", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/recruiters/new" %></li>
-                <li><a href="#Login">Login</a></li>
-                <li><a href="#Logout">Logout</a></li>
+                <% if current_user == nil %>
+                  <li><%= link_to "Sign Up as an Athlete", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/players/new" %></li>
+                  <li><%= link_to "Sign Up as a Recruiter", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/recruiters/new" %></li>
+                  <li><%= link_to "Login", login_path %></li>
+                <% else %>
+                  <li><%= link_to "Logout", logout_path %></li>
+                  <li><%= link_to 'Send Message', users_path %></li>
+                <% end %>
               </ul>
-            </body>
-            <%= link_to "Login with facebook", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/auth/facebook/callback" %>
+            </div>
             <li><a href="/auth/twitter">Login with Twitter</a></li>
           </ul>
         </div>
@@ -38,4 +40,6 @@
     </div>
     <%= yield %>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </html>

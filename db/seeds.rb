@@ -178,6 +178,7 @@ player_count = 1
     :points => rand(1..30),
     :fouls => rand(0..5),
     :player_profile_id => player_profile.id
+    :game_id => rand(0..400)
   )
 
   TeamPlayer.create(

@@ -1,5 +1,8 @@
 class HomeController < ApplicationController
 
+  skip_before_action :authorize!, only: [:index]
+
+
   def index
     # tweet_info = build_twitter_service
     # @user = tweet_info.user
