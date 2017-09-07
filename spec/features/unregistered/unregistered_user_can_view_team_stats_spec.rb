@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'as an unregistered user when I visit a team stats' do
-  scenario 'I can see a teams stats' do
+RSpec.feature "unregistered user" do
+  scenario "can see team stats page" do
     coach = create(:user, type: "Coach", first_name: "Bob", last_name: "Bill", password: "123")
     team = create(:team)
     players = create_list(:user, 3, type: "Player", password: "123")
@@ -22,6 +22,5 @@ RSpec.feature 'as an unregistered user when I visit a team stats' do
     expect(page).to have_content("Players: 3")
     expect(page).to have_content("Total Points: 120")
     expect(page).to have_content("Total Fouls: 60")
-
   end
 end
