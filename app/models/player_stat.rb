@@ -1,5 +1,6 @@
 class PlayerStat < ApplicationRecord
   belongs_to :player_profile
+  belongs_to :game
 
   def stat_dates
     self.created_at.strftime('%b-%d, %Y')
@@ -13,10 +14,6 @@ class PlayerStat < ApplicationRecord
   end
 
   def self.create_limit(x)
-    if x == nil
-      x = 10
-    else
-      x = x
-    end
+    x = 10 if x.nil?
   end
 end
