@@ -17,8 +17,9 @@
       <ul class="upcoming">
         <% @player.upcoming.each do |game| %>
           <li class="game">
-            <button id="facility_name" type="button">
-              <%= game.facility_name %>
+            <button id="facility_name" type="button" onclick="updateMap(<%= game.lat %>, <%= game.lng %>)">
+              <%= game.when %>
+              VS: <%= game.vs(@player) %>
             </button>
           </li>
         <% end %>
@@ -26,12 +27,10 @@
     </div>
     <div class="container">
       <div class="game_info">
-        Sun, 5 October 2017, 7:30 pm VS: Vikings
       </div>
       <div id="map"></div>
     </div>
-    <script src="../../../mapScript.js">
-    </script>
+    <script src="../../mapScript.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?callback=initMap">
     </script>
