@@ -3,18 +3,21 @@
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
 
- .stats-title {
+.stats-title {
    color: rgb(0,86,90);
    text-align: center;
+   padding-left: 0
  }
 
- .stats-title h1 {
+.stats-title h1 {
    margin-left: 60px;
    text-decoration: underline;
  }
+
 .start-rec {
   border: 2px solid rgb(0,86,90)
 }
+
 .profile-body {
   font-family: 'Libre Baskerville', serif;
 }
@@ -23,13 +26,24 @@
   padding: 20px;
   background-image: url(image_path('players/cork.png'));
   background-size: 100% 400px;
-  height: 400px;
+  height: 420px;
   color: white;
-  border: 2px solid rgb(0,86,90)
+  border: 5px solid rgb(0,86,90);
+  margin-left: 16px;
 }
 
 .upcoming-games h3 {
+  text-align: center;
   margin-left: 10px;
+  font-size: 2em;
+  background-color: rgb(0,86,90);
+  padding: 6px;
+  border: 2px solid black;
+}
+
+.upcoming-games li {
+  font-size: 1.3em;
+  list-style-image: url(image_path("players/bball.png"));
 }
 
 .prf-sum h4 {
@@ -42,8 +56,8 @@
 }
 
 .recruitment-btn{
-  margin-top: 60px;
-  margin-left: 100px;
+  margin-top: 20px;
+  margin-left: 70px;
 }
 
 .edit-btn{
@@ -74,7 +88,7 @@
   position: absolute;
   top:0;
   margin-top: 81px;
-  border-right: 1px solid black; 
+  border-right: 1px solid black;
 }
 .team-name {
   color: rgb(0,86,90);
@@ -99,4 +113,29 @@
   padding: 5px;
   padding-top: 30px;
   padding-bottom: 80px;
+  border: 2px solid black;
+}
+
+.upcoming-row {
+  border-bottom: 2px solid black;
+  height: 400px;
+  color: rgb(0,86,90);
+  background-color: rgb(0,86,90);
+  margin-left: 1px;
+}
+
+.stats-row {
+  border-bottom: 2px solid black;
+  height: 600px;
+  color: rgb(0,86,90);
+  background-color: rgb(0,86,90);
+  margin-top: 28px;
+}
+
+.stats-bar {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(0,86,90);
+  color: rgb(0,86,90);
+  margin-left: 10px;
 }
