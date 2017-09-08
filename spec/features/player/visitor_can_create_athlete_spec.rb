@@ -7,7 +7,7 @@ RSpec.feature "home page visitation"  do
       visit root_path
 
       expect(page).to have_link("Sign Up as an Athlete")
-      login_with_oauth
+      # login_with_oauth
       expect(current_path).to eq(new_player_path)
       byebug
       fill_in "player[first_name]", with: "AJ"
