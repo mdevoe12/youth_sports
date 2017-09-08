@@ -1,11 +1,3 @@
-
-  $.ajax({
-    url: "/api/v1/players/games",
-    method: 'GET',
-    data: {
-      id: 335
-    },
-    success: function(post){
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 11,
@@ -15,12 +7,18 @@
         setMarkers(map);
       }
       var games = post;
-      debugger
       function setMarkers(map) {
         var shape = {
           coords: [1,1,1,20,18,20,18,1],
           type: 'poly'
         };
+        $.ajax({
+          url: "/api/v1/players/games",
+          method: 'GET',
+          data: {
+            id: 335
+          },
+          success: function(post){
         for (var i = 0; i < games.length; i++) {
           var game = games[i];
           var marker = new google.maps.Marker({
