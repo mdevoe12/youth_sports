@@ -1,0 +1,12 @@
+<% flash.each do |key, value| %>
+  <div>
+    <%= value %>
+  </div>
+<% end %>
+
+<% if current_user %>
+  <p>Signed in as <%= current_user.name %> | <%= link_to 'log out', session_path(current_user.id), method: :delete %></p>
+<% end %>
+<ul>
+  <li><%= link_to 'Home', root_path %></li>
+</ul>

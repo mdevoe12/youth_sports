@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row">
+    <% if @player.id == current_user.id %>
+      <div class="col-md-12 welcome-bar">
+        <h1>Welcome <%= @player.username.capitalize %></h1>
+        <h3 id="id"><%= @player.id %></h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div id="ath-profile-id" class="hidden"><%= @player.id %></div>
+    <div class="col-md-3 ath-side-bar">
+      <div class=col-md-8>
+        <%= image_tag("players/bball_prof.png", :id => "ath-profile-pic") %>
+      </div>
+      <div class="col-md-8">
+        <% if current_user.id == @player.id %>
+        <%= link_to "Edit Profile", edit_player_path(@player) %>
+        <% end %>
+        <h3><%= @player.name %></h3>
+        <h4><%= @player.school %></h4>
+        <h4><%= @player.grade %></h4>
+        <h4><%= @player.height %></h4>
+        <h4><%= @player.weight %></h4>
+        <h4><%= @player.gpa %></h4>
+      </div>
+    </div>
+    <div class="col-md-9 ath-profile-stats">
+      <h1>stats</h1>
+      <canvas id="ath-profile-stats" width="1000" height="700"></canvas>
+      <%= javascript_include_tag "charts/stats.js" %>
+    </div>
+  </div>
+</div>

@@ -3,31 +3,32 @@
   <head>
     <title>YouthSports</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId            : <%= ENV['FACEBOOK_APP_ID'] %>,
-          autoLogAppEvents : true,
-          xfbml            : true,
-          version          : 'v2.10'
-        });
-        FB.AppEvents.logPageView();
-      };
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-light">
+  <a class="navbar-brand navbar-text" href="/">RecruiteMe</a>
+  <% if current_user.nil? %>
+    <%= render partial: "layouts/unregistered_navbar" %>
+  <% else %>
+    <%= render partial: "layouts/logged_in_navbar" %>
+  <% end %>
+</nav>
 
-      (function(d, s, id){
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      </script>
+
+
+
+
+    <div class="container">
+      <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>">
+        <%= value %>
+      </div>
+      <% end %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= yield %>
   </body>
 </html>

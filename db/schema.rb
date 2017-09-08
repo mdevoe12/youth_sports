@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901022605) do
+ActiveRecord::Schema.define(version: 20170907181255) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "admin_profiles", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "admin_id"
-    t.index ["admin_id"], name: "index_admin_profiles_on_admin_id"
-  end
 
   create_table "coach_profiles", force: :cascade do |t|
     t.string "institution"
@@ -30,6 +23,61 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.datetime "updated_at", null: false
     t.bigint "coach_id"
     t.index ["coach_id"], name: "index_coach_profiles_on_coach_id"
+  end
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer "author_id"
+    t.integer "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
+    t.index ["author_id"], name: "index_conversations_on_author_id"
+    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
+  end
+
+  create_table "facilities", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "favorite_players", force: :cascade do |t|
+    t.string "screen_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "player_id"
+    t.index ["player_id"], name: "index_favorite_players_on_player_id"
+  end
+
+  create_table "game_teams", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_game_teams_on_game_id"
+    t.index ["team_id"], name: "index_game_teams_on_team_id"
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "facility_id"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.datetime "date"
+    t.index ["facility_id"], name: "index_games_on_facility_id"
+  end
+
+  create_table "personal_messages", force: :cascade do |t|
+    t.text "body"
+    t.bigint "conversation_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_personal_messages_on_user_id"
   end
 
   create_table "player_profiles", force: :cascade do |t|
@@ -45,23 +93,26 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.index ["player_id"], name: "index_player_profiles_on_player_id"
   end
 
-
-  create_table "prospects", force: :cascade do |t|
-    t.bigint "recruiter_profile_id"
-    t.bigint "player_profile_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
-    t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
-  end
-  
   create_table "player_stats", force: :cascade do |t|
     t.integer "points"
     t.integer "fouls"
     t.bigint "player_profile_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "game_id"
+    t.index ["game_id"], name: "index_player_stats_on_game_id"
     t.index ["player_profile_id"], name: "index_player_stats_on_player_profile_id"
+  end
+
+  create_table "prospects", force: :cascade do |t|
+    t.bigint "recruiter_profile_id"
+    t.bigint "player_profile_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
+    t.string "token"
+    t.index ["player_profile_id"], name: "index_prospects_on_player_profile_id"
+    t.index ["recruiter_profile_id"], name: "index_prospects_on_recruiter_profile_id"
   end
 
   create_table "recruiter_profiles", force: :cascade do |t|
@@ -119,14 +170,25 @@ ActiveRecord::Schema.define(version: 20170901022605) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "password_digest"
+    t.string "provider"
+    t.string "uid"
+    t.string "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string "secret"
   end
 
-  add_foreign_key "admin_profiles", "users", column: "admin_id"
   add_foreign_key "coach_profiles", "users", column: "coach_id"
+  add_foreign_key "favorite_players", "users", column: "player_id"
+  add_foreign_key "game_teams", "games"
+  add_foreign_key "game_teams", "teams"
+  add_foreign_key "games", "facilities"
+  add_foreign_key "personal_messages", "conversations"
+  add_foreign_key "personal_messages", "users"
   add_foreign_key "player_profiles", "users", column: "player_id"
+  add_foreign_key "player_stats", "games"
+  add_foreign_key "player_stats", "player_profiles"
   add_foreign_key "prospects", "player_profiles"
   add_foreign_key "prospects", "recruiter_profiles"
-  add_foreign_key "player_stats", "player_profiles"
   add_foreign_key "recruiter_profiles", "users", column: "recruiter_id"
   add_foreign_key "team_coaches", "teams"
   add_foreign_key "team_coaches", "users", column: "coach_id"
