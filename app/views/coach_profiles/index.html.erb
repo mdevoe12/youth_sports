@@ -1,8 +1,6 @@
-<div class="white">
 <h1>All Coaches</h1>
 
 <ul>
 <% @coach_profiles.each do |profile| %>
   <li><%= link_to profile.coach.first_name, coach_profile_path(profile.coach) %></li>
 <% end %>
-</div>
