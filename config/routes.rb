@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   get '/auth/twitter/callback', to: 'sessions#create'
   get '/auth/twitter', as: :twitter_login
-  get '/favorite_player', to: 'favorite_player#create'
+  resources :favorite_players, only: [:create, :new]
 
   namespace :users do
     get '/:id/messages', to: 'conversations#index'
@@ -28,9 +28,8 @@ Rails.application.routes.draw do
   resources :players, only: [:new, :create, :update]
   resources :player_profiles, only: [:new, :create, :show]
   resources :coach_profiles, only: [:show]
-  # resources :sessions, only: [:create, :destroy]
   resources :personal_messages, only: [:new, :create]
-  resources :conversations, only: [:new, :index, :show]
+  resources :conversations, only: [:index, :show]
   resources :athletes, as: :players, :controller => :players, only: [:show, :edit]
   resources :recruiters, only: [:new, :create, :update]
   resources :recruiter_profiles, only: [:new, :create, :show]

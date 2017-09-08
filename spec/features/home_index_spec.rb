@@ -13,10 +13,4 @@ describe "#home index" do
     expect(page).to have_link("Sign Up as a Recruiter")
     expect(page).to have_link("Login")
   end
-
-  xit "can see buttons to log in with Oauth" do
-    visit "/"
-    expect(page).to have_link("Sign up with Facebook")
-    expect(page).to have_content("Sign up with Google")
-  end
 end

@@ -12,28 +12,22 @@
   </head>
   <body>
     <h1><%= @player.name %></h1>
-    <div>
-      <h3>Upcoming Games</h3>
-      <ul class="upcoming">
-        <% unless @player.teams.count == 0 %>
-          <% @player.upcoming.each do |game| %>
+    <% unless @player.teams.count == 0 %>
+      <div>
+        <h3>Upcoming Games</h3>
+        <ul class="upcoming">
+          <% @player.upcoming.map do |game| %>
             <li class="game">
-              <button id="facility_name" type="button">
-                <%= game.facility_name %>
-              </button>
+              <%= game.when %> VS: <%= game.vs(@player) %>
             </li>
           <% end %>
-        <% end %>
-      </ul>
-    </div>
-    <div class="container">
-      <div class="game_info">
-        Sun, 5 October 2017, 7:30 pm VS: Vikings
+        </ul>
       </div>
+    <% end %>
+    <div class="container">
       <div id="map"></div>
     </div>
-    <script src="../../../mapScript.js">
-    </script>
+    <script src="../../mapScript.js"></script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?callback=initMap">
     </script>

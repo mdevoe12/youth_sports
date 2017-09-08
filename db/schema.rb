@@ -44,6 +44,14 @@ ActiveRecord::Schema.define(version: 20170907181255) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "favorite_players", force: :cascade do |t|
+    t.string "screen_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "player_id"
+    t.index ["player_id"], name: "index_favorite_players_on_player_id"
+  end
+
   create_table "game_teams", force: :cascade do |t|
     t.bigint "game_id"
     t.bigint "team_id"
@@ -170,6 +178,7 @@ ActiveRecord::Schema.define(version: 20170907181255) do
   end
 
   add_foreign_key "coach_profiles", "users", column: "coach_id"
+  add_foreign_key "favorite_players", "users", column: "player_id"
   add_foreign_key "game_teams", "games"
   add_foreign_key "game_teams", "teams"
   add_foreign_key "games", "facilities"
