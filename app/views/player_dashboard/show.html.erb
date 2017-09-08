@@ -1,7 +1,11 @@
 <h1>Hello <%= current_user.username %></h1>
 <h2><%= link_to "Create/update your favorite player", new_favorite_player_path %></h2>
-<%= current_user.favorite_player.screen_name %>
-<%= current_user.favorite_player %>
-<%# current_user.favorite_player.tweets.each do |tweet| %>
-<%#= tweet %>
-<%# end %>
+<h3>Favorite Player:</h3>
+<% if current_user.favorite_player.nil? %>
+  <%= "No favorite player selected" %>
+<% else %>
+  <li><%= current_user.favorite_player.screen_name %></li>
+  <li><% @tweets.each do |tweet| %></li>
+    <li><%= tweet.text %></li>
+  <li><% end %></li>
+<% end %>
