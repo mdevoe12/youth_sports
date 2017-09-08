@@ -1,4 +1,102 @@
 
-
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
+
+ .stats-title {
+   color: rgb(0,86,90);
+   text-align: center;
+ }
+
+ .stats-title h1 {
+   margin-left: 60px;
+   text-decoration: underline;
+ }
+.start-rec {
+  border: 2px solid rgb(0,86,90)
+}
+.profile-body {
+  font-family: 'Libre Baskerville', serif;
+}
+
+.upcoming-games {
+  padding: 20px;
+  background-image: url(image_path('players/cork.png'));
+  background-size: 100% 400px;
+  height: 400px;
+  color: white;
+  border: 2px solid rgb(0,86,90)
+}
+
+.upcoming-games h3 {
+  margin-left: 10px;
+}
+
+.prf-sum h4 {
+  text-align: center;
+}
+
+.prf-sum h3{
+  font-size: 100% 100vh;
+  text-align: justify;
+}
+
+.recruitment-btn{
+  margin-top: 60px;
+  margin-left: 100px;
+}
+
+.edit-btn{
+  padding-left: 100px;
+  font-size: 1em;
+  font-size-adjust: none;
+}
+
+.body-stripe-right{
+  text-align: right;
+  height: 1300px;
+  width: 40px;
+  color: rgb(139,208,201);
+  background-color: rgb(139,208,201);
+  position: absolute;
+  right:0;
+  top:0;
+  margin-top: 81px;
+  border-left: 1px solid black;
+}
+
+.body-stripe-left{
+  text-align: right;
+  height: 1300px;
+  width: 40px;
+  color: rgb(139,208,201);
+  background-color: rgb(139,208,201);
+  position: absolute;
+  top:0;
+  margin-top: 81px;
+  border-right: 1px solid black; 
+}
+.team-name {
+  color: rgb(0,86,90);
+}
+
+.player-name h3 {
+  padding-left: 20px
+}
+
+#ath-team-logo {
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+}
+
+#ath-profile-pic{
+  border: 2px solid black;
+}
+
+.list-board {
+  background-color: #2F4F4F;
+  padding: 5px;
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
