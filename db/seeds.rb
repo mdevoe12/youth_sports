@@ -9,12 +9,12 @@ Role.create(name: "Coach")
 Role.create(name: "Recruiter")
 Role.create(name: "Admin")
 
-admin = Admin.create(first_name: "Josh",
-last_name: "Dao",
-username: "admin@admin.com",
-password_digest: "password")
+# admin = Admin.create(first_name: "Josh",
+# last_name: "Dao",
+# username: "admin@admin.com",
+# password_digest: "password")
 
-admin.roles << Role.find_by(name: "Admin")
+# admin.roles << Role.find_by(name: "Admin")
 
 Facility.create(
   :name => "Coors field",
