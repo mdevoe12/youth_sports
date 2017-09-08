@@ -7,7 +7,6 @@
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <%= link_to "Sign Up as an Athlete", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/players/new", :class => 'dropdown-item' %>
         <%= link_to "Sign Up as a Recruiter", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/recruiters/new", :class => 'dropdown-item' %>
-        <%= link_to "Login with Twitter", "/auth/twitter", :class => 'dropdown-item' %>
         <%= link_to "Login", login_path, :class => 'dropdown-item' %>
       </div>
     </div>
