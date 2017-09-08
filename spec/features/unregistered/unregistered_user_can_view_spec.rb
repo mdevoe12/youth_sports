@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.feature "unregistered user" do
   scenario "click login and see login page" do
     visit root_path
-
-    click_on "Login"
-
+    within('.dropdown-menu') do
+      click_link("Login")
+    end
     expect(page).to have_content("Username")
     expect(page).to have_content("Password")
   end
