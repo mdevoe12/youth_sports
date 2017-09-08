@@ -7,8 +7,8 @@ class PlayerStatsService
   end
 
   def stats_chart_data
-    points = @player_stats.map{|stat| stat.points}
-    fouls = @player_stats.map{|stat| stat.fouls}
+    points = @player_stats.map{|stat| stat.points}.reverse!
+    fouls = @player_stats.map{|stat| stat.fouls}.reverse!
     name = @player.name
     @json_return[:name] = name
     @json_return[:points] = Hash[(1..@player_stats.size).zip points]
