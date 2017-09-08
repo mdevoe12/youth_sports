@@ -15,7 +15,7 @@ RSpec.feature "registered player views their own dash" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@player)
     end
     it "matches their last 10 games stats" do
-      visit("/athletes/#{@player.id}")
+      visit("/player_profiles/#{@player.profile.id}")
       expect(page).to have_css("canvas#ath-profile-stats")
     end
   end
