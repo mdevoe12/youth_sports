@@ -12,8 +12,8 @@ RSpec.feature 'player visits their own page' do
     it 'and can edit their info successfully' do
       visit("/player_profiles/#{@player.profile.id}")
       expect(page).to have_content("105lbs")
-      expect(page).to have_link("Edit")
-      click_link("Edit")
+      expect(page).to have_link("Edit Profile")
+      click_link("Edit Profile")
       fill_in "player_profile_weight", with: "200lbs"
       click_on("Update Profile")
       expect(current_path).to eq("/player_profiles/#{@player.profile.id}")
@@ -22,7 +22,7 @@ RSpec.feature 'player visits their own page' do
     end
     it 'but cannot edit another players info' do
       visit("/player_profiles/#{@player2.profile.id}")
-      expect(page).to_not have_content("Edit")
+      expect(page).to_not have_content("Edit Profile")
       visit("/players/#{@player2.id}/edit")
       expect(page).to have_content("404")
     end

@@ -9,96 +9,75 @@
     </style>
   </head>
 
-<<<<<<< HEAD
-<div class="body-stripe-left"><p>.</p></div>
-<div class="container profile-body">
-  <div class="body-stripe-right"><p>.</p></div>
-=======
 <div class="container">
   <div class="white">
->>>>>>> 2a622cc021b0e8c339068e5d3ecf561cee60c71e
   <div class="row">
     <% if @player.id == current_user.id %>
       <div class="col-md-12 welcome-bar">
         <h1>Welcome <%= @player.username.capitalize %></h1>
-        <h3 id="id" class="hidden"><%= @player.id %></h3>
+        <h3 id="id"><%= @player.id %></h3>
       </div>
     <% end %>
   </div>
   <div class="row">
     <div id="ath-profile-id" class="hidden"><%= @player.id %></div>
-    <div class="col-md-4">
+    <div class="col-md-3 ath-side-bar">
       <div class="row">
         <div class=col-md-8>
           <%= image_tag("players/bball_prof.png", :id => "ath-profile-pic") %>
         </div>
       </div>
       <div class="row">
-        <div class="row">
-          <div class="col-md-12 player-name">
-            <h3><%= @player.name %></h3>
-            </br>
-          </div>
-        </div>
-        <div class="col-md-4 team-name">
-          <h5><%= @player.team.name %></h5>
-          <%= image_tag("players/team_logo.png", :id => "ath-team-logo") %>
-          </div>
-        <div class="col-md-8 prf-sum">
+        <div class="col-md-8">
+          <% if current_user.id == @player.id %>
+          <%= link_to "Edit Profile", edit_player_path(@player) %>
+          <% end %>
+          <h3><%= @player.name %></h3>
           <h4><%= @player.school %></h4>
           <h4><%= @player.grade %></h4>
           <h4><%= @player.height %></h4>
           <h4><%= @player.weight %></h4>
           <h4><%= @player.gpa %></h4>
-          <% if current_user.id == @player.id %>
-          <%= link_to "Edit", edit_player_path(@player), :class => "btn edit-btn"%>
-          <% end %>
         </div>
       </div>
       <div class='row'>
         <% unless @player.teams.count == 0 %>
-        <div class="upcoming-games">
+        <div>
           <h3>Upcoming Games</h3>
-          <div class="row">
-            <div class="col-md-1"> </div>
-            <div class="col-md-10">
-              <div class="list-board">
-                <ul class="upcoming">
-                  <% @player.upcoming.map do |game| %>
-                  <li class="game">
-                    <%= game.when %> VS: <%= game.vs(@player) %>
-                  </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-1"> </div>
-          </div>
+          <ul class="upcoming">
+            <% @player.upcoming.map do |game| %>
+            <li class="game">
+              <%= game.when %> VS: <%= game.vs(@player) %>
+            </li>
+            <% end %>
+          </ul>
         </div>
         <% end %>
       </div>
-      <div class='row upcoming-row'>
-        <h3>Upcoming Games</h3>
-      </div>
     </div>
-    <div class="col-md-8 ath-profile-stats">
-      <div class="stats-bar"><p>something</p></div>
-      <div class="recruitment-btn">
-        <% if flash[:notice] %>
-        <div class="notice"><%= flash[:notice] %></div>
-        <% end %>
-        <%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %>
-      </div>
+    <div class="col-md-9 ath-profile-stats">
       <div class="row">
-        <div class="col-md-12 stats-title">
-          <h1><%= @player.first_name.upcase %>'s STATS</h1>
+        <div class="col-md-12">
+          <h1>stats</h1>
           <canvas id="ath-profile-stats" width="1000" height="700"></canvas>
           <%= javascript_include_tag "charts/stats.js" %>
         </div>
       </div>
     </hr><br>
-      <div class="stats-row">
-        <p>something</p>
+      <div class='row'>
+        <div class="col-md-12">
+          <div class="container">
+            <div id="map"></div>
+          </div>
+          <script src="../../mapScript.js"></script>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?callback=initMap">
+          </script>
+          <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+          <% end %>
+          <%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post %>
+        </div>
       </div>
     </div>
   </hr>
