@@ -1,5 +1,4 @@
 class RecruiterProfilesController < ApplicationController
-
   before_action :player_check
 
   def new
@@ -8,7 +7,6 @@ class RecruiterProfilesController < ApplicationController
   end
 
   def create
-    require "pry"; binding.pry
     @recruiter_profile = RecruiterProfile.create(recruiter_params)
     if @recruiter_profile.save
       redirect_to dashboard_index_path(current_user)
@@ -37,7 +35,6 @@ class RecruiterProfilesController < ApplicationController
 
   def player_check
     render file: 'public/404.html', layout: true, status: 404 if current_user.type == "Player"
-
   end
 
 end

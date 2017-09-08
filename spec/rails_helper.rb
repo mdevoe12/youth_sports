@@ -69,4 +69,15 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   config.filter_gems_from_backtrace("rack-2.0.3", "railties-5.1.3", "rack-test-0.6.3")
+
+  # config.include IntegrationSpecHelper, type: :feature
+
 end
+
+
+# OmniAuth.config.test_mode = true
+
+# OmniAuth.config.add_mock(:facebook, {
+#   uid: '12345',
+#   provider: 'facebook'
+#   })
