@@ -10,14 +10,15 @@ Role.create(name: "Recruiter")
 Role.create(name: "Admin")
 
 
-# admin = Admin.create(first_name: "Josh",
-# last_name: "Dao",
-# username: "admin@admin.com",
-# password_digest: "password")
+admin = Admin.create(first_name: "Josh",
+last_name: "Dao",
+username: "admin@admin.com",
+password: "password")
 
-
-
-# admin.roles << Role.find_by(name: "Admin")
+recr = Recruiter.create(first_name: "Recr",
+                         last_name: "uiter",
+                         username: "recruiter",
+                         password: "password")
 
 Facility.create(
   :name => "Coors field",
