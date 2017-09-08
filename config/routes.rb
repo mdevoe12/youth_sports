@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   post '/receive_text', to: 'twilio#update'
 
   resources :players, only: [:new, :create, :update]
-  resources :player_profiles, only: [:new, :create, :show]
+  resources :player_profiles, only: [:new, :create, :show, :index]
   resources :coach_profiles, only: [:show]
   resources :personal_messages, only: [:new, :create]
   resources :conversations, only: [:index, :show]
