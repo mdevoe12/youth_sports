@@ -21,6 +21,10 @@ class PlayerProfilesController < ApplicationController
     end
   end
 
+  def index
+    @player_profiles = PlayerProfile.all
+  end
+
   private
 
   def profile_params

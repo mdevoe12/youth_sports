@@ -9,12 +9,15 @@ Role.create(name: "Coach")
 Role.create(name: "Recruiter")
 Role.create(name: "Admin")
 
-admin = Admin.create(first_name: "Josh",
-last_name: "Dao",
-username: "admin@admin.com",
-password: "password")
 
-admin.roles << Role.find_by(name: "Admin")
+# admin = Admin.create(first_name: "Josh",
+# last_name: "Dao",
+# username: "admin@admin.com",
+# password_digest: "password")
+
+
+
+# admin.roles << Role.find_by(name: "Admin")
 
 Facility.create(
   :name => "Coors field",
@@ -142,6 +145,7 @@ game_count = 1
   :status => rand(0..1),
   :date => Time.now
   )
+
 
   2.times do GameTeam.create(
   :game_id => game.id,

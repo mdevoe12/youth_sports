@@ -7,29 +7,18 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container">
-        <div class="navbar-header">
-        </div>
-        <div id="navbar">
-          <ul class="nav navbar-nav">
-            <div>
-              <ul>
-                <% if current_user == nil %>
-                  <li><%= link_to "Sign Up as an Athlete", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/players/new" %></li>
-                  <li><%= link_to "Sign Up as a Recruiter", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/recruiters/new" %></li>
-                  <li><%= link_to "Login", login_path %></li>
-                <% else %>
-                  <li><%= link_to "Logout", logout_path %></li>
-                  <li><%= link_to 'Messages', conversations_path %></li>
-                <% end %>
-              </ul>
-            </div>
-            <li><a href="/auth/twitter">Login with Twitter</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    <nav class="navbar navbar-expand-lg navbar-inverse bg-light">
+  <a class="navbar-brand navbar-text" href="/">RecruiteMe</a>
+  <% if current_user.nil? %>
+    <%= render partial: "layouts/unregistered_navbar" %>
+  <% else %>
+    <%= render partial: "layouts/logged_in_navbar" %>
+  <% end %>
+</nav>
+
+
+
+
 
     <div class="container">
       <% flash.each do |key, value| %>
