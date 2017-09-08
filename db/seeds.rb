@@ -143,10 +143,12 @@ game_count = 1
   :date => Time.now
   )
 
-  GameTeam.create(
-  :game_id => game.id,
-  :team_id => Team.pluck(:id).sample
-  )
+  2.times do
+    GameTeam.create(
+    :game_id => game.id,
+    :team_id => Team.pluck(:id).sample
+    )
+  end
 
   puts "creating game #{game_count}"
   game_count += 1
