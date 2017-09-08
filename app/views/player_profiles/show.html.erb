@@ -15,10 +15,12 @@
     <div>
       <h3>Upcoming Games</h3>
       <ul class="upcoming">
-        <% @player.upcoming.map do |game| %>
-          <li class="game">
-            <%= game.when %> VS: <%= game.vs(@player) %>
-          </li>
+        <% if current_user.team != nil %>
+          <% @player.upcoming.map do |game| %>
+            <li class="game">
+              <%= game.when %> VS: <%= game.vs(@player) %>
+            </li>
+          <% end %>
         <% end %>
       </ul>
     </div>

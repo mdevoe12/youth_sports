@@ -27,5 +27,4 @@ class PlayerProfilesController < ApplicationController
     params.require(:player_profile).permit(:school, :height, :weight, :grade_level,
     :gpa, :guardian_phone, :player_id)
   end
-
 end
