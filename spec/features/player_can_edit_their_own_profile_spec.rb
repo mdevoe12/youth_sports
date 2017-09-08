@@ -23,7 +23,7 @@ RSpec.feature 'player visits their own page' do
     it 'but cannot edit another players info' do
       visit("/player_profiles/#{@player2.profile.id}")
       expect(page).to_not have_content("Edit Profile")
-      visit("/athletes/#{@player2.id}/edit")
+      visit("/players/#{@player2.id}/edit")
       expect(page).to have_content("404")
     end
   end
