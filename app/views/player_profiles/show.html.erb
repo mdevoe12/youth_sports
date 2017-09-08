@@ -15,7 +15,7 @@
     <% unless @player.teams.count == 0 %>
       <div>
         <h3>Upcoming Games</h3>
-        <ul class="upcoming">
+        <ul id="upcoming">
           <% @player.upcoming.map do |game| %>
             <li class="game">
               <%= game.when %> VS: <%= game.vs(@player) %>
@@ -26,11 +26,9 @@
     <% end %>
     <div class="container">
       <div id="map"></div>
+      
+      <%= javascript_include_tag "mapScript.js" %>
     </div>
-    <script src="../../mapScript.js"></script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?callback=initMap">
-    </script>
     <% if flash[:notice] %>
       <div class="notice"><%= flash[:notice] %></div>
     <% end %>
