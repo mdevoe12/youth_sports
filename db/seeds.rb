@@ -9,12 +9,15 @@ Role.create(name: "Coach")
 Role.create(name: "Recruiter")
 Role.create(name: "Admin")
 
-admin = Admin.create(first_name: "Josh",
-last_name: "Dao",
-username: "admin@admin.com",
-password_digest: "password")
 
-admin.roles << Role.find_by(name: "Admin")
+# admin = Admin.create(first_name: "Josh",
+# last_name: "Dao",
+# username: "admin@admin.com",
+# password_digest: "password")
+
+
+
+# admin.roles << Role.find_by(name: "Admin")
 
 Facility.create(
   :name => "Coors field",
@@ -143,10 +146,12 @@ game_count = 1
   :date => Time.now
   )
 
-  GameTeam.create(
+
+  2.times do GameTeam.create(
   :game_id => game.id,
   :team_id => Team.pluck(:id).sample
   )
+  end
 
   puts "creating game #{game_count}"
   game_count += 1
@@ -175,12 +180,13 @@ player_count = 1
     :player_id => player.id
   )
 
-  PlayerStat.create(
+  9.times do PlayerStat.create(
     :points => rand(1..30),
     :fouls => rand(0..5),
     :player_profile_id => player_profile.id,
     :game_id => rand(0..400)
   )
+  end
 
   TeamPlayer.create(
     :team_id => Team.pluck(:id).sample,

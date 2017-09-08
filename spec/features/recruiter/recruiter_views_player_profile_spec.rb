@@ -34,20 +34,11 @@ RSpec.describe 'A logged in recruiter clicks on a player name' do
       expect(page).to have_content('Morty Smith')
       expect(page).to have_css('div#map')
       expect(upcoming.count).to eq(3)
-      within(first('.upcoming')) do
-        expect(page).to have_css('#when')
-        expect(page).to have_css('#vs')
-      end
-      # games should be sorted by date
-    end
-  end
 
-  scenario 'and clicks on an upcoming game' do
-    VCR.use_cassette('features/recruit_view', record: :new_episodes) do
-      # when I click on an upcoming game
-      # I should see an updated map
-      # with a pin at the right location
-      # and game info displayed above the map
+      within(first('.game')) do
+        expect(page).to have_content(game2.when)
+        expect(page).to have_content(game2.vs(player1))
+      end
     end
   end
 end

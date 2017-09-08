@@ -8,6 +8,7 @@
     <% end %>
   </div>
   <div class="row">
+    <div id="ath-profile-id" class="hidden"><%= @player.id %></div>
     <div class="col-md-3 ath-side-bar">
       <div class=col-md-8>
         <%= image_tag("players/bball_prof.png", :id => "ath-profile-pic") %>
@@ -27,6 +28,7 @@
     <div class="col-md-9 ath-profile-stats">
       <h1>stats</h1>
       <canvas id="ath-profile-stats" width="1000" height="700"></canvas>
+      <%= javascript_include_tag "charts/stats.js" %>
     </div>
   </div>
 </div>

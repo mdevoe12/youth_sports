@@ -22,6 +22,10 @@ class RecruiterProfilesController < ApplicationController
     end
   end
 
+  def index
+    @recruiter_profiles = RecruiterProfile.all
+  end
+
 
   private
 

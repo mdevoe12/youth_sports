@@ -1,9 +1,10 @@
-
+var id = $("#ath-profile-id").text()
+console.log(id)
 $.ajax({
   url: "/api/v1/players/stats",
   method: 'GET',
   data: {
-    id: 800,
+    id: id,
     games: 10
   }
 }).done(function(post){
@@ -11,7 +12,6 @@ $.ajax({
   var points = Object.values(post.points);
   var fouls = Object.values(post.fouls);
   var games = [1,2,3,4,5,6,7,8,9,10]
-  debugger
   // Chart.defaults.global.defaultFontColor = 'black';
   // Chart.defaults.global.defaultFontSize = 16;
 
