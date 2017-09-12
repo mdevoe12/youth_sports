@@ -21,6 +21,14 @@ class User < ApplicationRecord
     end
   end
 
+  def self.create_with_omniauth(auth)
+    user = find_or_create_by(uid: auth['uid'], provider:  auth['provider'])
+    user.password = auth['uid']
+    user.username = auth['info']['name']
+    user.save
+    user
+  end
+
   def self.types
     %w(Coach Player Recruiter Admin)
   end

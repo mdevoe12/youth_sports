@@ -7,6 +7,24 @@
   </head>
 
   <body>
+    <script>
+    window.fbAsyncInit = function() {
+          FB.init({
+            appId: '#{ENV['FACEBOOK_KEY']}',
+            version: 'v2.6',
+            cookie: true // IMPORTANT must enable cookies to allow the server to access the session
+          });
+          console.log("fb init");
+        };
+        (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "//connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+    </script>
+
     <nav class="navbar navbar-expand-lg navbar-inverse bg-light">
       <a class="navbar-brand navbar-text" href="/">RecruiteMe</a>
       <% if current_user.nil? %>
