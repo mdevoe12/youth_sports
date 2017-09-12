@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   private
 
   def authorize!
-    render file: 'public/404.html', layout: true, status: 404 if current_user.nil?
+    # render file: 'public/404.html', layout: true, status: 404 if current_user.nil?
   end
 
 end
