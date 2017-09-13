@@ -4,12 +4,6 @@ DatabaseCleaner.clean_with(:truncation)
 
 start = Time.now
 
-Role.create(name: "Player")
-Role.create(name: "Coach")
-Role.create(name: "Recruiter")
-Role.create(name: "Admin")
-
-
 admin = Admin.create(first_name: "Josh",
 last_name: "Dao",
 username: "admin@admin.com",
