@@ -67,5 +67,6 @@ RSpec.describe 'Registered recruiter logs in' do
     expect(page).to_not have_link("Jerry Smith")
     expect(page).to have_link("Morty Smith")
     expect(to_recruit.count).to eq(3)
+    expect(page).to have_css(img)
   end
 end
