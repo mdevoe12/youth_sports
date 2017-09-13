@@ -15,9 +15,10 @@ RSpec.describe "User clicks the Log In button in the navbar" do
       click_on("Log In")
 
       # And I click "Log In With Facebook"
-      click_button("Log In With Facebook")
+      click_on("Log In With Facebook")
 
       # And I enter my Facebook credentials
+      stub_omniauth
       # And I click "Submit"
       # And I select my type
       # And I enter the captcha
