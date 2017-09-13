@@ -23,10 +23,10 @@
     <h2><%= current_user.prospects.count %> Prospects</h2>
     <table>
       <tr>
-        <th style="width: 150px">Name</th>
-        <th>School</th>
-        <th>Grade Level</th>
-        <th>Recruitment Status</th>
+        <th style="width: 120px">Name</th>
+        <th style="width: 120px">School</th>
+        <th style="width: 120px">Grade Level</th>
+        <th style="width: 120px">Prospect Status</th>
       </tr>
       <% current_user.prospects.each do |prospect| %>
         <tr>
