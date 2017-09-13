@@ -6,9 +6,9 @@ class OauthController < ApplicationController
   end
 
   def create
-    auth = request.env['omniauth.auth']
-    user = User.create_with_twitter(auth) if auth.provider == "twitter"
-    user = User.create_with_facebook(auth) if auth.provider == "facebook"
+    user = User.create_with_oauth(request.env['omniauth.auth'])]
+    redirect_to dashboard_index_path unless user.type.nil?
+    redirect_to select_type_path if user.type.nil?
     session[:user_id] = user.id
     redirect_to dashboard_index_path
   end
