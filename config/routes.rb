@@ -4,10 +4,10 @@ Rails.application.routes.draw do
   patch '/player_profiles/:id', to: 'players#update'
   resources :users, only: [:index]
 
-  get '/auth/facebook/callback', to: 'facebook#create'
+  get '/auth/facebook/callback', to: 'oauth#create'
   get 'auth/failure', to: redirect('/')
 
-  get '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/twitter/callback', to: 'oauth#create'
   get '/auth/twitter', as: :twitter_login
   resources :favorite_players, only: [:create, :new]
 
