@@ -22,9 +22,41 @@ RSpec.feature "recruiter can use navbar links" do
     visit player_profile_path(@profile)
 
     expect(page).to have_content(@player.first_name)
-
     click_on "Athletes"
 
     expect(page).to have_content("All Athletes")
+    visit player_profile_path(@profile)
+
+    click_on "Recruiters"
+    expect(page).to have_content("All Recruiters")
+
+    visit player_profile_path(@profile)
+    click_on "Coaches"
+
+    expect(page).to have_content("All Coaches")
+  end
+
+  scenario "from page they're currently on" do
+    visit root_path
+    click_on "Athletes"
+
+    expect(page).to have_content("All Athletes")
+
+    click_on "Recruiters"
+    expect(page).to have_content("All Recruiters")
+
+    click_on "Coaches"
+
+    expect(page).to have_content("All Coaches")
+  end
+
+  scenario "recruiter can log out" do
+    visit root_path
+
+    expect(page).to have_content("Logout")
+
+    click_on "Logout"
+
+    expect(page).to have_content("Logged out!")
   end
 end
