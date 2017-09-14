@@ -10,10 +10,10 @@
   </div>
   <div class="col-md-8">
     <ul>
-      <li><%= current_user.first_name %></li>
-      <li><%= current_user.profile.institution %></li>
-      <li><%= current_user.profile.email %></li>
-      <li><%= current_user.profile.phone_number %></li>
+      <h3><%= current_user.name %>'s Dashboard</h3>
+      <h5>Representing: <%= current_user.profile.institution %></h5>
+      <h5>Email: <%= current_user.profile.email %></h5>
+      <h5>Phone: <%= current_user.profile.phone_number %></h5>
     </ul>
   </div>
 </div>
@@ -26,7 +26,8 @@
         <th style="width: 120px">Name</th>
         <th style="width: 120px">School</th>
         <th style="width: 120px">Grade Level</th>
-        <th style="width: 120px">Prospect Status</th>
+        <th style="width: 120px">Status</th>
+        <th style="width: 120px">Next Game</th>
       </tr>
       <% current_user.prospects.each do |prospect| %>
         <tr>
@@ -34,6 +35,7 @@
           <td><%= prospect.player_profile.school %></td>
           <td><%= prospect.player_profile.grade_level %></td>
           <td><%= prospect.status %></td>
+          <td><%= prospect.player_profile.player.upcoming.first.when %></td>
         </tr>
       <% end %>
     </table>
