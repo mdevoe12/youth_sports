@@ -1,10 +1,12 @@
-<div class="white">
-<h1>All Athletes</h1>
+<div class="container">
+  <h1 align="center">All Athletes</h1>
 
-<ul>
-  <% @player_profiles.each do |profile| %>
-  <li><%= link_to profile.player.first_name, player_profile_path(profile.id) %></li>
-  <% end %>
+<hr>
+  <div class="row" id="player_profiles">
+      <%= render @player_profiles %>
+  </div>
 
-</ul>
+  <div align="center" id="paginator">
+    <%= paginate @player_profiles, remote: true %>
+  </div>
 </div>
