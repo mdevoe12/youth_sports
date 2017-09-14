@@ -1,0 +1,11 @@
+<hr>
+<div class="container">
+<div class="row">
+  <%= upcoming = @player.upcoming.map { |facility| facility.facility_id } %>
+  <br>
+  <%= @facilities = Facility.where(id: [upcoming] ).map { |facility| facility.name } %>
+  </div>
+</div>
+<br>
+<br>
+<br>
