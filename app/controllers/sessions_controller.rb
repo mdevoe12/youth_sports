@@ -1,28 +1,27 @@
 class SessionsController < ApplicationController
 
-
   skip_before_action :authorize!, only: [:new, :create]
-
 
   def new
   end
 
   def create
     user = User.find_by(username: params[:session][:username])
-    if user && user.authenticate(params[:session][:password])
-      session[:user_id] = user.id
-      redirect_to root_path
-      # if user.type == "Player"
-      #   redirect_to player_profile_path(user.id)
-      # elsif user.type == "Recruiter"
-      #   redirect_to recruiter_profile_path(user.id)
-      # else user.type == "Coach"
-      #   redirect_to coach_profile_path(user.id)
-      # end
-    else
-      flash[:danger] = 'Invalid email/password combination'
-      render :new
-    end
+      if user && user.authenticate(params[:session][:password])
+        session[:user_id] = user.id
+        redirect_to root_path
+        # if user.type == "Player"
+        #   redirect_to player_profile_path(user.id)
+        # elsif user.type == "Recruiter"
+        #   redirect_to recruiter_profile_path(user.id)
+        # else user.type == "Coach"
+        #   redirect_to coach_profile_path(user.id)
+        # end
+      else
+        flash[:danger] = 'Invalid email/password combination'
+        render :new
+      end
+    # end
   end
 
   def destroy

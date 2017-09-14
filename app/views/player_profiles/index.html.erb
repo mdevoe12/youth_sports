@@ -1,6 +1,14 @@
 <div class="white">
+	<% if current_user.favorite_player.nil? %>
+	<h2><%= link_to "Create/update your favorite player", new_favorite_player_path %></h2>
+		<%= "No favorite player selected" %>
+	<% else %>
+		<li><%= current_user.favorite_player.screen_name %></li>
+		<li><% @tweet_info.fav_player_tweets.each do |tweet| %></li>
+			<li><%= tweet.text %></li>
+		<li><% end %></li>
+	<% end %>
 <h1>All Athletes</h1>
-
 <ul>
   <% @player_profiles.each do |profile| %>
   <li><%= link_to profile.player.first_name, player_profile_path(profile.id) %></li>

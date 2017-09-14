@@ -14,6 +14,12 @@ last_name: "Dao",
 username: "admin@admin.com",
 password: "password")
 
+amare_joseph = Player.create(first_name: "Amaere",
+last_name: "Randall",
+username: "p@p.com",
+password: "p")
+
+serena = FavoritePlayer.create(screen_name: "@serenawilliams", created_at: "2017-09-07 17:26:58", updated_at: "2017-09-07 17:26:58", player_id: amare_joseph.id)
 recr = Recruiter.create(first_name: "Recr",
                          last_name: "uiter",
                          username: "recruiter",

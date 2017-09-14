@@ -19,9 +19,14 @@ class PlayerProfilesController < ApplicationController
 
   def index
     @player_profiles = PlayerProfile.all
+    @tweet_info = build_twitter_service
   end
 
   private
+
+  def build_twitter_service
+    @service ||= TwitterService.new(current_user)
+  end
 
   def profile_params
     params.require(:player_profile).permit(:school, :height, :weight, :grade_level,
