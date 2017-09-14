@@ -1,11 +1,12 @@
 <div class="container">
-  <h1 class="center">All Athletes</h1>
+  <h1 align="center">All Athletes</h1>
 
-  <div id="player_profiles">
-  <%= render @player_profiles %>
+<hr>
+  <div class="row" id="player_profiles">
+      <%= render @player_profiles %>
   </div>
 
-    <div id="paginator">
-      <%= paginate @player_profiles, remote: true %>
-    </div>
+  <div align="center" id="paginator">
+    <%= paginate @player_profiles, remote: true %>
+  </div>
 </div>

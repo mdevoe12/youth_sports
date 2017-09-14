@@ -22,7 +22,7 @@ class PlayerProfilesController < ApplicationController
   end
 
   def index
-    @player_profiles = PlayerProfile.page(params[:page]).per(9)
+    @player_profiles = PlayerProfile.page(params[:page]).per(16)
   end
 
   private
