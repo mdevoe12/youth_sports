@@ -1,10 +1,11 @@
-<div class="white">
-<h1>All Athletes</h1>
+<div class="container">
+  <h1 class="center">All Athletes</h1>
 
-<ul>
-  <% @player_profiles.each do |profile| %>
-  <li><%= link_to profile.player.first_name, player_profile_path(profile.id) %></li>
-  <% end %>
+    <% @player_profiles.each do |profile| %>
+    <p><%= link_to profile.player.first_name, player_profile_path(profile.id) %></p>
+    <% end %>
 
-</ul>
+
+  <%= paginate @player_profiles %>
+
 </div>
