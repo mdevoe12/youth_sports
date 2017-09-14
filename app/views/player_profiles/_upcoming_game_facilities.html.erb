@@ -4,7 +4,7 @@
   <div class="col-md-4">
 
   <div id="facilitymap" style="width: 100%; height: 400px"></div>
-  <%= upcoming = @player.upcoming.map { |facility| facility.facility_id } %>
+  <% upcoming = @player.upcoming.map { |facility| facility.facility_id } %>
   <br>
   <% Facility.where(id: [upcoming] ).map do |facility|  %>
   <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["new_google_api"] %>"></script>
