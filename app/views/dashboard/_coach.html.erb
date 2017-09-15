@@ -10,7 +10,7 @@
   </div>
   <div class="col-md-8">
     <ul>
-      <h3><%= current_user.name %>'s Dashboard</h3><br>
+      <h3>Coach <%= current_user.last_name %>'s Dashboard</h3><br>
       <h5>Institution: <%= current_user.profile.institution %></h5>
       <h5>Current Teams: </h5>
       <% current_user.teams.each do |team| %>
@@ -27,22 +27,33 @@
 <div class="container">
   <div class="col-md-12 prf-sum">
     <br>
-    <h3> Your Athletes </h3>
-    <table class="prospect-table">
-      <tr>
-        <th>Name</th>
-        <th>School</th>
-        <th>Team</th>
-        <th>Grade Level</th>
-      </tr>
-      <% current_user.teams.first.players.each do |player| %>
-        <tr>
-          <td><%= link_to player.name, player_profile_path(player.profile)%></td>
-          <td><%= player.profile.school %></td>
-          <td><%= player.profile.player.teams.first.name %></td>
-          <td><%= player.profile.grade_level %></td>
-        </tr>
+    <h3> Your Teams </h3>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#">Teams</a></li>
+        <% current_user.teams.each do |team| %>
+          <li><%= link_to team.name, "##{team.name}", "data-toggle" => "tab" %></li>
+        <% end %>
+    </ul>
+
+        <div class="tab-content">
+          <% current_user.teams.each do |team| %>
+            <% team.players.each do |player| %>
+              <div id="#">
+
+              </div>
+          <table class="prospect-table">
+              <tr>
+                <th>Name</th>
+                <th>Grade Level</th>
+              </tr>
+              <tr>
+                <td><%= link_to player.name, player_profile_path(player.profile)%></td>
+                <td><%= player.profile.grade_level %></td>
+              </tr>
+            <% end %>
+          </table>
       <% end %>
-    </table>
+      </div>
+    </ul>
   </div>
 </div>
