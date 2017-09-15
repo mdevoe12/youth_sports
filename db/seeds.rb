@@ -20,6 +20,16 @@ recr = Recruiter.create(first_name: "Recr",
                          username: "recruiter",
                          password: "password")
 
+cch = Coach.create(first_name: "coachy",
+                     last_name: "coach",
+                      username: "coach",
+                      password: "password")
+
+CoachProfile.create(coach_id: cch.id,
+                    institution: "Notre Dame",
+                    email: "coach@coach.com",
+                    phone_number: "15555555555")
+
 Facility.create(
   :name => "Coors field",
   :address => "2001 Blake St, Denver, CO 80205",
