@@ -1,8 +1,48 @@
-<div class="white">
+<div class="body-stripe-left"><p>.</p></div>
+<div class="container profile-body">
+<div class="body-stripe-right"><p>.</p></div>
 <div class="container">
-  <div class="col-sm-12">
-    <h1><%= "Hello Coach #{current_user.first_name}" %></h1>
-    <h2><%= "Institution: #{current_user.institution}"%></h2>
+<div class="white">
+
+<div class="container">
+  <div class="col-md-4">
+    <img class="profile-pic" src="https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=o6u9Tq%2FiOJm8OxArAcTdAq%2Fy5Lk%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R69hAxU0Rks6bmIpkb-50hKCoTTEHX8RHTuvoTTOCq8J4OcZuH--hlDJmgewUB2LrzwHWW_VtCjKoPteN0lipPtLJHjNVBROlE8gG9JodY6NRUropW_SPj5bCdN3eIVbj24Mq3gaFwsRy8n-g" alt="">
+  </div>
+  <div class="col-md-8">
+    <ul>
+      <h3><%= current_user.name %>'s Dashboard</h3><br>
+      <h5>Institution: <%= current_user.profile.institution %></h5>
+      <h5>Current Teams: </h5>
+      <% current_user.teams.each do |team| %>
+        <ul>
+          <li><%= team.name %></li>
+        </ul>
+      <% end %>
+      <h5>Email: <%= current_user.profile.email %></h5>
+      <h5>Phone: <%= current_user.profile.phone_number %></h5>
+    </ul>
   </div>
 </div>
+
+<div class="container">
+  <div class="col-md-12 prf-sum">
+    <br>
+    <h3> Your Athletes </h3>
+    <table class="prospect-table">
+      <tr>
+        <th>Name</th>
+        <th>School</th>
+        <th>Team</th>
+        <th>Grade Level</th>
+      </tr>
+      <% current_user.teams.first.players.each do |player| %>
+        <tr>
+          <td><%= link_to player.name, player_profile_path(player.profile)%></td>
+          <td><%= player.profile.school %></td>
+          <td><%= player.profile.player.teams.first.name %></td>
+          <td><%= player.profile.grade_level %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
