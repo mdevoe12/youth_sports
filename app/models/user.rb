@@ -12,6 +12,10 @@ class User < ApplicationRecord
 
   self.inheritance_column = :type
 
+  def email_required?
+    false
+  end
+
   def self.create_from_omniauth(params)
     attributes = {
       first_name: params.info.name.split[0],

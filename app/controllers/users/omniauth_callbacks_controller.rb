@@ -11,7 +11,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   private
 
     def create
-      byebug
       auth_params = request.env["omniauth.auth"]
       provider = AuthenticationProvider.where(name: auth_params.provider).first
       authentication = provider.user_authentications.where(uid: auth_params.uid).first
