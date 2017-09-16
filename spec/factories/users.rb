@@ -3,6 +3,7 @@ FactoryGirl.define do
     type nil
     username 'username'
     password 'password'
+    email 'email@email.com'
 
     trait :complete do
       with_profile

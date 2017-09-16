@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception
+  protect_from_forgery prepend: true
   helper_method :current_user
-  before_action :authorize!
+  alias_method :devise_current_user, :current_user
 
   def current_user
     if session[:user_id] != nil
@@ -9,10 +9,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_in_path_for(resource)
+    root_path
+  end
+
   private
 
-  def authorize!
-    render file: 'public/404.html', layout: true, status: 404 if current_user.nil?
-  end
+  # def authorize!
+  #   render file: 'public/404.html', layout: true, status: 404 if current_user.nil?
+  # end
 
 end

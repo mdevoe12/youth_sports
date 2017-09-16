@@ -9,14 +9,13 @@ def stub_facebook
   # omniauth will use when a user tries to authenticate:
   OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
     provider: "facebook",
-    extra: {
-      raw_info: {
+    uid: "12345678",
+    info: {
         name: "Katie Keel",
-        id: "12345678"
-      },
+        email: "katie@keel.com"
     },
     credentials: {
-      token: "12345678",
+      token: "a1b1c1d1"
     }
     })
 end
