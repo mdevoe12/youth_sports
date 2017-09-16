@@ -47,7 +47,6 @@ ActiveRecord::Schema.define(version: 20170907181255) do
   create_table "favorite_players", force: :cascade do |t|
     t.string "screen_name"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.bigint "player_id"
     t.index ["player_id"], name: "index_favorite_players_on_player_id"
   end

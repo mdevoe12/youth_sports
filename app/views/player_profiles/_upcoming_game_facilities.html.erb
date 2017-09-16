@@ -1,37 +1,58 @@
 <hr>
 <div class="container">
-<div class="row">
-  <div class="col-md-4">
+  <div class="row">
+    <div class="col-md-6">
 
-  <div id="facilitymap" style="width: 100%; height: 400px"></div>
-  <% upcoming = @player.upcoming.map { |facility| facility.facility_id } %>
-  <br>
-  <% Facility.where(id: [upcoming] ).map do |facility|  %>
-  <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["new_google_api"] %>"></script>
-    <script>
-      function initialize() {
+      <div id="facilitymap" style="width: 100%; height: 400px" ></div>
 
-        for (var i = 0; i <  <%= upcoming.length %>; i++) {
-          var location = { lat: <%= facility.latitude %>, lng: <%= facility.longitude %> };
-          var map = new google.maps.Map(document.getElementById('facilitymap'), {
-            center: location,
-            zoom:14
-          });
-        }
+      <script src="https://maps.googleapis.com/maps/api/js?key=<%= ENV["new_google_api"] %>"></script>
+        <script>
+          let upcoming = <%= upcoming = @player.upcoming.map { |facility| facility.facility_id } %>
 
-        var marker = new google.maps.Marker({
-          position: location,
-          map: map
-        });
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  <% end %>
+          function initialize() {
+
+              const map = new google.maps.Map(document.getElementById('facilitymap'), {
+                center: {lat: 39.742043, lng: -104.991531},
+                zoom:10
+              });
+
+                $.getJSON(`http://localhost:3000/api/v1/locations?for=${upcoming}`)
+                .done((data)=>{
+                  data.forEach((location) => {
+                  var marker =  new google.maps.Marker({
+                      position: {lat: location.latitude, lng: location.longitude},
+                      map: map,
+                    });
+
+                    var string = <%= raw @player.upcoming.map { |game| game.vs(@player)} %>
+
+                    var infowindow = new google.maps.InfoWindow({
+                      content: location.name + "<br>" + " " + location.address
+                    });
+
+                    google.maps.event.addListener(marker, 'click', function() {
+                        if(!marker.open){
+                            infowindow.open(map,marker);
+                            marker.open = true;
+                        }
+                        else{
+                            infowindow.close();
+                            marker.open = false;
+                        }
+                        google.maps.event.addListener(map, 'click', function() {
+                            infowindow.close();
+                            marker.open = false;
+                        });
+                    });
+                  })
+                })
+              }
+          google.maps.event.addDomListener(window, 'load', initialize);
+        </script>
+    </div>
+  </div>
 </div>
-</div>
 
-
-</div>
 <br>
 <br>
 <br>

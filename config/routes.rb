@@ -39,9 +39,12 @@ Rails.application.routes.draw do
   # internal api
   namespace :api do
     namespace :v1 do
+      get 'locations', to: "locations#index"
       get 'players/stats', to: 'player_stats#show'
       get 'players/points', to: 'player_points#show'
     end
   end
+
+
 
 end
