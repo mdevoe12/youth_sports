@@ -11,7 +11,12 @@
     <%= "No favorite player selected" %>
   <% else %>
     <li><%= current_user.favorite_player.screen_name %></li>
-  <% end %>
+
+
+  <li><% @tweet_info.fav_player_tweets.each do |tweet| %></li>
+            <li><%= tweet.text %></li>
+        <li><% end %></li>
+    <% end %>
 
     <% current_user.teams.each do |team| %>
       <li><%= team.name %></li>

@@ -25,6 +25,19 @@ cch = Coach.create(first_name: "coachy",
                       username: "coach",
                       password: "password")
 
+play = Player.create(first_name: "player",
+                     last_name: "player",
+                      username: "player",
+                      password: "password")
+
+PlayerProfile.create(school: 'Hamilton Middle School',
+                                    height: '4ft10',
+                                    weight: '90',
+                                    grade_level: 6,
+                                    gpa: 4.0,
+                                    guardian_phone: '7202436470',
+                                    player_id: play.id)
+
 CoachProfile.create(coach_id: cch.id,
                     institution: "Notre Dame",
                     email: "coach@coach.com",
@@ -187,7 +200,7 @@ player_count = 1
     :weight => "#{rand(110...250)}",
     :grade_level => rand(1..12),
     :gpa => rand(1.1...4.0).round(2),
-    :guardian_phone => "15555555555",
+    :guardian_phone => "16073426730",
     :player_id => player.id
   )
 
