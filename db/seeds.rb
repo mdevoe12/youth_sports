@@ -30,7 +30,7 @@ play = Player.create(first_name: "player",
                       username: "player",
                       password: "password")
 
-PlayerProfile.create(school: 'Hamilton Middle School',
+play_prof = PlayerProfile.create(school: 'Hamilton Middle School',
                                     height: '4ft10',
                                     weight: '90',
                                     grade_level: 6,
@@ -208,6 +208,15 @@ player_count = 1
     :points => rand(1..30),
     :fouls => rand(0..5),
     :player_profile_id => player_profile.id,
+    :game_id => rand(0..400)
+  )
+  end
+
+  # Below is to create stats for our player login created at top of page
+  9.times do PlayerStat.create(
+    :points => rand(1..30),
+    :fouls => rand(0..5),
+    :player_profile_id => play_prof.id,
     :game_id => rand(0..400)
   )
   end
