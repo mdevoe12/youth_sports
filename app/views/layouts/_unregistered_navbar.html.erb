@@ -25,8 +25,10 @@
           <h4 class="modal-title">Log In</h4>
         </div>
         <div class="modal-body text-center">
-          <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path %>
-          <%= link_to "Login with Twitter", user_twitter_omniauth_authorize_path %>
+          <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path %><br>
+          <%= link_to "Login with Twitter", user_twitter_omniauth_authorize_path %><br>
+          <%= link_to "Sign In", new_user_session_path %><br>
+          <%= link_to "Create Account", new_user_registration_path %><br>
         </div>
         <div class="modal-footer">
           <a href="#" data-dismiss="modal" class="btn">Close</a>

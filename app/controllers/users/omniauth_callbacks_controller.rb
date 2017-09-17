@@ -34,7 +34,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       UserAuthentication.create_from_omniauth(auth_params, user, provider)
 
       session[:user_id] = user.id
-      sign_in_and_redirect(:user, user)
+      sign_in(user)
     end
 
     def create_user_and_authentication_and_sign_in(auth_params, provider)

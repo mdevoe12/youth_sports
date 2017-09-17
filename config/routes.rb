@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
+  resources :type_selection, only: [:new, :create]
+
   namespace :users do
     get '/:id/messages', to: 'conversations#index'
     get '/:id/favorite_player', to: 'favorite_player#create'

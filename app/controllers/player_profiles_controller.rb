@@ -1,7 +1,6 @@
 class PlayerProfilesController < ApplicationController
 
   def new
-    @player_id = params["player_id"]
     @player_profile = PlayerProfile.new
   end
 
@@ -29,6 +28,6 @@ class PlayerProfilesController < ApplicationController
 
   def profile_params
     params.require(:player_profile).permit(:school, :height, :weight, :grade_level,
-    :gpa, :guardian_phone, :player_id)
+    :gpa, :guardian_phone)
   end
 end
