@@ -5,15 +5,15 @@
   <div class="col-md-8">
     <ul>
       <h3>Coach <%= current_user.last_name %>'s Dashboard</h3><br>
-      <h5>Institution: <%= current_user.profile.institution %></h5>
-      <h5>Current Teams: </h5>
+      <p>Institution: <%= current_user.profile.institution %></p>
+      <p>Current Teams: </p>
       <% current_user.teams.each do |team| %>
         <ul>
           <li><%= team.name %></li>
         </ul>
       <% end %>
-      <h5>Email: <%= current_user.profile.email %></h5>
-      <h5>Phone: <%= current_user.profile.phone_number %></h5>
+      <p>Email: <%= current_user.profile.email %></p>
+      <p>Phone: <%= current_user.profile.phone_number %></p>
     </ul>
   </div>
 </div>

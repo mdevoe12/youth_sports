@@ -47,6 +47,7 @@ RSpec.describe 'Registered recruiter logs in' do
     expect(page).to have_content(recruiter.name)
     expect(to_recruit.count).to eq(1)
     expect(page).to have_css(".profile-pic")
+    expect(page).to have_css(".prospect-table")
     expect(page).to_not have_link("Jerry Smith")
     expect(page).to have_link("Morty Smith")
     expect(page).to have_content(player1.school)
