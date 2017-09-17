@@ -4,12 +4,6 @@ DatabaseCleaner.clean_with(:truncation)
 
 start = Time.now
 
-Role.create(name: "Player")
-Role.create(name: "Coach")
-Role.create(name: "Recruiter")
-Role.create(name: "Admin")
-
-
 admin = Admin.create(first_name: "Josh",
 last_name: "Dao",
 username: "admin@admin.com",
@@ -126,7 +120,6 @@ coach_recruiter_count = 1
       :password   => Faker::Internet.password(8)
     )
 
-    coach.roles << Role.find_by(name: "Coach")
 
     CoachProfile.create(
       :institution => Faker::GameOfThrones.house,
@@ -147,7 +140,6 @@ coach_recruiter_count = 1
       :password   => Faker::Internet.password(8)
       )
 
-    recruiter.roles << Role.find_by(name: "Recruiter")
 
     recruiter_profile = RecruiterProfile.create(
       :institution => Faker::GameOfThrones.house,
@@ -192,7 +184,6 @@ player_count = 1
   )
 
   favorite_player = FavoritePlayer.create(screen_name: "@KingJames", player_id: player.id)
-  player.roles << Role.find_by(name: "Player")
 
   player_profile = PlayerProfile.create(
     :school => Faker::HarryPotter.house,
