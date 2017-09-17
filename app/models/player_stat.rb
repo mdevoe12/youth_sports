@@ -26,6 +26,15 @@ class PlayerStat < ApplicationRecord
     find_player_for_stats(player).sum(:fouls)
   end
 
+  def self.import(file)
+    CSV.foreach(file.path, headers: true) do |row|
+      PlayerStat.create(player_profile_id: player.['ID'].profile,
+                                  game_id: ['Game_ID'],
+                                   points:  ['Points'],
+                                    fouls:   ['Fouls'])
+    end
+  end
+
   private
 
   def self.find_player_for_stats(player)
