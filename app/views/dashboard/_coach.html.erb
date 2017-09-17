@@ -15,7 +15,11 @@
       <p>Email: <%= current_user.profile.email %></p>
       <p>Phone: <%= current_user.profile.phone_number %></p>
       <br><br><br>
-      <%= button_to "Upload CSV", uploads_path, method: :post, :class => 'btn btn-warning start-rec' %>
+      <h4>Upload CSV for game stats:</h4>
+      <%= form_tag uploads_path, multipart: true do %>
+        <%= file_field_tag :file, :class => 'btn btn-warning start-rec' %>
+        <%= submit_tag "Upload CSV", :class => 'btn btn-warning start-rec' %>
+      <% end %>
     </ul>
   </div>
 </div>

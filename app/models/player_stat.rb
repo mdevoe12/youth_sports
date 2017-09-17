@@ -1,4 +1,5 @@
 class PlayerStat < ApplicationRecord
+  require 'csv'
   belongs_to :player_profile
   belongs_to :game
 
@@ -28,7 +29,8 @@ class PlayerStat < ApplicationRecord
 
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
-      PlayerStat.create(player_profile_id: player.['ID'].profile,
+      binding.pry
+      PlayerStat.create(player_profile_id: player.['ID'].profile.id,
                                   game_id: ['Game_ID'],
                                    points:  ['Points'],
                                     fouls:   ['Fouls'])
