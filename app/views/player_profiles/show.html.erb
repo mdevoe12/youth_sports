@@ -81,8 +81,13 @@
         <% if flash[:notice] %>
         <div class="notice"><%= flash[:notice] %></div>
         <% end %>
-        <%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %>
+        <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %></p>
+
+        <p><%= button_to "In Progress", in_progress_path(player_id: @player.id), class: "btn btn-primary" %></p>
       </div>
+      <div class="in-progress-btn">
+      </div>
+
       <div class="row">
         <div class="col-md-12 stats-title">
           <h1><%= @player.first_name.upcase %>'s STATS</h1>

@@ -31,7 +31,11 @@
           <td><%= prospect.player_profile.school %></td>
           <td><%= prospect.player_profile.player.teams.first.name %></td>
           <td><%= prospect.player_profile.grade_level %></td>
-          <td><%= prospect.status %></td>
+          <% if prospect.status == "in-progress" %>
+          <td><%= link_to prospect.status, update_progress_path(prospect.id), method: :put %></td>
+          <% else %>
+            <td><%= prospect.status %></td>
+          <% end %>
           <td><%= prospect.player_profile.player.upcoming.first.when %></td>
         </tr>
       <% end %>

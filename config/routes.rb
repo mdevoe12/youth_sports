@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
 
+  post '/in_progress/:id', to: 'prospects#create', as: :in_progress
+  put '/in_progress/:id', to: 'prospects#update', as: :update_progress
+
 
   resources :players, only: [:new, :create, :update, :edit]
   resources :player_profiles, only: [:new, :create, :show, :index]
