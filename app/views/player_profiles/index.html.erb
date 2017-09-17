@@ -1,7 +1,47 @@
 <div class="container">
   <h1 align="center">All Athletes</h1>
+  <hr>
 
-<hr>
+<%= search_form_for @search do |f| %>
+
+  <div class="field">
+    <%= f.label :school_cont, "School" %>
+    <%= f.text_field :school_cont %></br>
+
+    <%= f.label :player_last_name_cont, "Last Name" %>
+    <%= f.search_field :player_last_name_cont %></br>
+
+    <%= f.label :player_first_name_cont, "First Name" %>
+    <%= f.search_field :player_first_name_cont %></br>
+
+    <%= f.label :grade_level_cont, "Grade" %>
+    <%= f.text_field :grade_level_cont %></br>
+
+    <%= f.label :gpa_gteq, "GPA between" %>
+    <%= f.text_field :gpa_gteq %>
+    <%= f.label :gpa_lteq, "and" %>
+    <%= f.text_field :gpa_lteq %></br>
+
+    <%= f.label :height_gteq, "Height between" %>
+    <%= f.text_field :height_gteq %>
+    <%= f.label :height_lteq, "and" %>
+    <%= f.text_field :height_lteq %>
+  <%= f.submit "Search", class: "btn btn-primary" %></br>
+</div>
+<% end %>
+
+  <table class="table">
+    <thead>
+      <th style="width: 20%">Name</th>
+      <th style="width: 20%">School</th>
+      <th style="width: 20%">Team</th>
+      <th style="width: 10%">Grade</th>
+      <th style="width: 10%">GPA</th>
+      <th style="width: 10%">Height</th>
+      <th style="width: 10%">Weight</th>
+    </thead>
+  </table>
+
   <div class="row" id="player_profiles">
       <%= render @player_profiles %>
   </div>

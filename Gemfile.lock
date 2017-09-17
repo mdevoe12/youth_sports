@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/activerecord-hackery/ransack.git
+  revision: a916544a5a3b9cdee31bba7c27f419c10f69b852
+  specs:
+    ransack (1.8.3)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.3)
+
+GIT
   remote: https://github.com/kaminari/kaminari
   revision: 6f338aa2d7e3beb92db0cec5568aa8773351bfb8
   specs:
@@ -169,6 +180,8 @@ GEM
       omniauth-oauth (~> 1.1)
       rack
     pg (0.21.0)
+    polyamorous (1.3.1)
+      activerecord (>= 3.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -330,6 +343,7 @@ DEPENDENCIES
   pry
   puma (~> 3.7)
   rails (~> 5.1.3)
+  ransack!
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver

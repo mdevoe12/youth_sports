@@ -22,7 +22,8 @@ class PlayerProfilesController < ApplicationController
   end
 
   def index
-    @player_profiles = PlayerProfile.page(params[:page]).per(16)
+    @search = PlayerProfile.search(params[:q])
+    @player_profiles = @search.result.includes(:player).page(params[:page]).per(16)
   end
 
   private
