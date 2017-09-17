@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   resources :recruiters, only: [:new, :create, :update]
   resources :recruiter_profiles, only: [:new, :create, :show, :index]
   resources :dashboard, only: [:index]
+  resources :uploads, only: [:create]
 
   # internal api
   namespace :api do

@@ -14,6 +14,8 @@
       <% end %>
       <p>Email: <%= current_user.profile.email %></p>
       <p>Phone: <%= current_user.profile.phone_number %></p>
+      <br><br><br>
+      <%= button_to "Upload CSV", uploads_path, method: :post, :class => 'btn btn-warning start-rec' %>
     </ul>
   </div>
 </div>
