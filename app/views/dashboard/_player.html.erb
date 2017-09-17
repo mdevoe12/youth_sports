@@ -5,12 +5,25 @@
   <div class="col-md-8">
     <ul>
       <h3><%= current_user.name %>'s Dashboard</h3><br>
-      <li>School: <%= current_user.profile.school %></li>
-      <li> Grade: <%= current_user.profile.grade_level %></li>
-      <li>   GPA: <%= current_user.profile.gpa %></li>
-      <li>Guardian's Phone: <%= current_user.profile.guardian_phone %></li>
-      <li><%= current_user.profile.height %></li>
-      <li><%= current_user.profile.weight %></li>
+      <p>School: <%= current_user.profile.school %></p>
+      <p> Grade: <%= current_user.profile.grade_level %></p>
+      <p>   GPA: <%= current_user.profile.gpa %></p>
+      <p>Guardian's Phone: <%= current_user.profile.guardian_phone %></p>
+      <br><br>
+      <table class="prospect-table">
+        <tr>
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Total Points</th>
+          <th>Total Fouls</th>
+        </tr>
+        <tr>
+          <td><%= current_user.profile.height %></td>
+          <td><%= current_user.profile.weight %></td>
+          <td><%= PlayerStat.player_total_points(current_user) %></td>
+          <td><%= PlayerStat.player_total_fouls(current_user) %></td>
+        </tr>
+      </table>
     </ul>
   </div>
 </div>

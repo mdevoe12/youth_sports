@@ -54,4 +54,5 @@ class Player < User
       self.team.games.where(status: "upcoming")
     end
   end
+
 end

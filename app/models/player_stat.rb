@@ -16,4 +16,12 @@ class PlayerStat < ApplicationRecord
   def self.create_limit(x)
     x = 10 if x.nil?
   end
+
+  def self.player_total_points(player)
+    PlayerStat.where(player_profile_id: player.profile.id).sum(:points)
+  end
+
+  def self.player_total_fouls(player)
+    PlayerStat.where(player_profile_id: player.profile.id).sum(:fouls)
+  end
 end
