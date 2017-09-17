@@ -18,10 +18,17 @@ class PlayerStat < ApplicationRecord
   end
 
   def self.player_total_points(player)
-    PlayerStat.where(player_profile_id: player.profile.id).sum(:points)
+    find_player_for_stats(player).sum(:points)
+
   end
 
   def self.player_total_fouls(player)
-    PlayerStat.where(player_profile_id: player.profile.id).sum(:fouls)
+    find_player_for_stats(player).sum(:fouls)
+  end
+
+  private
+
+  def self.find_player_for_stats(player)
+    where(player_profile_id: player.profile.id)
   end
 end

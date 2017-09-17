@@ -37,7 +37,6 @@ RSpec.describe 'A logged in player' do
 
     visit '/dashboard'
 
-
     expect(page).to have_content("#{player.name}'s Dashboard")
     expect(page).to have_content(profile.school)
     expect(page).to have_content(profile.height)
