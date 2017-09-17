@@ -17,7 +17,7 @@
       <br><br><br>
       <h4>Upload CSV for game stats:</h4>
       <%= form_tag uploads_path, multipart: true do %>
-        <%= file_field_tag :file, :class => 'btn btn-warning start-rec' %>
+        <%= file_field_tag :file %>
         <%= submit_tag "Upload CSV", :class => 'btn btn-warning start-rec' %>
       <% end %>
     </ul>

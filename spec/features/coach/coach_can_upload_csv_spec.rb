@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "A coach" do
-  scenario "can see upload csv button" do
+  scenario "can see upload csv" do
     coach = Coach.create(  first_name: "Brandon",
                           last_name: "Randall",
                           password: "123")
@@ -14,5 +14,11 @@ RSpec.feature "A coach" do
     visit "/dashboard"
 
     expect(page).to have_button("Upload CSV")
+
+    attach_file(:file, 'spec/features/upload_files/test_csv.csv')
+    click_button "Upload CSV"
+
+    expect(current_path).to eq(dashboard_index_path)
+    expect(page).to have_content("Items imported")
   end
 end
