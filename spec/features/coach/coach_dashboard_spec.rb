@@ -15,11 +15,11 @@ describe "#coach_dashboard_index" do
     visit "/dashboard"
 
     expect(current_path).to eq("/dashboard")
-    expect(page).to have_content("Hello Coach #{coach.first_name}")
+    expect(page).to have_content("Coach #{coach.last_name}")
     expect(page).to have_content("Institution: Eagles")
-
-
-    # expect(page).to have_css(".email")
-    # expect(page).to have_css(".phone_number")
+    expect(page).to have_content("Email: #{profile.email}")
+    expect(page).to have_content("Phone: #{profile.phone_number}")
+    expect(page).to have_content("Your Teams")
+    expect(page).to have_css(".profile-pic")
   end
 end
