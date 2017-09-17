@@ -1,31 +1,44 @@
-<%= "Hello" %>
-
+<div class="container">
+  <div class="col-md-4">
+    <img class="profile-pic" src="https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=o6u9Tq%2FiOJm8OxArAcTdAq%2Fy5Lk%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R69hAxU0Rks6bmIpkb-50hKCoTTEHX8RHTuvoTTOCq8J4OcZuH--hlDJmgewUB2LrzwHWW_VtCjKoPteN0lipPtLJHjNVBROlE8gG9JodY6NRUropW_SPj5bCdN3eIVbj24Mq3gaFwsRy8n-g" alt="">
+  </div>
+  <div class="col-md-8">
+    <ul>
+      <h3><%= current_user.name %>'s Dashboard</h3><br>
+      <p>School: <%= current_user.profile.school %></p>
+      <p> Grade: <%= current_user.profile.grade_level %></p>
+      <p>   GPA: <%= current_user.profile.gpa %></p>
+      <p>Guardian's Phone: <%= current_user.profile.guardian_phone %></p>
+      <br><br>
+      <table class="prospect-table">
+        <tr>
+          <th>Height</th>
+          <th>Weight</th>
+          <th>Total Points</th>
+          <th>Total Fouls</th>
+        </tr>
+        <tr>
+          <td><%= current_user.profile.height %></td>
+          <td><%= current_user.profile.weight %></td>
+          <td><%= PlayerStat.player_total_points(current_user) %></td>
+          <td><%= PlayerStat.player_total_fouls(current_user) %></td>
+        </tr>
+      </table>
+    </ul>
+  </div>
+</div>
 
 <div class="container">
-  <div class="col-sm-12">
-  <h1>  <%= "Hello #{current_user.first_name}" %></h1>
-  <h2><%= link_to "Create/update your favorite player", new_favorite_player_path %></h2>
-
-  <h3>Favorite Player:</h3>
-  <% if current_user.favorite_player.nil? %>
-    <%= "No favorite player selected" %>
-  <% else %>
-    <li><%= current_user.favorite_player.screen_name %></li>
-  <% end %>
-
-    <% current_user.teams.each do |team| %>
-      <li><%= team.name %></li>
+  <div class="col-md-6 prf-sum">
+    <br>
+    <% if current_user.favorite_player.nil? %>
+      <h5><%= link_to "Add your favorite player's screename to see recent tweets", new_favorite_player_path %></h5>
+    <% else %>
+      <h5>Favorite Player: <%= current_user.favorite_player.screen_name %> | <%= link_to "Change your favorite player", new_favorite_player_path %></h5>
+        <% @tweet_info.fav_player_tweets.each do |tweet| %>
+          <li><%= tweet.text %></li>
+          <br>
+        <% end %>
     <% end %>
-
-    <% current_user.coaches.each do |coach| %>
-      <li><%= coach.name %></li>
-    <% end %>
-
-    <li><%= current_user.profile.school %>
-    <%= current_user.profile.height %>
-    <%= current_user.profile.weight %>
-    <%= current_user.profile.grade_level %>
-    <%= current_user.profile.gpa %>
-    <%= current_user.profile.guardian_phone %></li>
   </div>
 </div>
