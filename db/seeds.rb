@@ -212,14 +212,6 @@ player_count = 1
   )
   end
 
-  # Below is to create stats for our player login created at top of page
-  9.times do PlayerStat.create(
-    :points => rand(1..30),
-    :fouls => rand(0..5),
-    :player_profile_id => play_prof.id,
-    :game_id => rand(0..400)
-  )
-  end
 
   TeamPlayer.create(
     :team_id => Team.pluck(:id).sample,
@@ -229,7 +221,14 @@ player_count = 1
   player_count += 1
 end
 
-
+# Below is to create stats for our player login created at top of page
+9.times do PlayerStat.create(
+  :points => rand(1..30),
+  :fouls => rand(0..5),
+  :player_profile_id => play_prof.id,
+  :game_id => rand(0..400)
+)
+end
 
 100.times do
   Prospect.create(
