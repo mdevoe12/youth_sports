@@ -81,9 +81,12 @@
         <% if flash[:notice] %>
         <div class="notice"><%= flash[:notice] %></div>
         <% end %>
-        <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %></p>
 
-        <p><%= button_to "In Progress", in_progress_path(player_id: @player.id), class: "btn btn-primary" %></p>
+        <% if current_user.type == "Recruiter"  %>
+        <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %></p>
+        <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% end %>
+
       </div>
       <div class="in-progress-btn">
       </div>

@@ -31,8 +31,8 @@
           <td><%= prospect.player_profile.school %></td>
           <td><%= prospect.player_profile.player.teams.first.name %></td>
           <td><%= prospect.player_profile.grade_level %></td>
-          <% if prospect.status == "in-progress" %>
-          <td><%= link_to prospect.status, update_progress_path(prospect.id), method: :put %></td>
+          <% if prospect.status == "watching" %>
+          <td><%= link_to "Remove from Watchlist", delete_watch_list_path(prospect.id), method: :delete, class: "btn btn-danger btn-sm" %></td>
           <% else %>
             <td><%= prospect.status %></td>
           <% end %>
