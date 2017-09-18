@@ -15,13 +15,19 @@ class ApplicationController < ActionController::Base
     elsif current_user.type.nil?
       new_type_selection_path
     elsif current_user.profile.nil?
-      if current_user.type == "Player"
-        new_player_profile_path
-      elsif current_user.type == "Coach"
-        new_coach_profile_path
-      elsif current_user.type == "Recruiter"
-        new_recruiter_profile_path
-      end
+      create_profile
+    else
+      dashboard_index_path
+    end
+  end
+
+  def create_profile
+    if current_user.type == "Player"
+      new_player_profile_path
+    elsif current_user.type == "Coach"
+      new_coach_profile_path
+    elsif current_user.type == "Recruiter"
+      new_recruiter_profile_path
     end
   end
 
