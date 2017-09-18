@@ -71,7 +71,7 @@ RSpec.configure do |config|
   config.filter_gems_from_backtrace("rack-2.0.3", "railties-5.1.3", "rack-test-0.6.3")
 
   # config.include IntegrationSpecHelper, type: :feature
-
+  config.include Devise::Test::ControllerHelpers, :type => :controller
 end
 
 
