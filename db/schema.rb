@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20170916223400) do
+=======
+ActiveRecord::Schema.define(version: 20170913211100) do
+>>>>>>> development
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,12 +136,6 @@ ActiveRecord::Schema.define(version: 20170916223400) do
     t.index ["recruiter_id"], name: "index_recruiter_profiles_on_recruiter_id"
   end
 
-  create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "team_coaches", force: :cascade do |t|
     t.bigint "team_id"
     t.bigint "coach_id"
@@ -223,6 +221,4 @@ ActiveRecord::Schema.define(version: 20170916223400) do
   add_foreign_key "team_coaches", "users", column: "coach_id"
   add_foreign_key "team_players", "teams"
   add_foreign_key "team_players", "users", column: "player_id"
-  add_foreign_key "user_roles", "roles"
-  add_foreign_key "user_roles", "users"
 end
