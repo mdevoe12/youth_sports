@@ -12,4 +12,7 @@ class TwitterService
     @connection.user_timeline(@current_user.favorite_player.screen_name, count: 20, exclude_replies: true)
   end
 
+  def fav_player_name
+    @connection.user_timeline(@current_user.favorite_player.screen_name, count: 20, exclude_replies: true).first.user.name
+  end
 end
