@@ -1,8 +1,11 @@
 class UploadsController < ApplicationController
 
   def create
-    PlayerStat.import(params[:file])
-    redirect_to dashboard_index_path, notice: "Items imported"
+    if PlayerStat.import(params[:file]) == true
+      redirect_to dashboard_index_path, notice: "Items imported"
+    else
+      redirect_to dashboard_index_path, notice: "Error Encountered"
+    end
   end
 
 end

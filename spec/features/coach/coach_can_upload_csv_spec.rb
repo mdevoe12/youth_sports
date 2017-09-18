@@ -44,7 +44,6 @@ RSpec.feature "A coach" do
 
     expect(current_path).to eq(dashboard_index_path)
     expect(page).to have_content("Items imported")
-
     expect(stat.points).to eq(6)
     expect(stat.fouls).to eq(4)
     expect(stat.game_id).to eq(1)
@@ -59,8 +58,8 @@ RSpec.feature "A coach" do
     click_button "Upload CSV"
 
     stat = PlayerStat.last
-
+    binding.pry
     expect(current_path).to eq(dashboard_index_path)
-    expect(page).to have_content("Items imported")
+    expect(page).to have_content("Error Encountered")
   end
 end
