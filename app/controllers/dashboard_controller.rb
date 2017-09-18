@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
     @tweet_info = build_twitter_service
     if current_user.favorite_player
       raw_data = build_mysportsfeeds_service.data
-      @favorite_player_stats = FavPlayerStats.new(raw_data)
+      @favorite_player_stats = FavoritePlayerStats.new(raw_data)
     end
   end
 
