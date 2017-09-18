@@ -35,7 +35,7 @@ Rails.application.routes.draw do
 
   resources :players, only: [:new, :create, :update, :edit]
   resources :player_profiles, only: [:new, :create, :show, :index]
-  resources :coach_profiles, only: [:show, :index]
+  resources :coach_profiles, only: [:new, :create, :show, :index]
 
   resources :personal_messages, only: [:new, :create]
   resources :conversations, only: [:index, :show]

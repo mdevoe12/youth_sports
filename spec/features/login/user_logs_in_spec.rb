@@ -189,51 +189,85 @@ RSpec.describe "User clicks the Log In button in the navbar" do
 
   context "as a coach and" do
     scenario "logs in with Facebook for the first time and is sent to their dashboard after successful creation" do
+      facebook = create(:authentication_provider, name: "facebook")
+      user = create(:user, email: "katie@keel.com")
+      auth = create(:user_authentication, user: user, authentication_provider: facebook, params: stub_facebook)
       # As a coach
       # When I visit the home page for the first time
+      visit '/'
       # And I click "Log In"
+      click_on("Log In")
       # And I click "Log In With Facebook"
-      # And I enter my Facebook credentials
-      # And I click "Submit"
+      click_on("Login with Facebook")
       # And I select my type
-      # And I click submit
+      choose("type_Coach")
+      # And I click Submit
+      click_on "Update Account"
+      expect(current_path).to eq new_coach_profile_path
       # And I fill in my profile information
+      fill_in "coach_profile_institution", with: "Harvard"
+      fill_in "coach_profile_email", with: "coach@harvard.com"
+      fill_in "coach_profile_phone_number", with: "1234567890"
       # And I click submit
+      click_on "Create Profile"
       # I should be sent to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
 
     scenario "logs in with Facebook after the first time and is sent straight to their dashboard" do
+      facebook = create(:authentication_provider, name: "facebook")
+      coach = create(:coach, :with_profile, email: "katie@keel.com", type: "Coach")
+      auth = create(:user_authentication, user: coach, authentication_provider: facebook, params: stub_facebook)
       # As a coach
       # When I visit the home page after my first login
+      visit '/'
       # And I click "Log In"
-      # And I click "Log In With Twitter"
-      # And I enter my Twitter credentials
-      # And I click "Submit"
+      click_on("Log In")
+      # And I click "Log In With Facebook"
+      click_on("Login with Facebook")
       # I should be sent to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
 
     scenario "logs in with Twitter for the first time and is sent to their dashboard after successful creation" do
+      twitter = create(:authentication_provider, name: "twitter")
+      user = create(:user, email: "katie@keel.com")
+      auth = create(:user_authentication, user: user, authentication_provider: twitter, params: stub_twitter)
       # As a coach
       # When I visit the home page for the first time
+      visit '/'
       # And I click "Log In"
+      click_on("Log In")
       # And I click "Log In With Twitter"
-      # And I enter my Twitter credentials
-      # And I click "Submit"
+      click_on("Login with Twitter")
       # And I select my type
-      # And I click submit
+      choose("type_Coach")
+      # And I click Submit
+      click_on "Update Account"
+      expect(current_path).to eq new_coach_profile_path
       # And I fill in my profile information
+      fill_in "coach_profile_institution", with: "Harvard"
+      fill_in "coach_profile_email", with: "coach@harvard.com"
+      fill_in "coach_profile_phone_number", with: "1234567890"
       # And I click submit
+      click_on "Create Profile"
       # I should be sent to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
 
     scenario "logs in with Twitter after the first time and is sent straight to their dashboard" do
+      twitter = create(:authentication_provider, name: "twitter")
+      coach = create(:coach, :with_profile, email: "katie@keel.com", type: "Coach")
+      auth = create(:user_authentication, user: coach, authentication_provider: twitter, params: stub_twitter)
       # As a coach
       # When I visit the home page after my first login
+      visit '/'
       # And I click "Log In"
-      # And I click "Log In With Facebook"
-      # And I enter my Facebook credentials
-      # And I click "Submit"
+      click_on("Log In")
+      # And I click "Log In With Twitter"
+      click_on("Login with Twitter")
       # I should be sent to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
   end
 
