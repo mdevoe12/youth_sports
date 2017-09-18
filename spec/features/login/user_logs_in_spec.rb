@@ -18,6 +18,8 @@ RSpec.describe "User clicks the Log In button in the navbar" do
       # And I click Submit
       click_on "Update Account"
       # And I fill in my profile information
+      fill_in "player_profile_first_name", with: "Cedric"
+      fill_in "player_profile_last_name", with: "Diggory"
       fill_in "player_profile_school", with: "Hufflepuff"
       fill_in "player_profile_height", with: "62"
       fill_in "player_profile_weight", with: "130"
@@ -69,6 +71,8 @@ RSpec.describe "User clicks the Log In button in the navbar" do
       # And I click submit
       click_on "Update Account"
       # And I enter my profile information
+      fill_in "player_profile_first_name", with: "Cedric"
+      fill_in "player_profile_last_name", with: "Diggory"
       fill_in "player_profile_school", with: "Hufflepuff"
       fill_in "player_profile_height", with: "62"
       fill_in "player_profile_weight", with: "130"
@@ -122,6 +126,8 @@ RSpec.describe "User clicks the Log In button in the navbar" do
       # And I click Submit
       click_on "Update Account"
       # And I fill in my profile information
+      fill_in "recruiter_profile_first_name", with: "Bob"
+      fill_in "recruiter_profile_last_name", with: "Smith"
       fill_in "recruiter_profile_institution", with: "Harvard"
       fill_in "recruiter_profile_email", with: "recruiter@harvard.com"
       fill_in "recruiter_profile_phone_number", with: "1234567890"
@@ -162,6 +168,8 @@ RSpec.describe "User clicks the Log In button in the navbar" do
       # And I click Submit
       click_on "Update Account"
       # And I fill in my profile information
+      fill_in "recruiter_profile_first_name", with: "Bob"
+      fill_in "recruiter_profile_last_name", with: "Smith"
       fill_in "recruiter_profile_institution", with: "Harvard"
       fill_in "recruiter_profile_email", with: "recruiter@harvard.com"
       fill_in "recruiter_profile_phone_number", with: "1234567890"
@@ -205,6 +213,9 @@ RSpec.describe "User clicks the Log In button in the navbar" do
       click_on "Update Account"
       expect(current_path).to eq new_coach_profile_path
       # And I fill in my profile information
+      fill_in "coach_profile_first_name", with: "Bob"
+      fill_in "coach_profile_last_name", with: "Smith"
+
       fill_in "coach_profile_institution", with: "Harvard"
       fill_in "coach_profile_email", with: "coach@harvard.com"
       fill_in "coach_profile_phone_number", with: "1234567890"
@@ -273,7 +284,7 @@ RSpec.describe "User clicks the Log In button in the navbar" do
 
   scenario "logs in with bcrypt" do
     # As a registered user
-    user = create(:user, :with_profile, type: "Player")
+    player = create(:player, :with_profile, type: "Player")
     # When I visit the home page
     visit '/'
     # And I click "Log In"
@@ -281,7 +292,7 @@ RSpec.describe "User clicks the Log In button in the navbar" do
     # And I click "Sign In"
     click_on "Sign In"
     # And I enter my username and password
-    fill_in "session_email", with: user.email
+    fill_in "session_email", with: player.email
     fill_in "session_password", with: "password"
     # And I click "Submit"
     click_on "Log in"

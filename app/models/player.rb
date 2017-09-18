@@ -8,9 +8,13 @@ class Player < User
   has_one :favorite_player, class_name: :FavoritePlayer
 
   def name
-    self.profile.first_name + " " + self.profile.last_name
+    if self.first_name.nil? || self.last_name.nil?
+      self.profile.first_name + " " + self.profile.last_name
+    else
+      self.first_name + " " + self.last_name
+    end
   end
-
+  
   def school
     self.profile.school
   end
