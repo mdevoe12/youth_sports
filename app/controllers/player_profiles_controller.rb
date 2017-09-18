@@ -14,11 +14,7 @@ class PlayerProfilesController < ApplicationController
 
   def show
     @player_profile = PlayerProfile.find(params[:id])
-    # if current_user.type == "Recruiter"
-      # @player = current_user.prospects.find_by(player_profile_id: params[:id]).player_profile.player
-    # else
-      @player = Player.find(@player_profile.player_id)
-    # end
+    @player = Player.find(@player_profile.player_id)
   end
 
   def index

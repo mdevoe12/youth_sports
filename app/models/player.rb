@@ -7,6 +7,7 @@ class Player < User
   has_many :player_stats, through: :profile
   has_one :favorite_player, class_name: :FavoritePlayer
 
+
   def name
     self.first_name + " " + self.last_name
   end
@@ -54,4 +55,5 @@ class Player < User
       self.team.games.where(status: "upcoming")
     end
   end
+
 end
