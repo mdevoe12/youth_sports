@@ -4,6 +4,6 @@ class Recruiter < User
 
 
   def name
-    self.first_name + " " + self.last_name
+    self.profile.first_name + " " + self.profile.last_name
   end
 end

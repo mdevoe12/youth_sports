@@ -20,4 +20,16 @@ class Coach < User
     self.teams.pluck(:name)
   end
 
+  def institution
+   self.profile.institution
+ end
+
+ def email
+   self.profile.email
+ end
+
+ def phone
+   self.profile.phone_number
+ end
+
 end

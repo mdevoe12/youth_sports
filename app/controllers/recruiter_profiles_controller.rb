@@ -33,7 +33,7 @@ class RecruiterProfilesController < ApplicationController
   private
 
   def recruiter_params
-    params.require(:recruiter_profile).permit(:institution, :email, :phone_number, :recruiter_id)
+    params.require(:recruiter_profile).permit(:first_name, :last_name, :institution, :email, :phone_number, :recruiter_id)
   end
 
   def player_check

@@ -33,6 +33,8 @@ RSpec.describe "User creates standard account" do
       # And I click Submit
       click_on "Update Account"
       # And I enter my profile information
+      fill_in "player_profile_first_name", with: "Cedric"
+      fill_in "player_profile_last_name", with: "Diggory"
       fill_in "player_profile_school", with: "Hufflepuff"
       fill_in "player_profile_height", with: "62"
       fill_in "player_profile_weight", with: "130"
@@ -85,6 +87,8 @@ RSpec.describe "User creates standard account" do
       choose("type_Coach")
       # And I click submit
       click_on "Update Account"
+      fill_in "coach_profile_first_name", with: "Bob"
+      fill_in "coach_profile_last_name", with: "Smith"
       fill_in "coach_profile_institution", with: "Harvard"
       fill_in "coach_profile_email", with: "coach@harvard.com"
       fill_in "coach_profile_phone_number", with: "1234567890"
@@ -127,6 +131,8 @@ RSpec.describe "User creates standard account" do
       # And I click submit
       click_on "Update Account"
       # And I enter my profile information
+      fill_in "recruiter_profile_first_name", with: "Bob"
+      fill_in "recruiter_profile_last_name", with: "Smith"
       fill_in "recruiter_profile_institution", with: "Harvard"
       fill_in "recruiter_profile_email", with: "recruiter@harvard.com"
       fill_in "recruiter_profile_phone_number", with: "1234567890"

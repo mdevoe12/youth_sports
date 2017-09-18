@@ -27,7 +27,7 @@ class PlayerProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:player_profile).permit(:school, :height, :weight, :grade_level,
+    params.require(:player_profile).permit(:first_name, :last_name, :school, :height, :weight, :grade_level,
     :gpa, :guardian_phone, :player_id)
   end
 end
