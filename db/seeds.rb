@@ -4,12 +4,6 @@ DatabaseCleaner.clean_with(:truncation)
 
 start = Time.now
 
-Role.create(name: "Player")
-Role.create(name: "Coach")
-Role.create(name: "Recruiter")
-Role.create(name: "Admin")
-
-
 admin = Admin.create(first_name: "Josh",
 last_name: "Dao",
 username: "admin@admin.com",
@@ -42,7 +36,6 @@ CoachProfile.create(coach_id: cch.id,
                     institution: "Notre Dame",
                     email: "coach@coach.com",
                     phone_number: "15555555555")
->>>>>>> f76ebf0e39f9d3f3d21bf28a58d05d5da212b9b8
 
 Facility.create(
   :name => "Coors field",

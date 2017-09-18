@@ -19,7 +19,7 @@ describe "logged in athlete" do
     allow_any_instance_of(ApplicationController)
     .to receive(:current_user).and_return(aj)
 
-    visit player_dashboard_path(aj)
+    visit dashboard_path(aj)
     expect(current_path).to eq("/dashboard/#{aj.id}")
     expect(page).to have_link("Create/update your favorite player")
     click_on ("Create/update your favorite player")
