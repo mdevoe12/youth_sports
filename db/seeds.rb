@@ -165,7 +165,7 @@ player_count = 1
 
   player_profile = PlayerProfile.create(
     :school => Faker::HarryPotter.house,
-    :height => "#{rand(60..79)}",
+    :height => "#{rand(40..79)}",
     :weight => "#{rand(110...250)}",
     :grade_level => rand(1..12),
     :gpa => rand(1.1...4.0).round(2),
