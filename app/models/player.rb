@@ -3,7 +3,7 @@ class Player < User
   has_many :teams, through: :team_players
   has_many :team_coaches, through: :teams
   has_many :coaches, through: :team_coaches
-  has_one :profile, class_name: :PlayerProfile
+  has_one :profile, class_name: :PlayerProfile, dependent: :destroy
   has_many :player_stats, through: :profile
   has_one :favorite_player, class_name: :FavoritePlayer
 
@@ -29,6 +29,10 @@ class Player < User
 
   def gpa
     self.profile.gpa
+  end
+
+  def guardian_phone
+    self.profile.guardian_phone
   end
 
   def stats
