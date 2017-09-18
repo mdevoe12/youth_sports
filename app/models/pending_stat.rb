@@ -1,0 +1,2 @@
+class PendingStat < ApplicationRecord
+end

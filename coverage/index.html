@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-18T14:23:24-06:00">2017-09-18T14:23:24-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-18T15:31:36-06:00">2017-09-18T15:31:36-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">20.29%</span></span>
+    (<span class="covered_percent"><span class="red">20.42%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>59</b> files in total.
-    <b>621</b> relevant lines. 
-    <span class="green"><b>126</b> lines covered</span> and
+    <b>622</b> relevant lines. 
+    <span class="green"><b>127</b> lines covered</span> and
     <span class="red"><b>495</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -283,9 +283,9 @@
       <tr>
         <td class="strong"><a href="#a9987a072c6ec8fb84f14357298cbab9d3a4f1e4" class="src_link" title="app/controllers/uploads_controller.rb">app/controllers/uploads_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>5</td>
-        <td>5</td>
+        <td>12</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -649,7 +649,7 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">6.17%</span></span>
+    (<span class="covered_percent"><span class="red">6.47%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
@@ -660,8 +660,8 @@
   <a name="Controllers"></a>
   <div>
     <b>23</b> files in total.
-    <b>308</b> relevant lines. 
-    <span class="green"><b>19</b> lines covered</span> and
+    <b>309</b> relevant lines. 
+    <span class="green"><b>20</b> lines covered</span> and
     <span class="red"><b>289</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -891,9 +891,9 @@
       <tr>
         <td class="strong"><a href="#a9987a072c6ec8fb84f14357298cbab9d3a4f1e4" class="src_link" title="app/controllers/uploads_controller.rb">app/controllers/uploads_controller.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>5</td>
-        <td>5</td>
+        <td>12</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -4317,8 +4317,8 @@
     <h3>app/controllers/uploads_controller.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4344,49 +4344,55 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    binding.pry</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
           <code class="ruby">    if PlayerStat.import(params[:file]) == true</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to dashboard_index_path, notice: &quot;Items imported&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to dashboard_index_path, notice: &quot;Error Encountered&quot;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
           <code class="ruby">end</code>
