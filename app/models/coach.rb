@@ -25,7 +25,7 @@ class Coach < User
  end
 
  def email
-   self.profile.email
+   self.profile.email if self.profile
  end
 
  def phone
