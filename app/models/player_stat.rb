@@ -29,8 +29,7 @@ class PlayerStat < ApplicationRecord
 
   def self.import(file)
     CSV.foreach(file.path, headers: true, header_converters: :symbol) do |row|
-      # binding.pry
-      PlayerStat.create(player_profile_id: Player.find(row[:id]).profile.id,
+      PlayerStat.create!(player_profile_id: Player.find(row[:id]).profile.id,
                                   game_id: row[:game_id],
                                    points:  row[:points],
                                     fouls:   row[:fouls])
