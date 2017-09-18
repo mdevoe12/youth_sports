@@ -4,6 +4,8 @@ FactoryGirl.define do
     trait :with_profile do
       after(:create) do |recruiter|
         recruiter_profile = create :recruiter_profile,
+                                first_name: "Nick",
+                                last_name: "Saban",
                                 institution: "ALABAMA ROLL TIDE",
                                 email: "satan@crimson.ua.edu",
                                 phone_number: "1234567890",
