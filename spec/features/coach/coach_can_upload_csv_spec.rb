@@ -58,7 +58,7 @@ RSpec.feature "A coach" do
     click_button "Upload CSV"
 
     stat = PlayerStat.last
-    binding.pry
+
     expect(current_path).to eq(dashboard_index_path)
     expect(page).to have_content("Error Encountered")
   end

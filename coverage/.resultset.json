@@ -290,7 +290,6 @@
         1,
         null,
         1,
-        1,
         2,
         1,
         null,
@@ -820,6 +819,26 @@
         0,
         0
       ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/pending_stat.rb": [
+        0,
+        null,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0
+      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/personal_message.rb": [
         0,
         0,
@@ -979,6 +998,6 @@
         0
       ]
     },
-    "timestamp": 1505770296
+    "timestamp": 1505774546
   }
 }
