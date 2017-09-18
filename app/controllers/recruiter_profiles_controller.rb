@@ -2,14 +2,17 @@ class RecruiterProfilesController < ApplicationController
   before_action :player_check
 
   def new
-    @recruiter_id = params["recruiter_id"]
+    @recruiter_id = current_user.id
     @recruiter_profile = RecruiterProfile.new
   end
 
   def create
     @recruiter_profile = RecruiterProfile.create(recruiter_params)
     if @recruiter_profile.save
-      redirect_to dashboard_index_path(current_user)
+      redirect_to dashboard_index_path
+    else
+      flash[:message] = "There was an error processing your request; please try again"
+      render :new
     end
   end
 
@@ -30,7 +33,7 @@ class RecruiterProfilesController < ApplicationController
   private
 
   def recruiter_params
-    params.require(:recruiter_profile).permit(:institution, :email, :phone_number, :uid, :recruiter_id)
+    params.require(:recruiter_profile).permit(:institution, :email, :phone_number, :recruiter_id)
   end
 
   def player_check

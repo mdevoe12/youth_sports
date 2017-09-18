@@ -74,19 +74,42 @@ RSpec.describe "User creates standard account" do
 
   context "as a recruiter and" do
     scenario "is sent to their dashboard upon creation" do
-      # As a recruiter
       # When I visit the home page
+      visit "/"
       # And I click "Log In"
-      # And I click "Log In/Sign Up"
-      # And I enter a username
+      click_on "Log In"
+      # And I click "Create Account"
+      click_on "Create Account"
+      # And I enter an email
+      fill_in "user_email", with: "user@user.com"
       # And I enter a password
-      # And I click "Select Type"
-      # And I click "Athlete"
-      # And I click Submit
-      # And I enter my profile information
+      fill_in "user_password", with: "password"
+      fill_in "user_password_confirmation", with: "password"
       # And I click submit
+      click_on "Sign up"
+      # I should be sent to the login page
+      expect(current_path).to eq "/login"
+      # And I should see a message that I created my account
+      expect(page).to have_content "Welcome! You have signed up successfully."
+      # And when I log in to my new account
+      user = User.last
+      fill_in "session_email", with: user.email
+      fill_in "session_password", with: "password"
+      click_on "Log in"
+      # I should be prompted to select my user type
+      expect(current_path).to eq new_type_selection_path
+      # And when I select my type
+      choose("type_Recruiter")
+      # And I click submit
+      click_on "Update Account"
+      # And I enter my profile information
+      fill_in "recruiter_profile_institution", with: "Harvard"
+      fill_in "recruiter_profile_email", with: "recruiter@harvard.com"
+      fill_in "recruiter_profile_phone_number", with: "1234567890"
+      # And I click submit
+      click_on "Create Profile"
       # I should be taken to my dashboard
-      # And I should see my information
+      expect(current_path).to eq dashboard_index_path
     end
   end
 end

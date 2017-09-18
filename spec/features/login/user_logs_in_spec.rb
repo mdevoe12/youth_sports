@@ -105,89 +105,129 @@ RSpec.describe "User clicks the Log In button in the navbar" do
     end
   end
 
-  context "as a coach and" do
+  context "as a recruiter and" do
     scenario "logs in with Facebook for the first time and is sent to their dashboard after successful creation" do
-      # As a coach
-      # When I visit the home page after my first login
+      facebook = create(:authentication_provider, name: "facebook")
+      user = create(:user, email: "katie@keel.com")
+      auth = create(:user_authentication, user: user, authentication_provider: facebook, params: stub_facebook)
+      # As a recruiter
+      # When I visit the home page for the first time
+      visit '/'
       # And I click "Log In"
+      click_on("Log In")
       # And I click "Log In With Facebook"
-      # And I enter my Facebook credentials
-      # And I click "Submit"
+      click_on("Login with Facebook")
       # And I select my type
-      # And I enter the captcha
-      # I should be sent to my dashboard
+      choose("type_Recruiter")
+      # And I click Submit
+      click_on "Update Account"
+      # And I fill in my profile information
+      fill_in "recruiter_profile_institution", with: "Harvard"
+      fill_in "recruiter_profile_email", with: "recruiter@harvard.com"
+      fill_in "recruiter_profile_phone_number", with: "1234567890"
+      # And I click submit
+      click_on "Create Profile"
+      # I should be taken to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
 
     scenario "logs in with Facebook after the first time and is sent straight to their dashboard" do
-      # As a coach
+      facebook = create(:authentication_provider, name: "facebook")
+      recruiter = create(:recruiter, :with_profile, email: "katie@keel.com", type: "Recruiter")
+      auth = create(:user_authentication, user: recruiter, authentication_provider: facebook, params: stub_facebook)
+      # As a recruiter
       # When I visit the home page after my first login
+      visit '/'
       # And I click "Log In"
-      # And I click "Log In With Twitter"
-      # And I enter my Twitter credentials
-      # And I click "Submit"
+      click_on("Log In")
+      # And I click "Log In With Facebook"
+      click_on("Login with Facebook")
       # I should be sent to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
 
     scenario "logs in with Twitter for the first time and is sent to their dashboard after successful creation" do
-      # As a coach
-      # When I visit the home page after my first login
+      twitter = create(:authentication_provider, name: "twitter")
+      user = create(:user, email: "katie@keel.com")
+      auth = create(:user_authentication, user: user, authentication_provider: twitter, params: stub_twitter)
+      # As a recruiter
+      # When I visit the home page for the first time
+      visit '/'
       # And I click "Log In"
+      click_on("Log In")
       # And I click "Log In With Twitter"
-      # And I enter my Twitter credentials
-      # And I click "Submit"
+      click_on("Login with Twitter")
       # And I select my type
-      # And I enter the captcha
-      # I should be sent to my dashboard
+      choose("type_Recruiter")
+      # And I click Submit
+      click_on "Update Account"
+      # And I fill in my profile information
+      fill_in "recruiter_profile_institution", with: "Harvard"
+      fill_in "recruiter_profile_email", with: "recruiter@harvard.com"
+      fill_in "recruiter_profile_phone_number", with: "1234567890"
+      # And I click submit
+      click_on "Create Profile"
+      # I should be taken to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
 
     scenario "logs in with Twitter after the first time and is sent straight to their dashboard" do
-      # As a coach
+      twitter = create(:authentication_provider, name: "twitter")
+      recruiter = create(:recruiter, :with_profile, email: "katie@keel.com", type: "Recruiter")
+      auth = create(:user_authentication, user: recruiter, authentication_provider: twitter, params: stub_twitter)
+      # As a recruiter
       # When I visit the home page after my first login
+      visit '/'
       # And I click "Log In"
-      # And I click "Log In With Facebook"
-      # And I enter my Facebook credentials
-      # And I click "Submit"
+      click_on("Log In")
+      # And I click "Log In With Twitter"
+      click_on("Login with Twitter")
       # I should be sent to my dashboard
+      expect(current_path).to eq dashboard_index_path
     end
   end
 
-  context "as a recruiter and" do
+  context "as a coach and" do
     scenario "logs in with Facebook for the first time and is sent to their dashboard after successful creation" do
-      # As a recruiter
-      # When I visit the home page after my first login
+      # As a coach
+      # When I visit the home page for the first time
       # And I click "Log In"
       # And I click "Log In With Facebook"
       # And I enter my Facebook credentials
       # And I click "Submit"
       # And I select my type
-      # And I enter the captcha
+      # And I click submit
+      # And I fill in my profile information
+      # And I click submit
       # I should be sent to my dashboard
     end
 
     scenario "logs in with Facebook after the first time and is sent straight to their dashboard" do
-     # As a recruiter
-     # When I visit the home page after my first login
-     # And I click "Log In"
-     # And I click "Log In With Facebook"
-     # And I enter my Facebook credentials
-     # And I click "Submit"
-     # I should be sent to my dashboard
-    end
-
-    scenario "logs in with Twitter for the first time and is sent to their dashboard after successful creation" do
-      # As a recruiter
+      # As a coach
       # When I visit the home page after my first login
       # And I click "Log In"
       # And I click "Log In With Twitter"
       # And I enter my Twitter credentials
       # And I click "Submit"
+      # I should be sent to my dashboard
+    end
+
+    scenario "logs in with Twitter for the first time and is sent to their dashboard after successful creation" do
+      # As a coach
+      # When I visit the home page for the first time
+      # And I click "Log In"
+      # And I click "Log In With Twitter"
+      # And I enter my Twitter credentials
+      # And I click "Submit"
       # And I select my type
-      # And I enter the captcha
+      # And I click submit
+      # And I fill in my profile information
+      # And I click submit
       # I should be sent to my dashboard
     end
 
     scenario "logs in with Twitter after the first time and is sent straight to their dashboard" do
-      # As a recruiter
+      # As a coach
       # When I visit the home page after my first login
       # And I click "Log In"
       # And I click "Log In With Facebook"
@@ -199,23 +239,79 @@ RSpec.describe "User clicks the Log In button in the navbar" do
 
   scenario "logs in with bcrypt" do
     # As a registered user
+    user = create(:user, :with_profile, type: "Player")
     # When I visit the home page
+    visit '/'
     # And I click "Log In"
-    # And I click "Log In/Sign Up"
+    click_on "Log In"
+    # And I click "Sign In"
+    click_on "Sign In"
     # And I enter my username and password
+    fill_in "session_email", with: user.email
+    fill_in "session_password", with: "password"
     # And I click "Submit"
+    click_on "Log in"
     # I should be sent to my dashboard
+    expect(current_path).to eq dashboard_index_path
   end
 
   context "after logging in with Facebook and" do
     scenario "can log in with Twitter to the same account" do
+      # As a user
+      # After I've created my account by logging in with Facebook
+      facebook = create(:authentication_provider, name: "facebook")
+      user = create(:user, :with_profile, email: "katie@keel.com", type: "Player")
+      auth = create(:user_authentication, user: user, authentication_provider: facebook, params: stub_facebook)
 
+      visit "/"
+
+      click_on "Log In"
+      click_on "Login with Facebook"
+
+      # And I log out
+      click_link "#{user.username}"
+      click_on "Logout"
+      expect(current_path).to eq root_path
+
+      twitter = create(:authentication_provider, name: "twitter")
+      auth = create(:user_authentication, user: user, authentication_provider: twitter, params: stub_twitter)
+      # And I click "Log In"
+      click_on "Log In"
+      # And I click "Log in with Twitter"
+      click_on "Login with Twitter"
+      # I should be directed to the same account
+      expect(current_path).to eq dashboard_index_path
+      expect(page).to have_link "#{user.username}"
     end
   end
 
   context "after logging in with Twitter and" do
     scenario "can log in with Facebook to the same account" do
+      # As a user
+      # After I've created my account by logging in with Twitter
+      twitter = create(:authentication_provider, name: "twitter")
+      user = create(:user, :with_profile, email: "katie@keel.com", type: "Player")
+      auth = create(:user_authentication, user: user, authentication_provider: twitter, params: stub_twitter)
 
+      visit "/"
+
+      click_on "Log In"
+      click_on "Login with Twitter"
+
+      # And I log out
+      click_link "#{user.username}"
+      click_on "Logout"
+      expect(current_path).to eq root_path
+
+      facebook = create(:authentication_provider, name: "facebook")
+      auth = create(:user_authentication, user: user, authentication_provider: facebook, params: stub_facebook)
+      # And I click "Log In"
+      click_on "Log In"
+      # And I click "Log in with Facebook"
+      click_on "Login with Facebook"
+      # I should be directed to the same account
+      expect(current_path).to eq dashboard_index_path
+      expect(page).to have_link "#{user.username}"
     end
   end
 end
