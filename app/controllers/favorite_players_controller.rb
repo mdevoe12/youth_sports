@@ -10,7 +10,7 @@ class FavoritePlayersController < ApplicationController
                         .create(screen_name: fav, player_id: current_user.id)
     player_name = build_twitter_service.fav_player_name
     @favorite_player.update(full_name: player_name)
-    redirect_to dashboard_index_path(current_user.id)
+    redirect_to dashboard_index_path
   end
 
   private
