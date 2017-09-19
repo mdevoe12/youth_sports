@@ -1,15 +1,12 @@
-
-</div>
-
-<div class="col-md-10">
-  <h1>All Coaches</h1>
+<div class="container-fluid">
+  <h1 align="center">All Coaches</h1>
   <hr>
-    <div class="row" id="player_profiles">
+
+    <div class="row" id="coach_profiles">
       <%= render @coach_profiles %>
     </div>
 
     <div align="center" id="paginator">
       <%= paginate @coach_profiles, remote: true %>
     </div>
-
 </div>
