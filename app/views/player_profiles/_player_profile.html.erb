@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <tbody>
+            <tr>
+              <td class="name" style="width: 20%"><%= link_to player_profile.player.name, player_profile_path(player_profile.id)%></td>
+              <td style="width: 20%"><%= player_profile.school %></td>
+              <td style="width: 20%"><%= player_profile.player.teams.first.name %></td>
+              <td style="width: 5%"><%= player_profile.grade_level %></td>
+              <td style="width: 5%"><%= player_profile.gpa %></td>
+              <td style="width: 15%" class="text-center"><%= player_profile.height %></td>
+              <td style="width: 15%" class="text-center"><%= player_profile.weight %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

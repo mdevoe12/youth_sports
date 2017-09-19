@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :game do
-    facility nil
+    facility
     status 1
   end
 end
