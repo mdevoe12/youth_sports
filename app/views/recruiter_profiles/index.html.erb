@@ -1,6 +1,8 @@
+<div class="white"
 <h1>All Recruiters</h1>
 
 <ul>
 <% @recruiter_profiles.each do |profile| %>
-  <li><%= link_to profile.recruiter.first_name, recruiter_profile_path(profile.recruiter) %></li>
+  <li><%= link_to profile.recruiter.first_name, recruiter_profile_path(profile) %></li>
   <% end %>
+</div>

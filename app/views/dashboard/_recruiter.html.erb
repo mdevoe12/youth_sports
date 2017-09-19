@@ -1,13 +1,44 @@
 <div class="container">
-  <div class="col-sm-12">
-    <h2><%= current_user.prospects.count %> Prospects</h2>
-    <hr>
-    <% current_user.prospects.each do |prospect| %>
-      <h4> <%= link_to prospect.name, player_profile_path(prospect.player_profile) %> </h4>
-        <h5>
-          <%= prospect.player_profile.school %>,
-          Grade level: <%= prospect.player_profile.grade_level %>
-        </h5>
-    <% end %>
+  <div class="col-md-4">
+    <img class="profile-pic" src="https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=o6u9Tq%2FiOJm8OxArAcTdAq%2Fy5Lk%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R69hAxU0Rks6bmIpkb-50hKCoTTEHX8RHTuvoTTOCq8J4OcZuH--hlDJmgewUB2LrzwHWW_VtCjKoPteN0lipPtLJHjNVBROlE8gG9JodY6NRUropW_SPj5bCdN3eIVbj24Mq3gaFwsRy8n-g" alt="">
+  </div>
+  <div class="col-md-8">
+    <ul>
+      <h3><%= current_user.name %>'s Dashboard</h3><br>
+      <p>Representing: <%= current_user.profile.institution %></p>
+      <p>Email: <%= current_user.profile.email %></p>
+      <p>Phone: <%= current_user.profile.phone_number %></p>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-12 prf-sum">
+    <br>
+    <h3><%= current_user.prospects.count %> Potential Recruit(s) </h3>
+    <table class="prospect-table">
+      <tr>
+        <th>Name</th>
+        <th>School</th>
+        <th>Team</th>
+        <th>Grade Level</th>
+        <th>Status</th>
+        <th>Next Game</th>
+      </tr>
+      <% current_user.prospects.each do |prospect| %>
+        <tr>
+          <td><%= link_to prospect.name, player_profile_path(prospect.player_profile)%></td>
+          <td><%= prospect.player_profile.school %></td>
+          <td><%= prospect.player_profile.player.teams.first.name %></td>
+          <td><%= prospect.player_profile.grade_level %></td>
+          <% if prospect.status == "watching" %>
+          <td><%= link_to "Remove from Watchlist", delete_watch_list_path(prospect.id), method: :delete, class: "btn btn-danger btn-sm" %></td>
+          <% else %>
+            <td><%= prospect.status %></td>
+          <% end %>
+          <td><%= prospect.player_profile.player.upcoming.first.when %></td>
+        </tr>
+      <% end %>
+    </table>
   </div>
 </div>

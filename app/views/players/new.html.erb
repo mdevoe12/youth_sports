@@ -1,28 +1,25 @@
 <h1>Create New Account</h1>
 
 <%= form_for @player do |f| %>
-
+  <br>
   <%= f.label :first_name %>
   <%= f.text_field :first_name, id: "first_name" %>
-
+  <br>
   <%= f.label :last_name %>
   <%= f.text_field :last_name, id: "last_name" %>
-
+  <br>
   <%= f.label :username %>
   <%= f.text_field :username, id: "username" %>
-
+  <br>
   <%= f.label :password %>
   <%= f.password_field :password, id: "password" %>
-
+  <br>
   <%= f.label :confirmation_password %>
   <%= f.password_field :confirmation_password, id: "confirmation_password" %>
-
+  <br>
   <%= f.hidden_field :type, value: "Player" %>
   <%= f.hidden_field :uid, value: @uid %>
-
+  <br>
   <%= f.submit "Create Account"%>
 
 <% end %>
-
-<%= link_to "Sign up with Twitter" %>
-<%= link_to "Sign up with Google" %>

@@ -6,6 +6,6 @@ FactoryGirl.define do
     grade_level 7
     gpa 1.5
     guardian_phone "phone-numba"
-    player_id nil
+    player
   end
 end
