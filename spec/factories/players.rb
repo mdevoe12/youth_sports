@@ -3,6 +3,8 @@ FactoryGirl.define do
     first_name "Derrick"
     last_name "Henry"
 
+    
+
     trait :with_profile do
       after(:create) do |player|
         player_profile = create :player_profile,
