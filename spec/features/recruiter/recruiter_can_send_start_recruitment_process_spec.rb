@@ -37,7 +37,7 @@ RSpec.feature "recruiter starts recruitment process" do
     rack_test_session_wrapper.post(receive_text_path,
     params = {
       Body: "y1234 yes",
-      From: "+#{@profile.guardian_phone}"})
+      From: "+#{player.profile.guardian_phone}"})
 
     expect(Player.last.profile.prospects.last.status).to eq("prospect")
   end
@@ -57,7 +57,7 @@ RSpec.feature "recruiter starts recruitment process" do
     rack_test_session_wrapper.post(receive_text_path,
     params = {
       Body: "y1234 no",
-      From: "+#{@profile.guardian_phone}"})
+      From: "+#{player.profile.guardian_phone}"})
 
     expect(Player.last.profile.prospects.last.status).to eq("denied")
   end
