@@ -36,7 +36,6 @@
     <% else %>
       <h5>Favorite Player: <%= current_user.favorite_player.screen_name %> | <%= link_to "Change your favorite player", new_favorite_player_path %></h5>
       <h5><%= current_user.favorite_player.screen_name %>'s Stats:</h5><br>
-      <%= @favorite_player_stats.plus_minus %><br>
       <h5>Their Tweets:</h5><br>
         <% @tweet_info.fav_player_tweets.each do |tweet| %>
           <li><%= tweet.text %></li>
