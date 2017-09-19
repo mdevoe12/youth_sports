@@ -246,7 +246,6 @@
         1,
         1,
         null,
-        null,
         null
       ],
       "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/channels/application_cable/channel.rb": [
@@ -1037,6 +1036,6 @@
         0
       ]
     },
-    "timestamp": 1505792632
+    "timestamp": 1505853358
   }
 }
