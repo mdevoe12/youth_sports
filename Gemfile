@@ -44,6 +44,7 @@ gem 'omniauth-twitter'
 gem 'twitter'
 gem 'kaminari', :git => 'https://github.com/kaminari/kaminari'
 gem 'ransack', github: 'activerecord-hackery/ransack'
+gem 'active_model_serializers', '~> 0.10.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
