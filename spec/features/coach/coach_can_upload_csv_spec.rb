@@ -49,7 +49,7 @@ RSpec.feature "A coach" do
     expect(stat.game_id).to eq(1)
   end
 
-  scenario "uploads bad csv data" do
+  xscenario "uploads bad csv data" do
     visit "/dashboard"
 
     expect(page).to have_button("Upload CSV")
