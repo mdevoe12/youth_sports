@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+  
   root 'home#index'
   patch '/player_profiles/:id', to: 'players#update'
   resources :users, only: [:index]

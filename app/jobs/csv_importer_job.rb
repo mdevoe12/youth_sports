@@ -1,7 +1,7 @@
 class CsvImporterJob < ApplicationJob
   queue_as :default
 
-  def perform(*args)
-    # Do something later
+  def perform(file)
+    CSVImporter.new(file).run
   end
 end
