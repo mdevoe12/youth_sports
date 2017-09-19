@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :recruiter, parent: :user, class: 'Recruiter' do
 
+    type "Recruiter"
+
     trait :with_profile do
       after(:create) do |recruiter|
         recruiter_profile = create :recruiter_profile,

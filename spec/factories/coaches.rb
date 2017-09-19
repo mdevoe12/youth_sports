@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :coach, parent: :user, class: 'Coach' do
-
+    type "Coach"
     first_name "Nick"
     last_name "Saban"
 

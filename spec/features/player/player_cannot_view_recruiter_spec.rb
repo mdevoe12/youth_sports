@@ -9,6 +9,6 @@ RSpec.feature "player" do
 
     visit recruiter_profile_path(recruiter.profile.id)
 
-    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(current_path).to eq login_path
   end
 end
