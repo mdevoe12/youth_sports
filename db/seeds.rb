@@ -4,6 +4,7 @@ DatabaseCleaner.clean_with(:truncation)
 
 start = Time.now
 
+
 admin = Admin.create(first_name: "Josh",
 last_name: "Dao",
 username: "admin@admin.com",
@@ -13,29 +14,6 @@ recr = Recruiter.create(first_name: "Recr",
                          last_name: "uiter",
                          username: "recruiter",
                          password: "password")
-
-cch = Coach.create(first_name: "coachy",
-                     last_name: "coach",
-                      username: "coach",
-                      password: "password")
-
-play = Player.create(first_name: "player",
-                     last_name: "player",
-                      username: "player",
-                      password: "password")
-
-play_prof = PlayerProfile.create(school: 'Hamilton Middle School',
-                                    height: '4ft10',
-                                    weight: '90',
-                                    grade_level: 6,
-                                    gpa: 4.0,
-                                    guardian_phone: '7202436470',
-                                    player_id: play.id)
-
-CoachProfile.create(coach_id: cch.id,
-                    institution: "Notre Dame",
-                    email: "coach@coach.com",
-                    phone_number: "15555555555")
 
 Facility.create(
   :name => "Coors field",
@@ -187,7 +165,7 @@ player_count = 1
 
   player_profile = PlayerProfile.create(
     :school => Faker::HarryPotter.house,
-    :height => "#{rand(4...7)} foot #{rand(1...11)} inches",
+    :height => "#{rand(40..79)}",
     :weight => "#{rand(110...250)}",
     :grade_level => rand(1..12),
     :gpa => rand(1.1...4.0).round(2),
@@ -203,7 +181,6 @@ player_count = 1
   )
   end
 
-
   TeamPlayer.create(
     :team_id => Team.pluck(:id).sample,
     :player_id => player.id
@@ -212,14 +189,7 @@ player_count = 1
   player_count += 1
 end
 
-# Below is to create stats for our player login created at top of page
-9.times do PlayerStat.create(
-  :points => rand(1..30),
-  :fouls => rand(0..5),
-  :player_profile_id => play_prof.id,
-  :game_id => rand(0..400)
-)
-end
+
 
 100.times do
   Prospect.create(

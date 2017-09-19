@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :recruiter_profile do
     institution "Turing"
-    email "example@example.com"
+    email "recruiter@email.com"
     phone_number "123456789"
     recruiter
   end

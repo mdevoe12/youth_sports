@@ -5,7 +5,7 @@
   <div class="white">
   <div class="row">
 
-        <h3 id="id" class="hidden"><%= @player.id %></h3>
+    <h3 id="id" class="hidden"><%= @player.id %></h3>
 
   </div>
   <div class="row">
@@ -24,8 +24,8 @@
           </div>
         </div>
         <div class="col-md-4 team-name">
-          <h5><%= @player.team.name %></h5>
-          <%= image_tag("players/team_logo.png", :id => "ath-team-logo") %>
+          <!-- <h5><%#= @player.teams.name %></h5> -->
+          <!-- <%#= image_tag("players/team_logo.png", :id => "ath-team-logo") %> -->
           </div>
         <div class="col-md-8 prf-sum">
           <h4><%= @player.school %></h4>
@@ -33,7 +33,7 @@
           <h4><%= @player.height %></h4>
           <h4><%= @player.weight %></h4>
           <h4><%= @player.gpa %></h4>
-          <% if current_user.id == @player.id %>
+          <% if current_user && current_user.id == @player.id %>
           <%= link_to "Edit", edit_player_path(@player), :class => "btn edit-btn"%>
           <% end %>
         </div>
@@ -44,12 +44,14 @@
           <h3>Upcoming Games</h3>
           <div class="row">
             <div class="col-md-1"> </div>
+
             <div class="col-md-10">
               <div class="list-board">
                 <ul class="upcoming">
                   <% @player.upcoming.map do |game| %>
                   <li class="game">
-                    <%= game.when %> VS: <%= game.vs(@player) %>
+                    <p><%= game.when %></p>
+                  <p>  VS: <%= game.vs(@player) %></p>
                   </li>
                   <% end %>
                 </ul>
@@ -64,6 +66,8 @@
         <h3>Upcoming Games</h3>
       </div>
     </div>
+
+
     <div class="col-md-8 ath-profile-stats">
       <div class="stats-bar"><p>something</p></div>
       <div class="recruitment-btn">
@@ -96,3 +100,5 @@
   </div>
 </div>
 </div>
+
+<%= render "upcoming_game_facilities" %>
