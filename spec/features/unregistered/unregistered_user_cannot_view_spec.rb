@@ -1,36 +1,33 @@
 require 'rails_helper'
 
 RSpec.feature "unregistered user cannot" do
-  scenario "view /dashboard" do
+  scenario "view /dashboard without logging in" do
     visit '/dashboard'
 
-    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(current_path).to eq login_path
   end
 
   scenario "cannot view player profiles" do
-    player = Player.create(first_name: "steve", last_name: "madden", password: "123")
-    profile = PlayerProfile.create(school: "BG", player_id: player.id)
+    player = create(:player, :with_profile)
 
-    visit player_profile_path(profile.id)
+    visit player_profile_path(player.profile.id)
 
-    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(current_path).to eq login_path
   end
 
   scenario "cannot view coach profile" do
-    coach = Coach.create(first_name: "harry", last_name: "henderson", password: "123")
-    profile = CoachProfile.create(coach_id: coach.id)
+    coach = create(:coach, :with_profile)
 
-    visit coach_profile_path(profile.id)
+    visit coach_profile_path(coach.profile.id)
 
-    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(current_path).to eq login_path
   end
 
   scenario "cannot view recruiter profile" do
-    recr = Recruiter.create(first_name: "harry", last_name: "henderson", password: "123")
-    profile = RecruiterProfile.create(recruiter_id: recr.id)
+    recruiter = create(:recruiter, :with_profile)
 
-    visit recruiter_profile_path(profile.id)
+    visit recruiter_profile_path(recruiter.profile.id)
 
-    expect(page).to have_content("The page you were looking for doesn't exist.")
+    expect(current_path).to eq login_path
   end
 end

@@ -3,17 +3,16 @@ require 'rails_helper'
 RSpec.feature "unregistered user" do
   scenario "click login and see login page" do
     visit root_path
-    within('.dropdown-menu') do
-      click_link("Login")
-    end
-    expect(page).to have_content("Username")
+    click_link("Log In")
+    click_link("Sign In")
+    expect(page).to have_content("Email")
     expect(page).to have_content("Password")
   end
 
   scenario "can see team stats page" do
-    coach = create(:user, type: "Coach", first_name: "Bob", last_name: "Bill", password: "123")
+    coach = create(:user, type: "Coach", first_name: "Bob", last_name: "Bill", password: "password")
     team = create(:team)
-    players = create_list(:user, 3, type: "Player", password: "123")
+    players = create_list(:player, 3, type: "Player")
     facility = Facility.create(name: "test")
     game = Game.create!(facility_id: facility.id, status: 0)
     Player.all.each do |player|

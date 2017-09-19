@@ -1,9 +1,68 @@
-<div class="white">
-<h1>All Athletes</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h1>Search</h1>
+      <hr>
+      <%= search_form_for @search do |f| %>
+      <div class="form-group">
+        <%= f.label :player_cont, "Name" %>
+        <p><%= f.search_field :player_cont, class: "form-control" %></p>
 
-<ul>
-  <% @player_profiles.each do |profile| %>
-  <li><%= link_to profile.player.first_name, player_profile_path(profile.id) %></li>
-  <% end %>
-</ul>
+        <%= f.label :school_cont, "School" %>
+        <p><%= f.text_field :school_cont, class: "form-control" %></p>
+
+        <%= f.label :grade_level_eq, "Grade" %>
+        <p><%= f.text_field :grade_level_eq, class: "form-control" %></p>
+
+        <%= f.label :player_teams_name_cont, "Team" %>
+        <p><%= f.text_field :player_teams_name_cont, class: "form-control" %></p>
+      </div>
+
+      <div class="form-inline">
+      <%= f.label :gpa_gteq, "GPA" %>
+        <p><%= f.text_field :gpa_gteq, class: "form-control", size: "13" %>  -
+        <%= f.text_field :gpa_lteq, class: "form-control", size: "13" %>
+
+      <%= f.label :height_gteq, "Height" %>
+        <p><%= f.text_field :height_gteq, class: "form-control", size: "13"  %> -
+        <%= f.text_field :height_lteq, class: "form-control", size: "13"  %></p>
+
+      <%= f.label :weight_gteq, "Weight" %>
+        <p><%= f.text_field :weight_gteq, class: "form-control", size: "13"  %> -
+        <%= f.text_field :weight_lteq, class: "form-control", size: "13"  %></p>
+      </div>
+
+        <p><%= f.submit "Search", class: "btn btn-primary btn-lg btn-block" %></p>
+      <% end %>
+      <%= link_to "Clear Search", request.path, class:"btn btn btn-outline-primary btn-lg" %>
+    </div>
+
+    <div class="col-md-9">
+      <h1>All Athletes</h1>
+      <hr>
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+            <th style="width: 20%">Name</th>
+            <th style="width: 20%">School</th>
+            <th style="width: 20%">Team</th>
+            <th style="width: 5%">Grade</th>
+            <th style="width: 5%">GPA</th>
+            <th style="width: 15%">Height (inches)</th>
+            <th style="width: 15%">Weight (pounds)</th>
+          </tr>
+          </thead>
+        </table>
+      </div>
+
+        <div class="row" id="player_profiles">
+          <%= render @player_profiles %>
+        </div>
+
+        <div align="center" id="paginator">
+          <%= paginate @player_profiles, remote: true %>
+        </div>
+    </div>
+  </div>
 </div>

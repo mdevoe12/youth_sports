@@ -4,9 +4,16 @@ Rails.application.routes.draw do
   patch '/player_profiles/:id', to: 'players#update'
   resources :users, only: [:index]
 
-  get '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/facebook/callback', to: 'oauth#create'
+  get 'auth/failure', to: redirect('/')
+
+  get '/auth/twitter/callback', to: 'oauth#create'
   get '/auth/twitter', as: :twitter_login
   resources :favorite_players, only: [:create, :new]
+
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  resources :type_selection, only: [:new, :create]
 
   namespace :users do
     get '/:id/messages', to: 'conversations#index'
@@ -28,7 +35,7 @@ Rails.application.routes.draw do
 
   resources :players, only: [:new, :create, :update, :edit]
   resources :player_profiles, only: [:new, :create, :show, :index]
-  resources :coach_profiles, only: [:show, :index]
+  resources :coach_profiles, only: [:new, :create, :show, :index]
 
   resources :personal_messages, only: [:new, :create]
   resources :conversations, only: [:index, :show]
