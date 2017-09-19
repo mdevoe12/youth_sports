@@ -288,10 +288,32 @@
       ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/controllers/uploads_controller.rb": [
         1,
+        1,
+        null,
         null,
         1,
         1,
         1,
+        null,
+        null,
+        null
+      ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/models/csv_importer.rb": [
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -327,14 +349,14 @@
         null,
         null,
         1,
-        1,
-        1,
-        null,
-        1,
         null,
         null,
         null,
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null,
@@ -767,6 +789,15 @@
         0,
         0
       ],
+      "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/jobs/csv_importer_job.rb": [
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0
+      ],
       "/Users/matthewdevoe/turing/3module/projects/youth_sports/app/mailers/application_mailer.rb": [
         0,
         0,
@@ -986,6 +1017,6 @@
         0
       ]
     },
-    "timestamp": 1505842252
+    "timestamp": 1505843239
   }
 }
