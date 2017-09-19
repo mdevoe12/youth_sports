@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170918225555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "player_id"
+    t.string "full_name"
     t.index ["player_id"], name: "index_favorite_players_on_player_id"
   end
 
