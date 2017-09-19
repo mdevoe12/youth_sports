@@ -1,8 +1,19 @@
-<div class="white"
-<h1>All Recruiters</h1>
 
-<ul>
-<% @recruiter_profiles.each do |profile| %>
-  <li><%= link_to profile.recruiter.first_name, recruiter_profile_path(profile.recruiter) %></li>
-  <% end %>
+
+
+<div class="container-fluid">
+  <div class="border-map">
+    <h1 align="center">All Recruiters</h1>
+  </div>
+  <hr>
+  <div class="border-map">
+
+    <div class="row" id="recruiter_profiles">
+      <%= render @recruiter_profiles %>
+    </div>
+  </div>
+
+    <div align="center" id="paginator">
+      <%= paginate @recruiter_profiles, remote: true %>
+    </div>
 </div>

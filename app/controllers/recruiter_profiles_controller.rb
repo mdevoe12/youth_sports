@@ -23,7 +23,7 @@ class RecruiterProfilesController < ApplicationController
   end
 
   def index
-    @recruiter_profiles = RecruiterProfile.all
+    @recruiter_profiles = RecruiterProfile.page(params[:page]).per(36)
   end
 
 

@@ -5,7 +5,7 @@ class CoachProfilesController < ApplicationController
   end
 
   def index
-    @coach_profiles = CoachProfile.page(params[:page]).per(27)
+    @coach_profiles = CoachProfile.page(params[:page]).per(36)
   end
 
 end

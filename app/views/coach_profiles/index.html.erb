@@ -1,10 +1,14 @@
 <div class="container-fluid">
-  <h1 align="center">All Coaches</h1>
+  <div class="border-map">
+    <h1 align="center">All Coaches</h1>
+  </div>
   <hr>
+  <div class="border-map">
 
     <div class="row" id="coach_profiles">
       <%= render @coach_profiles %>
     </div>
+  </div>
 
     <div align="center" id="paginator">
       <%= paginate @coach_profiles, remote: true %>
