@@ -5,7 +5,7 @@ class CoachProfilesController < ApplicationController
   end
 
   def index
-    @coach_profiles = CoachProfile.all
+    @coach_profiles = CoachProfile.page(params[:page]).per(16)
   end
 
 end
