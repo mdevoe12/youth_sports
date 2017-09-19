@@ -3,7 +3,7 @@ class RecruitersController < ApplicationController
   skip_before_action :authorize!, only: [:new, :create]
 
   def new
-    @response = Faraday.get("https://graph.facebook.com/v2.10/oauth/access_token?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/recruiters/new&client_secret=#{ENV['FACEBOOK_APP_SECRET']}&code=#{params["code"]}")
+    @response = Faraday.get("https://graph.facebook.com/v2.10/oauth/access_token?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=https://obscure-tundra-12352.herokuapp.com/recruiters/new&client_secret=#{ENV['FACEBOOK_APP_SECRET']}&code=#{params["code"]}")
 
     token = @response.body.split(/\W+/)[2]
 
