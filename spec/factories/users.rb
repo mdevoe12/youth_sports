@@ -3,6 +3,9 @@ FactoryGirl.define do
     type nil
     username 'username'
     password 'password'
+    sequence :email do |x|
+      "email#{x}@email.com"
+    end
 
     trait :complete do
       with_profile
@@ -19,10 +22,19 @@ FactoryGirl.define do
           user.first_name = "Pat"
           user.last_name = "Riley"
           user.save
+        elsif user.type == 'Recruiter'
+          user.first_name = "Nick"
+          user.last_name = "Saban"
         end
       end
       after(:create) do |user|
-        create(:player_profile, grade_level: 6, gpa: 3.2, guardian_phone: "31700000", height: "4'6in", weight: '105lbs', school: "Haysville Hogs", player_id: user.id)
+        if user.type == "Player"
+          create(:player_profile, grade_level: 6, gpa: 3.2, guardian_phone: "31700000", height: "4'6in", weight: '105lbs', school: "Haysville Hogs", player_id: user.id)
+        elsif user.type == "Coach"
+          create(:coach_profile, institution: "Hogwarts", email: "hagrid@hogwarts.net", coach_id: user.id)
+        elsif user.type == "Recruiter"
+          create(:recruiter_profile, institution: "ALABAMA ROLL TIDE", email: "satan@crimson.ua.edu", recruiter_id: user.id)
+        end
       end
     end
 
@@ -34,4 +46,6 @@ FactoryGirl.define do
       end
     end
   end
+
+
 end

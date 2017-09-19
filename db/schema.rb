@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918215625) do
+ActiveRecord::Schema.define(version: 20170918225555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "authentication_providers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_name_on_authentication_providers"
+  end
 
   create_table "coach_profiles", force: :cascade do |t|
     t.string "institution"
@@ -22,6 +29,8 @@ ActiveRecord::Schema.define(version: 20170918215625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "coach_id"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["coach_id"], name: "index_coach_profiles_on_coach_id"
   end
 
@@ -70,6 +79,8 @@ ActiveRecord::Schema.define(version: 20170918215625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "player_id"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["player_id"], name: "index_player_profiles_on_player_id"
   end
 
@@ -102,6 +113,8 @@ ActiveRecord::Schema.define(version: 20170918215625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recruiter_id"
+    t.string "first_name"
+    t.string "last_name"
     t.index ["recruiter_id"], name: "index_recruiter_profiles_on_recruiter_id"
   end
 
@@ -127,6 +140,19 @@ ActiveRecord::Schema.define(version: 20170918215625) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_authentications", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "authentication_provider_id"
+    t.string "uid"
+    t.string "token"
+    t.datetime "token_expires_at"
+    t.text "params"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["authentication_provider_id"], name: "index_user_authentications_on_authentication_provider_id"
+    t.index ["user_id"], name: "index_user_authentications_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "type"
     t.string "first_name"
@@ -134,12 +160,21 @@ ActiveRecord::Schema.define(version: 20170918215625) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
-    t.string "password_digest"
     t.string "provider"
     t.string "uid"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
     t.string "secret"
+    t.string "email", default: ""
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
   end
 
   add_foreign_key "coach_profiles", "users", column: "coach_id"
