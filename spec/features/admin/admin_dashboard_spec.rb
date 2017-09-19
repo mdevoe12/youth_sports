@@ -1,15 +1,23 @@
 require 'rails_helper'
 
 RSpec.feature "admin can" do
-  scenario "seed dashboard" do
-    admin = Admin.create(first_name: "Bill",
-                         last_name: "Nye",
-                         password_digest: "123")
+  scenario "see dashboard" do
+    admin = Admin.create(email: "bill@nye.com", password: "billnye")
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+    visit '/'
+
+    click_on "Log In"
+
+    click_on "Sign In"
+
+    fill_in "session_email", with: admin.email
+    fill_in "session_password", with: "billnye"
+
+    click_on "Log in"
 
     visit '/dashboard'
 
-    expect(page).to have_content(admin.first_name)
+    expect(current_path).to eq dashboard_index_path
+    expect(page).to have_content("Hello #{admin.first_name}")
   end
 end
