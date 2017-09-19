@@ -1,0 +1,11 @@
+<h1>Please select your account type:</h1>
+
+<%= form_for @user, url: type_selection_index_path, method: :post do |f| %>
+    <%= radio_button_tag(:type, "Player") %>
+    <%= label_tag(:type_player, "Player") %><br>
+    <%= radio_button_tag(:type, "Recruiter") %>
+    <%= label_tag(:type_recruiter, "Recruiter") %><br>
+    <%= radio_button_tag(:type, "Coach") %>
+    <%= label_tag(:type_coach, "Coach") %><br>
+    <%= f.submit "Update Account" %>
+<% end %>

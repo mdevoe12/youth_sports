@@ -1,18 +1,22 @@
 class PlayerProfilesController < ApplicationController
 
   def new
-    @player_id = params["player_id"]
+    @player_id = current_user.id
     @player_profile = PlayerProfile.new
   end
 
   def create
     @player_profile = PlayerProfile.new(profile_params)
-    if @player_profile.save
-      redirect_to player_profile_path(@player_profile.id)
+    if @player_profile.save!
+      redirect_to dashboard_index_path
+    else
+      flash[:message] = "There was an error processing your request; please try again"
+      render :new
     end
   end
 
   def show
+    redirect_to login_path unless user_signed_in?
     @player_profile = PlayerProfile.find(params[:id])
     @player = Player.find(@player_profile.player_id)
   end
@@ -25,7 +29,7 @@ class PlayerProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:player_profile).permit(:school, :height, :weight, :grade_level,
+    params.require(:player_profile).permit(:first_name, :last_name, :school, :height, :weight, :grade_level,
     :gpa, :guardian_phone, :player_id)
   end
 end

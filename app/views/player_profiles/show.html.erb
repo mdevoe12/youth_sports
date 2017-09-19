@@ -24,8 +24,8 @@
           </div>
         </div>
         <div class="col-md-4 team-name">
-          <h5><%= @player.team.name %></h5>
-          <%= image_tag("players/team_logo.png", :id => "ath-team-logo") %>
+          <!-- <h5><%#= @player.teams.name %></h5> -->
+          <!-- <%#= image_tag("players/team_logo.png", :id => "ath-team-logo") %> -->
           </div>
         <div class="col-md-8 prf-sum">
           <h4><%= @player.school %></h4>
@@ -33,7 +33,7 @@
           <h4><%= @player.height %></h4>
           <h4><%= @player.weight %></h4>
           <h4><%= @player.gpa %></h4>
-          <% if current_user.id == @player.id %>
+          <% if current_user && current_user.id == @player.id %>
           <%= link_to "Edit", edit_player_path(@player), :class => "btn edit-btn"%>
           <% end %>
         </div>

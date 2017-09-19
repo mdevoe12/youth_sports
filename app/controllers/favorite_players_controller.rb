@@ -6,8 +6,8 @@ class FavoritePlayersController < ApplicationController
 
   def create
     fav = params["favorite_player"]["screen_name"]
-    @favorite_player = FavoritePlayer
-                        .create(screen_name: fav, player_id: current_user.id)
+    @favorite_player = FavoritePlayer.create!(screen_name: fav, player_id: current_user.id)
+    current_user.favorite_player = @favorite_player
     redirect_to dashboard_index_path
   end
 
