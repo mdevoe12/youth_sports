@@ -12,13 +12,16 @@ RSpec.feature 'player visits their own page' do
       fill_in "player_profile_weight", with: "200"
       click_on("Update Profile")
       expect(current_path).to eq("/player_profiles/#{player.profile.id}")
-      expect(page).to have_content("200lbs")
-      expect(page).to_not have_content("105lbs")
+      expect(page).to have_content("200")
+      expect(page).to_not have_content("105")
     end
     it 'but cannot edit another players info' do
-      visit("/player_profiles/#{@player2.profile.id}")
+      player = create(:player, :with_profile, type: "Player")
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(player)
+      player_2 = create(:player, :with_profile, email: "derrickhenry@heismanwinners.com", type: "Player")
+      visit("/player_profiles/#{player_2.profile.id}")
       expect(page).to_not have_content("Edit")
-      visit("/players/#{@player2.id}/edit")
+      visit("/players/#{player_2.id}/edit")
       expect(page).to have_content("404")
     end
   end
