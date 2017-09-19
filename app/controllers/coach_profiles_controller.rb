@@ -31,7 +31,7 @@ class CoachProfilesController < ApplicationController
   end
 
   def player_check
-    render file: 'public/404.html', layout: true, status: 404 if current_user.type == "Player"
+    redirect_to login_path if current_user.nil? || current_user.type == "Player"
   end
 
 end
