@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
 
+  post '/watch_list/:id', to: 'prospects#create', as: :create_watch_list
+  delete '/watch_list/:id', to: 'prospects#destroy', as: :delete_watch_list
 
   resources :players, only: [:new, :create, :update, :edit]
   resources :player_profiles, only: [:new, :create, :show, :index]
