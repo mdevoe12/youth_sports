@@ -16,7 +16,6 @@ Rails.application.routes.draw do
   resources :type_selection, only: [:new, :create]
 
   namespace :users do
-    get '/:id/messages', to: 'conversations#index'
     get '/:id/favorite_player', to: 'favorite_player#create'
   end
 
@@ -24,7 +23,6 @@ Rails.application.routes.draw do
     get '/:id/stats', to: 'stats#index'
   end
 
-  get  '/:id/messages', to: 'conversations#index'
   get  '/:id/favorite_player', to: 'favorite_player#create'
   get  '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -39,8 +37,6 @@ Rails.application.routes.draw do
   resources :player_profiles, only: [:new, :create, :show, :index]
   resources :coach_profiles, only: [:new, :create, :show, :index]
 
-  resources :personal_messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show]
   resources :recruiters, only: [:new, :create, :update]
   resources :recruiter_profiles, only: [:new, :create, :show, :index]
   resources :dashboard, only: [:index]
