@@ -1,10 +1,13 @@
 language: ruby
 rvm:
-  - 2.4.1
+- 2.4.1
 services:
-  - postgresql
+- postgresql
 before_script:
-  - psql -c 'create database youth_sports_test;' -U postgres
+- psql -c 'create database youth_sports_test;' -U postgres
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - RAILS_ENV=test bundle exec rspec
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rspec
+env:
+  global:
+    secure: wj+HJezXgiP6S+N+FBn2mA708umhXgTHejYlZqhR9T4GnsoZkC9Mn8vpS1PSwZIDYJFIUXDbYXMN9r3EphTRxR+eKOklAmhV9ZHDN0ENTdpD88IE6oIIKkh41kpY6DUwX0gLJV1dFnaTV3KL5kkbZCMSr/kNt78JJhnQo5ZRJp+rSLKQJXTjkyfhOBt+5jOh3ajGXbYLzL5pjcaNdxOmFXUvdItCQnG4SmYltqQCyaTErWmC2w3nf8OzU1Vq+Rbi7UH+IfrjC04rOMbvdJSksGOUY1HciefU6j2aaB1a2b34bjMKtMxMP5gGtm21BGrotyFOQxC3/4lMg1ODBbHL+m6IM6dN5vCJkyWvH0Mzhpl1tA08e/aWQMusT35kMoa8KnzOYMsNmVbINPT3JfH4ACHIdnKLFH2uAKnl9VjDk78Vqb6CQ74qefpfZ53IXu7Y8udhYOVXBInQeLW+eyj/9NRVNQT2PMuCuV1+dIT6byjJ3D45IEWuxQq0z/fXKxBaGYM+yCigdK5JYo2zt/TuZ3cSd4BlAC9yU9UmNfmG0PkLgWEU0sd8NTArbG/pOBEru4HgLWc98/P7L2OX2Gv0GfQJMluXYd38tKSssWZHartYDcN7ljAM2GONxubYV5efL3cwA2h6U0U9Ez17pOoltjvuRq613aPO+dJ9E9FuDhI=
