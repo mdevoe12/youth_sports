@@ -169,7 +169,7 @@ player_count = 1
     :weight => "#{rand(110...250)}",
     :grade_level => rand(1..12),
     :gpa => rand(1.1...4.0).round(2),
-    :guardian_phone => "15555555555",
+    :guardian_phone => "16073426730",
     :player_id => player.id
   )
 
