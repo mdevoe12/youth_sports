@@ -15,6 +15,7 @@ FactoryGirl.define do
                                 grade_level: 3,
                                 gpa: 1.0,
                                 guardian_phone: "1234567890",
+                                status: "active",
                                 player: player
 
         player.profile = player_profile
