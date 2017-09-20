@@ -26,6 +26,7 @@ class PlayerStat < ApplicationRecord
     find_player_for_stats(player).sum(:fouls)
   end
 
+
   private
 
   def self.find_player_for_stats(player)
