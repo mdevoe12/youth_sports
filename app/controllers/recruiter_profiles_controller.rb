@@ -18,12 +18,13 @@ class RecruiterProfilesController < ApplicationController
 
   def show
     @recruiter_profile = RecruiterProfile.find(params[:id])
+    @images = Image.random_user
     @recruiter = @recruiter_profile.recruiter
     render 'public/404' if current_user.type == "Player"
   end
 
   def index
-    @recruiter_profiles = RecruiterProfile.all
+    @recruiter_profiles = RecruiterProfile.page(params[:page]).per(30)
   end
 
 

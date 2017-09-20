@@ -1,1 +1,15 @@
-<h1>Recruiter Profile</h1>
+<div class="container profile-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 column-border">
+          <h3 class="image"><%= image_tag @images.sample.picture, size: "150x150", class: 'img-circle', style: "border: 1px solid;" %>&emsp;<%= @recruiter.first_name %> <%=@recruiter.last_name  %> | Recruiter</h3>
+        <ul lass="list-group">
+          <li class="list-group-item">Representing: <%= @recruiter_profile.institution %></li>
+          <li class="list-group-item">Email: <%= @recruiter_profile.email %></li>
+          <li class="list-group-item">Phone: <%= @recruiter_profile.phone_number %></li>
+        </ul>
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
