@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -11,61 +12,28 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-truck" aria-hidden="true"></i>Sign Up<b class="caret"></b></a>
-					<div class="dropdown-menu">
-						<div class="track-w3ls">
-              <br>
-              <%= link_to "Register as Athlete", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/players/new"%>
-              <br><br>
-              <%= link_to "Register as Recruiter", "https://www.facebook.com/v2.10/dialog/oauth?client_id=#{ENV['FACEBOOK_APP_ID']}&redirect_uri=http://localhost:3000/recruiters/new"%>
-              <br><br>
-						</div>
-					</div>
-				</li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-lock" aria-hidden="true"></i> Login<b class="caret"></b></a>
-					<div class="dropdown-menu">
-						<div class="login-w3ls">
-							<h3>Login To Your Account</h3>
-							  <%= form_for(:session, url: login_path) do |f| %>
-								<%= f.label :username %>
-                <%= f.text_field :username %>
-								<%= f.label :password%>
-                <%= f.password_field :password %>
-								<%= f.submit "Sign In", :class => "btn btn-default" %>
-                <% end %>
-							</form>
-						</div>
-					</div>
-				</li>
-			</ul>
+          <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Log In</a></li>
+        </ul>
         </div><!--/.nav-collapse -->
     </div>
 </nav>
 
-
-
-
-<!-- <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/"><h1><span class="fa fa-diamond" aria-hidden="true"></span>RecruitMe</h1></a>
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Log In</h4>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="player_profiles#index">Athletes</a></li>
-				<li><a href="recruiter_profiles#index">Recruiters</a></li>
-				<li><a href="coach_profiles#index">Coaches</a></li>
-				<li><a href="conversations#index">messages</a></li>
-				<li><a href="/logout">logout</a></li>
-			</ul>
+        <div class="modal-body text-center">
+          <%= link_to "Login with Facebook", user_facebook_omniauth_authorize_path %><br>
+          <%= link_to "Login with Twitter", user_twitter_omniauth_authorize_path %><br>
+          <%= link_to "Sign In", new_user_session_path %><br>
+          <%= link_to "Create Account", new_user_registration_path %><br>
         </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Close</a>
+        </div>
+      </div>
     </div>
-</nav> -->
+</div>
