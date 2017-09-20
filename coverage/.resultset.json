@@ -17,7 +17,7 @@
         1,
         null,
         1,
-        79,
+        81,
         null,
         null,
         1,
@@ -153,6 +153,11 @@
         null
       ],
       "/Users/Yohanan/Desktop/turing/mod3/youth_sports/app/models/facility.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/Yohanan/Desktop/turing/mod3/youth_sports/app/models/favorite_player.rb": [
         1,
         1,
         null
@@ -602,8 +607,8 @@
         null,
         null,
         1,
-        140,
-        140,
+        153,
+        153,
         null,
         null,
         null,
@@ -613,11 +618,6 @@
         null,
         null,
         null,
-        null
-      ],
-      "/Users/Yohanan/Desktop/turing/mod3/youth_sports/app/models/favorite_player.rb": [
-        1,
-        1,
         null
       ],
       "/Users/Yohanan/Desktop/turing/mod3/youth_sports/app/controllers/coach_profiles_controller.rb": [
@@ -1175,6 +1175,6 @@
         0
       ]
     },
-    "timestamp": 1505923795
+    "timestamp": 1505933354
   }
 }
