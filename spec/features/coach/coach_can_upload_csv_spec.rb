@@ -32,8 +32,8 @@ RSpec.feature "A coach" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@coach)
   end
 
-  xscenario "can see upload successful csv" do
-  
+  scenario "can see upload csv" do
+
     visit "/dashboard"
 
     expect(page).to have_button("Upload CSV")
@@ -41,26 +41,7 @@ RSpec.feature "A coach" do
     attach_file(:file, 'spec/features/upload_files/good_data.csv')
     click_button "Upload CSV"
 
-    stat = PlayerStat.last
-
-    expect(current_path).to eq(dashboard_index_path)
-    expect(page).to have_content("Items imported")
-    expect(stat.points).to eq(6)
-    expect(stat.fouls).to eq(4)
-    expect(stat.game_id).to eq(1)
+    expect(page).to have_content("File Uploaded. A confirmation email will be sent upon completion.")
   end
 
-  xscenario "uploads bad csv data" do
-    visit "/dashboard"
-
-    expect(page).to have_button("Upload CSV")
-
-    attach_file(:file, 'spec/features/upload_files/bad_data.csv')
-    click_button "Upload CSV"
-
-    stat = PlayerStat.last
-
-    expect(current_path).to eq(dashboard_index_path)
-    expect(page).to have_content("Error Encountered")
-  end
 end
