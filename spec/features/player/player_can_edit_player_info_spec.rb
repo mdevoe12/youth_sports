@@ -1,8 +1,7 @@
 require 'rails_helper'
 
  describe "logged in athlete" do
-   scenario "can visit their profile page" do
-     # As an authenticated player
+   scenario "can edit their profile" do
      aj = Player.create(first_name: 'AJ',
                              last_name: 'Randall',
                              username: 'aj',
@@ -15,22 +14,19 @@ require 'rails_helper'
                                      gpa: 4.0,
                                      guardian_phone: '7202436470',
                                      player_id: aj.id)
-
      visit 'login'
 
        fill_in "session[email]", with: "aj@aj.com"
        fill_in "session[password]", with: "password"
        click_on "Log in"
-
+    visit dashboard_index_path
      expect(current_path).to eq('/dashboard')
-     expect(page).to have_content('Hamilton Middle School')
-     expect(page).to have_content('4ft10')
-     expect(page).to have_content("90")
-     expect(page).to have_content("6")
-     expect(page).to have_content('7202436470')
+
+     expect(page).to have_content(aj.profile.school)
+
      click_on "Edit Profile"
 
-     expect(current_path).to eq("/player_profiles/#{aj.id}/edit")
+     expect(current_path).to eq("/player_profiles/#{aj.profile.id}/edit")
 
      expect(page).to have_content("Edit Profile")
      fill_in "School", with: "none"
@@ -39,6 +35,9 @@ require 'rails_helper'
      fill_in "Grade level", with: "1"
      fill_in "Guardian phone", with: "2222222222"
      click_on "Update Player profile"
+
+    #  player.profile = PlayerProfile.last
+    #  allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(player)
 
      expect(current_path).to eq("/dashboard")
      expect(page).to have_content("none")
