@@ -7,6 +7,9 @@
       <% end %>
       <div class="col-md-10">
         <h3><%= @player.name %></h3>
+        <% if @hot %>
+          <%= image_tag 'fire_icon.jpg', size: "25x25" %>
+        <% end %>
       </div>
       <div class="col-md-2 recruit-button">
         <% if current_user.type == "Recruiter" && @player_profile.active? %>

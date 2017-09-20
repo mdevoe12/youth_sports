@@ -207,6 +207,16 @@ end
   )
 end
 
+25.times do
+  Prospect.create(
+    :recruiter_profile_id => Prospect.pluck(:recruiter_profile_id).sample,
+    :player_profile_id => Prospect.pluck(:player_profile_id).sample,
+    :status => rand(0..3)
+  )
+end
+
+
+
 
 end_time = Time.now
 
