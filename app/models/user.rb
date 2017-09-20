@@ -3,12 +3,6 @@ class User < ApplicationRecord
   devise :omniauthable, :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   has_many :authentications, class_name: 'UserAuthentication', dependent: :destroy
-  has_many :user_roles
-  has_many :roles, through: :user_roles
-  has_many :authored_conversations, class_name: 'Conversation', foreign_key: 'author_id'
-  has_many :received_conversations, class_name: 'Conversation', foreign_key: 'received_id'
-  has_many :personal_messages, dependent: :destroy
-
 
   self.inheritance_column = :type
 
