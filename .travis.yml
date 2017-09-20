@@ -5,6 +5,7 @@ services:
 - postgresql
 before_script:
 - psql -c 'create database youth_sports_test;' -U postgres
+- sudo redis-server /etc/redis/redis.conf --port 6380 --requirepass 'secret'
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - RAILS_ENV=test bundle exec rspec
