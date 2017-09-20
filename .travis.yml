@@ -6,7 +6,7 @@ services:
 - redis-server
 before_script:
 - psql -c 'create database youth_sports_test;' -U postgres
-- bundle exec sidekiq -d -r ./spec/dummy_app/app.rb -L /tmp/sidekiq.log
+- bundle exec sidekiq -d
 - sleep 1
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
