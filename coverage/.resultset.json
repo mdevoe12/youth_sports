@@ -299,6 +299,7 @@
         3,
         null,
         null,
+        null,
         1,
         null,
         1,
@@ -747,6 +748,18 @@
         null,
         0
       ],
+      "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/controllers/uploads_controller.rb": [
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0
+      ],
       "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/controllers/users/omniauth_callbacks_controller.rb": [
         0,
         null,
@@ -813,10 +826,40 @@
         0,
         0
       ],
+      "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/jobs/csv_importer_job.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/jobs/send_email_job.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
       "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/mailers/application_mailer.rb": [
         0,
         0,
         0,
+        null,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/mailers/upload_mailer.rb": [
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
         0
       ],
       "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/models/admin.rb": [
@@ -875,6 +918,35 @@
       "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/models/coach_profile.rb": [
         0,
         0,
+        0
+      ],
+      "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/models/csv_importer.rb": [
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
         0
       ],
       "/Users/brandon1985/turing/second-half/module_3/the/youth_sports/app/models/facility.rb": [
@@ -1135,7 +1207,6 @@
         0,
         0,
         0,
-        null,
         0,
         0,
         0,
@@ -1197,6 +1268,6 @@
         0
       ]
     },
-    "timestamp": 1505943668
+    "timestamp": 1505944671
   }
 }

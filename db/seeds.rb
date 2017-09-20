@@ -2,6 +2,9 @@ require 'database_cleaner'
 
 DatabaseCleaner.clean_with(:truncation)
 
+AuthenticationProvider.create(name: 'facebook')
+AuthenticationProvider.create(name: 'twitter')
+
 start = Time.now
 
 

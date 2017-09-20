@@ -16,17 +16,18 @@ require 'rails_helper'
                                      player_id: aj.id)
      visit 'login'
 
-       fill_in "session[email]", with: "aj@aj.com"
-       fill_in "session[password]", with: "password"
-       click_on "Log in"
+    fill_in "session[email]", with: "aj@aj.com"
+    fill_in "session[password]", with: "password"
+    click_on "Log in"
     visit dashboard_index_path
+
      expect(current_path).to eq('/dashboard')
 
      expect(page).to have_content(aj.profile.school)
 
      click_on "Edit Profile"
 
-     expect(current_path).to eq("/player_profiles/#{aj.profile.id}/edit")
+     expect(current_path).to eq("/player_profiles/#{aj_profile.id}/edit")
 
      expect(page).to have_content("Edit Profile")
      fill_in "School", with: "none"
