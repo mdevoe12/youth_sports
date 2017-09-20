@@ -3,7 +3,55 @@
  @import "bootstrap";
  @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville');
 
- .form-group {
+ body {
+   background-color: #ffffff !important;
+ }
+
+.border-map {
+  border: 1px solid #80CBC4;
+}
+
+.column-border {
+  background: #648880;
+  background: linear-gradient(to right, #f6f1d3, #648880 85%, #293f50);
+  border: 1px solid #80CBC4;
+  padding-top: 15px;
+}
+
+
+.stats-border {
+  border: 1px solid #80CBC4;
+}
+
+.table-border {
+  border: 1px solid #80CBC4;
+}
+
+.profile-page {
+  padding: 15px;
+  border: 1px solid #80CBC4;
+}
+.recruit-button {
+  padding-top: 10px;
+}
+
+.coaches-text-color {
+  background-color: black;
+}
+
+.upcoming-border {
+  border: 1px solid #80CBC4;
+}
+
+.border-for-map {
+  border: 1px solid #00838F;
+}
+
+.border-for-index {
+  border: 1px solid gray;
+}
+
+ .form-group-player-index {
    padding: 30px 0;
    background-color: #F9F9F9;
  }
