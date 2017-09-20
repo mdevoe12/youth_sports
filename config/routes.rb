@@ -4,14 +4,13 @@ Rails.application.routes.draw do
 
   root 'home#index'
   resources :players, only: [:new, :create, :update, :edit]
-  resources :player_profiles, only: [:new, :create, :show, :index]
+  resources :player_profiles, only: [:new, :create, :show, :index, :edit, :update]
   resources :coach_profiles, only: [:new, :create, :show, :index]
 
   resources :recruiters, only: [:new, :create, :update]
   resources :recruiter_profiles, only: [:new, :create, :show, :index]
   resources :dashboard, only: [:index]
 
-  patch '/player_profiles/:id', to: 'players#update'
   resources :users, only: [:index]
 
   get '/auth/facebook/callback', to: 'oauth#create'
