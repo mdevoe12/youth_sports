@@ -77,20 +77,6 @@ RSpec.describe Player, type: :model do
     end
   end
 
-  describe ".points" do
-    it "returns the points for a player from their profile" do
-
-      expect(@player.points).to eq([["Sep-20, 2017(game:16)", 1]])
-    end
-  end
-
-  describe ".fouls" do
-    it "returns the fouls for a player during a game" do
-
-      expect(@player.fouls.last).to eq(["Sep-20, 2017(game:17)", 1])
-    end
-  end
-
   describe ".team" do
     it "returns the first team that a player belongs to" do
 
