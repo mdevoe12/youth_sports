@@ -17,7 +17,11 @@ class CSVImporter
         stat.save!
       end
     end
-    UploadMailer.email_coach.deliver
+    send_email
+  end
+
+  def send_email
+    SendEmailJob.perform_later
   end
 
 end
