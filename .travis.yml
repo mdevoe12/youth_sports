@@ -1,10 +1,11 @@
 language: ruby
 rvm:
 - 2.4.1
+before_script:
+  - psql -c 'create database youth_sports_test;' -U postgres
 services:
 - postgresql
-before_script:
-- psql -c 'create database youth_sports_test;' -U postgres
+- redis-server
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - RAILS_ENV=test bundle exec rspec
