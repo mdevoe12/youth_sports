@@ -18,6 +18,8 @@
         <% elsif current_user.type == "Recruiter" && @player_profile.inactive? %>
         <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), disabled: :true, method: :post, :class => 'btn btn-warning start-rec' %></p>
         <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% elsif current_user == @player %>
+          <%= button_to "Edit Your Profile", edit_player_profile_path(current_user), method: :get, class: "btn btn-warning" %>
         <% end %>
       </div>
     </div>
@@ -71,9 +73,6 @@
               </tr>
             </tbody>
           </table>
-          <% if current_user.id == @player.id %>
-          <%= link_to "Edit", edit_player_path(@player), :class => "btn edit-btn"%>
-          <% end %>
         </div>
       </div>
     </div>
