@@ -17,6 +17,7 @@ class CSVImporter
         stat.save!
       end
     end
+    UploadMailer.email_coach.deliver
   end
 
 end
