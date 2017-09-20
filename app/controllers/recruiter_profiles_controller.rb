@@ -16,6 +16,8 @@ class RecruiterProfilesController < ApplicationController
   def show
     @recruiter_profile = RecruiterProfile.find(params[:id])
     @recruiter = Recruiter.find(@recruiter_profile.recruiter_id)
+    @images = Image.random_user
+
     if current_user.type == "Player"
       @recruiter = current_user.prospects.find_by(recruiter_profile_id: params[:id]).recruiter_profile.recruiter
     else
@@ -23,7 +25,7 @@ class RecruiterProfilesController < ApplicationController
   end
 
   def index
-    @recruiter_profiles = RecruiterProfile.page(params[:page]).per(36)
+    @recruiter_profiles = RecruiterProfile.page(params[:page]).per(30)
   end
 
 

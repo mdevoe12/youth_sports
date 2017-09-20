@@ -1,23 +1,17 @@
 <div class="container profile-body">
   <div class="container">
-    <h1>Recruiter Profile</h1>
-    <div class="row player-heading-border">
-      <div class="col-md-10">
-        <h3><%= @recruiter.first_name %> <%=@recruiter.last_name  %></h3>
-      </div>
-    </div>
-    <hr>
     <div class="row">
-      <div class="col-md-4">
-        <%= image_tag "https://media.licdn.com/media-proxy/ext?w=800&h=800&hash=o6u9Tq%2FiOJm8OxArAcTdAq%2Fy5Lk%3D&ora=1%2CaFBCTXdkRmpGL2lvQUFBPQ%2CxAVta5g-0R69hAxU0Rks6bmIpkb-50hKCoTTEHX8RHTuvoTTOCq8J4OcZuH--hlDJmgewUB2LrzwHWW_VtCjKoPteN0lipPtLJHjNVBROlE8gG9JodY6NRUropW_SPj5bCdN3eIVbj24Mq3gaFwsRy8n-g" %>
-      </div>
-
-      <div class="col-md-8 stats-title">
+      <div class="col-md-8 column-border">
+        <div class="image">
+          <h3><%= image_tag @images.sample.picture, size: "150x150", class: 'img-circle', style: "border: 1px solid;" %>&emsp;<%= @recruiter.first_name %> <%=@recruiter.last_name  %> | Recruiter</h3>
+        </div>
         <ul lass="list-group">
           <li class="list-group-item">Representing: <%= @recruiter_profile.institution %></li>
           <li class="list-group-item">Email: <%= @recruiter_profile.email %></li>
           <li class="list-group-item">Phone: <%= @recruiter_profile.phone_number %></li>
         </ul>
+        <br>
       </div>
     </div>
   </div>
+</div>

@@ -117,7 +117,6 @@ coach_recruiter_count = 1
       :password   => Faker::Internet.password(8)
       )
 
-
     recruiter_profile = RecruiterProfile.create(
       :institution => Faker::GameOfThrones.house,
       :email => Faker::Internet.safe_email,
