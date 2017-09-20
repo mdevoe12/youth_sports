@@ -18,7 +18,8 @@ describe "logged in athlete" do
     click_on "submit favorite player screen name"
 
     aj = Player.last
-    expect(current_path).to eq("/dashboard")
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(aj)
+    visit dashboard_index_path
     expect(page).to have_content("#{aj.favorite_player.screen_name}")
   end
 end

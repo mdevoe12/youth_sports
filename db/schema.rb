@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170918225555) do
+ActiveRecord::Schema.define(version: 20170919232312) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,16 +34,6 @@ ActiveRecord::Schema.define(version: 20170918225555) do
     t.index ["coach_id"], name: "index_coach_profiles_on_coach_id"
   end
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer "author_id"
-    t.integer "receiver_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["author_id", "receiver_id"], name: "index_conversations_on_author_id_and_receiver_id", unique: true
-    t.index ["author_id"], name: "index_conversations_on_author_id"
-    t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
-  end
-
   create_table "facilities", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -58,6 +48,7 @@ ActiveRecord::Schema.define(version: 20170918225555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "player_id"
+    t.string "full_name"
     t.index ["player_id"], name: "index_favorite_players_on_player_id"
   end
 
@@ -79,16 +70,6 @@ ActiveRecord::Schema.define(version: 20170918225555) do
     t.index ["facility_id"], name: "index_games_on_facility_id"
   end
 
-  create_table "personal_messages", force: :cascade do |t|
-    t.text "body"
-    t.bigint "conversation_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["conversation_id"], name: "index_personal_messages_on_conversation_id"
-    t.index ["user_id"], name: "index_personal_messages_on_user_id"
-  end
-
   create_table "player_profiles", force: :cascade do |t|
     t.string "school"
     t.string "height"
@@ -101,6 +82,7 @@ ActiveRecord::Schema.define(version: 20170918225555) do
     t.bigint "player_id"
     t.string "first_name"
     t.string "last_name"
+    t.integer "status"
     t.index ["player_id"], name: "index_player_profiles_on_player_id"
   end
 
@@ -202,8 +184,6 @@ ActiveRecord::Schema.define(version: 20170918225555) do
   add_foreign_key "game_teams", "games"
   add_foreign_key "game_teams", "teams"
   add_foreign_key "games", "facilities"
-  add_foreign_key "personal_messages", "conversations"
-  add_foreign_key "personal_messages", "users"
   add_foreign_key "player_profiles", "users", column: "player_id"
   add_foreign_key "player_stats", "games"
   add_foreign_key "player_stats", "player_profiles"

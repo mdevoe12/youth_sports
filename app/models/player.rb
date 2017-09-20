@@ -7,6 +7,7 @@ class Player < User
   has_many :player_stats, through: :profile
   has_one :favorite_player, class_name: :FavoritePlayer
 
+
   def name
     if self.first_name.nil? || self.last_name.nil?
       self.profile.first_name + " " + self.profile.last_name

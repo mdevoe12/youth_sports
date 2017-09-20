@@ -68,10 +68,10 @@ RSpec.configure do |config|
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
-  config.filter_gems_from_backtrace("rack-2.0.3", "railties-5.1.3", "rack-test-0.6.3")
+  # config.filter_gems_from_backtrace("rack-2.0.3", "railties-5.1.3", "rack-test-0.6.3")
 
   # config.include IntegrationSpecHelper, type: :feature
-  config.include Devise::Test::ControllerHelpers, :type => :controller
+  # config.include Devise::Test::ControllerHelpers, :type => :controller
 end
 
 

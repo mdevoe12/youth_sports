@@ -6,6 +6,8 @@ RSpec.feature "recruiter can use navbar links" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(recruiter)
 
     player = create(:player, :with_profile, email: "derrickhenry@heismanwinners.com", type: "Player")
+    player.teams << create(:team)
+
 
     visit("/player_profiles/#{player.profile.id}")
     expect(page).to have_content(player.first_name)

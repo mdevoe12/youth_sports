@@ -4,6 +4,10 @@ RSpec.feature "recruiter starts recruitment process" do
   scenario "recruiter starts recruitment" do
     recruiter = create(:recruiter, :with_profile)
     player = create(:player, :with_profile)
+    player.teams << create(:team, :with_upcoming_games)
+    Game.all.each do |game|
+      game.teams << create(:team, name: "Auburn War Eggos")
+    end
     facility = create(:facility)
     game = create(:game, facility: facility)
     PlayerStat.create(points: 40, fouls: 20, player_profile: player.profile, game: game)
@@ -25,6 +29,10 @@ RSpec.feature "recruiter starts recruitment process" do
   scenario "guardian responds with token" do
     recruiter = create(:recruiter, :with_profile)
     player = create(:player, :with_profile)
+    player.teams << create(:team, :with_upcoming_games)
+    Game.all.each do |game|
+      game.teams << create(:team, name: "Auburn War Eggos")
+    end
     facility = create(:facility)
     game = create(:game, facility: facility)
     PlayerStat.create(points: 40, fouls: 20, player_profile: player.profile, game: game)
@@ -45,6 +53,10 @@ RSpec.feature "recruiter starts recruitment process" do
   scenario "guardian responds no" do
     recruiter = create(:recruiter, :with_profile)
     player = create(:player, :with_profile)
+    player.teams << create(:team, :with_upcoming_games)
+    Game.all.each do |game|
+      game.teams << create(:team, name: "Auburn War Eggos")
+    end
     facility = create(:facility)
     game = create(:game, facility: facility)
     PlayerStat.create(points: 40, fouls: 20, player_profile: player.profile, game: game)
