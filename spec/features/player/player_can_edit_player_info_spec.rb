@@ -37,9 +37,6 @@ require 'rails_helper'
      fill_in "Guardian phone", with: "2222222222"
      click_on "Update Player profile"
 
-    #  player.profile = PlayerProfile.last
-    #  allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(player)
-
      expect(current_path).to eq("/dashboard")
      expect(page).to have_content("none")
      expect(page).to have_content("10")
