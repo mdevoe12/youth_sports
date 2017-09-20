@@ -12,6 +12,16 @@ class PlayerProfilesController < ApplicationController
     end
   end
 
+  def edit
+    @player_profile = PlayerProfile.find_by(player_id: current_user.id)
+  end
+
+  def update
+    @player_profile = PlayerProfile.find_by(player_id: current_user.id)
+    @player_profile.update(update_params)
+    redirect_to dashboard_index_path
+  end
+
   def show
     @player_profile = PlayerProfile.find(params[:id])
     @player = Player.find(@player_profile.player_id)
@@ -26,5 +36,9 @@ class PlayerProfilesController < ApplicationController
   def profile_params
     params.require(:player_profile).permit(:school, :height, :weight, :grade_level,
     :gpa, :guardian_phone, :player_id)
+  end
+
+  def update_params
+    params.require(:player_profile).permit(:school, :height, :weight, :grade_level, :guardian_phone)
   end
 end

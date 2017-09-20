@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     user = User.find_by(username: params[:session][:username])
     if user && user.authenticate(params[:session][:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to dashboard_index_path
       # if user.type == "Player"
       #   redirect_to player_profile_path(user.id)
       # elsif user.type == "Recruiter"

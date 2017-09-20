@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  patch '/player_profiles/:id', to: 'players#update'
+  # patch '/player_profiles/:id', to: 'players#update'
   resources :users, only: [:index]
 
   get '/auth/twitter/callback', to: 'sessions#create'
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
 
 
   resources :players, only: [:new, :create, :update, :edit]
-  resources :player_profiles, only: [:new, :create, :show, :index]
+  resources :player_profiles
   resources :coach_profiles, only: [:show, :index]
 
   resources :personal_messages, only: [:new, :create]
