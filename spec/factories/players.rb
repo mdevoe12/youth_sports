@@ -43,6 +43,8 @@ FactoryGirl.define do
         team = create :team,
                       :with_upcoming_games,
                       name: "Alabama Crimson Tide"
+
+        player.teams << team
       end
     end
   end

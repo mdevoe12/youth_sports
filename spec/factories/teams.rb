@@ -9,7 +9,7 @@ FactoryGirl.define do
         games = create_list(:game, 3, status: "upcoming")
         team.games << games
         games.each do |game|
-          game.teams << create(:team)
+          game.teams << create(:team, name: "Auburn War Eggos")
         end
       end
     end

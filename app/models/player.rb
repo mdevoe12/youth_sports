@@ -65,4 +65,8 @@ class Player < User
     end
   end
 
+  def hot?
+    true if Prospect.where(player_profile_id: self.profile.id).count > 3
+  end
+
 end
