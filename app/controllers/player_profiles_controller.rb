@@ -33,6 +33,11 @@ class PlayerProfilesController < ApplicationController
     redirect_to login_path unless user_signed_in?
     @player_profile = PlayerProfile.find(params[:id])
     @player = Player.find(@player_profile.player_id)
+    if @player.hot?
+      @hot = true
+    else
+      @hot = false
+    end
   end
 
   def index

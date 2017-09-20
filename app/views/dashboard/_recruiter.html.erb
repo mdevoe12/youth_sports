@@ -24,6 +24,7 @@
         <th>Grade Level</th>
         <th>Status</th>
         <th>Next Game</th>
+        <th>Hot?</th>
       </tr>
       <% current_user.prospects.each do |prospect| %>
         <tr>
@@ -37,6 +38,10 @@
             <td><%= prospect.status %></td>
           <% end %>
           <td><%= prospect.player_profile.player.upcoming.first.when %></td>
+          <td> <% if prospect.player_profile.player.hot? %>
+            <%= image_tag 'fire_icon.jpg', size: "25x25" %>
+          <% end %>
+          </td>
         </tr>
       <% end %>
     </table>
