@@ -9,9 +9,12 @@
         <h3><%= @player.name %></h3>
       </div>
       <div class="col-md-2 recruit-button">
-        <% if current_user.type == "Recruiter"  %>
-          <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %></p>
-          <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% if current_user.type == "Recruiter" && @player_profile.active? %>
+        <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %></p>
+        <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% elsif current_user.type == "Recruiter" && @player_profile.inactive? %>
+        <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), disabled: :true, method: :post, :class => 'btn btn-warning start-rec' %></p>
+        <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
         <% end %>
       </div>
     </div>
