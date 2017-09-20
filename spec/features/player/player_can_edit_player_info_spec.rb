@@ -27,7 +27,7 @@ require 'rails_helper'
 
      click_on "Edit Profile"
 
-     expect(current_path).to eq("/player_profiles/#{aj_profile.id}/edit")
+     expect(current_path).to eq("/player_profiles/#{aj_profile.player_id}/edit")
 
      expect(page).to have_content("Edit Profile")
      fill_in "School", with: "none"
