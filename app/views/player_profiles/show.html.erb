@@ -9,7 +9,10 @@
         <h3><%= @player.name %></h3>
       </div>
       <div class="col-md-2 recruit-button">
-        <%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %>
+        <% if current_user.type == "Recruiter"  %>
+          <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %></p>
+          <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% end %>
       </div>
     </div>
     <hr>
@@ -20,6 +23,7 @@
       </div>
 
       <div class="col-md-8 stats-title stats-border">
+        <h5><%= @player.first_name.upcase %>'s STATS</h5>
         <div id="ath-profile-id" class="hidden"><%= @player.id %></div>
           <p id="id" class="hidden"><%= @player.id %></p>
             <canvas id="ath-profile-stats" width="1000" height="700"></canvas>
@@ -68,13 +72,16 @@
         <br>
         <%= image_tag 'basketball-black-and-white-clipart.gif', size: "150x150", class: "center" %>
       <br>
+      <div class="game">
         <% unless @player.teams.count == 0 %>
         <ul class="list-group">
+
           <% @player.upcoming.map do |game| %>
           <li class="list-group-item"><%= game.when %>: <%= @player.team.name %> VS: <%= game.vs(@player) %> </li>
           <% end %>
         </ul>
       <% end %>
+      </div>
      </div>
       <%= render "upcoming_game_facilities" %>
     </div>
