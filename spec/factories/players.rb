@@ -37,5 +37,13 @@ FactoryGirl.define do
         player.profile = player_profile
       end
     end
+
+    trait :with_team do
+      after(:create) do |player|
+        team = create :team,
+                      :with_upcoming_games,
+                      name: "Alabama Crimson Tide"
+      end
+    end
   end
 end
