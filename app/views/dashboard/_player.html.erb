@@ -5,6 +5,8 @@
   <div class="col-md-8">
     <ul>
       <h3><%= current_user.name %>'s Dashboard</h3><br>
+      <h3><%= link_to "Create Profile", new_player_profile_path(current_user) %></h3>
+      <h3><%= link_to "Edit Profile", edit_player_profile_path(current_user) %></h3>
       <p>School: <%= current_user.profile.school %></p>
       <p> Grade: <%= current_user.profile.grade_level %></p>
       <p>   GPA: <%= current_user.profile.gpa %></p>
