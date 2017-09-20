@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe "logged in athlete" do
-  scenario "can visit their profile page" do
+  scenario "can edit their profile" do
     # As an authenticated player
     aj = Player.create(first_name: 'AJ',
                             last_name: 'Randall',
@@ -15,7 +15,7 @@ describe "logged in athlete" do
                                     guardian_phone: '7202436470',
                                     player_id: aj.id)
     # When I login
-    # current_user = allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(aj)
+    current_user = allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(aj)
     # click_on 'dropdown'
     # I should be routed to my dashboard
     # click_on "Sign In"
