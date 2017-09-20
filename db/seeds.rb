@@ -98,7 +98,6 @@ coach_recruiter_count = 1
       :password   => Faker::Internet.password(8)
     )
 
-
     CoachProfile.create(
       :institution => Faker::GameOfThrones.house,
       :email => Faker::Internet.safe_email,
@@ -117,7 +116,6 @@ coach_recruiter_count = 1
       :username   => Faker::Internet.safe_email,
       :password   => Faker::Internet.password(8)
       )
-
 
     recruiter_profile = RecruiterProfile.create(
       :institution => Faker::GameOfThrones.house,
@@ -153,7 +151,7 @@ end
 
 player_count = 1
 
-800.times do
+400.times do
   player = Player.create(
     :first_name => Faker::Name.first_name,
     :last_name  => Faker::Name.last_name,
@@ -170,7 +168,45 @@ player_count = 1
     :grade_level => rand(1..12),
     :gpa => rand(1.1...4.0).round(2),
     :guardian_phone => "16073426730",
+    :player_id => player.id,
+    :status => "active"
+  )
+
+  9.times do PlayerStat.create(
+    :points => rand(1..30),
+    :fouls => rand(0..5),
+    :player_profile_id => player_profile.id,
+    :game_id => rand(0..400)
+  )
+  end
+
+  TeamPlayer.create(
+    :team_id => Team.pluck(:id).sample,
     :player_id => player.id
+  )
+  puts "creating player #{player_count}"
+  player_count += 1
+end
+
+400.times do
+  player = Player.create(
+    :first_name => Faker::Name.first_name,
+    :last_name  => Faker::Name.last_name,
+    :username   => Faker::Internet.safe_email,
+    :password   => Faker::Internet.password(8)
+  )
+
+  favorite_player = FavoritePlayer.create(screen_name: "@KingJames", player_id: player.id)
+
+  player_profile = PlayerProfile.create(
+    :school => Faker::HarryPotter.house,
+    :height => "#{rand(40..79)}",
+    :weight => "#{rand(110...250)}",
+    :grade_level => rand(1..12),
+    :gpa => rand(1.1...4.0).round(2),
+    :guardian_phone => "16073426730",
+    :player_id => player.id,
+    :status => "inactive"
   )
 
   9.times do PlayerStat.create(
