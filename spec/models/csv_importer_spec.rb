@@ -48,4 +48,5 @@ RSpec.describe CSVImporter, type: :model do
     expect(stat.game_id).to eq(1)
     expect(stat.player_profile_id).to eq(@profile1.id)
   end
+
 end
