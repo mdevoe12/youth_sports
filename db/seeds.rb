@@ -172,12 +172,18 @@ player_count = 1
     :status => "active"
   )
 
-  9.times do PlayerStat.create(
-    :points => rand(1..30),
+  stats = 9.times do
+    PlayerStat.create(
+    :two_points => rand(0..16),
+    :three_points => rand(0..9),
+    :free_throw => rand(0..5),
     :fouls => rand(0..5),
     :player_profile_id => player_profile.id,
     :game_id => rand(0..400)
   )
+
+  stats.points << stats.two_points + stats.three_points + stats.free_throw
+
   end
 
   TeamPlayer.create(
