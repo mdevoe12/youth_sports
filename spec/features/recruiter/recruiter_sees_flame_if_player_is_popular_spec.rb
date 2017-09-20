@@ -16,14 +16,14 @@ RSpec.describe "Recruiter visits a player's profile and" do
 
     visit player_profile_path(hot_players.first.profile)
 
-    expect(page).to have_css("fire-icon")
+    expect(page).to have_css("img[src$='/assets/fire_icon-d3a8d6f5860d1b1e278ffccc2cac7b49edde9b521b365030f6704836e66c2003.jpg']")
 
     visit player_profile_path(hot_players[1].profile)
 
-    expect(page).to have_css("fire-icon")
+    expect(page).to have_css("img[src$='/assets/fire_icon-d3a8d6f5860d1b1e278ffccc2cac7b49edde9b521b365030f6704836e66c2003.jpg']")
 
     visit player_profile_path(hot_players.last.profile)
 
-    expect(page).to have_css("fire-icon")
+    expect(page).to have_css("img[src$='/assets/fire_icon-d3a8d6f5860d1b1e278ffccc2cac7b49edde9b521b365030f6704836e66c2003.jpg']")
   end
 end
