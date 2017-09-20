@@ -1,0 +1,2 @@
+$('#recruiter_profiles').html('<%= escape_javascript render(@recruiter_profiles) %>');
+$('#paginator').html('<%= escape_javascript(paginate(@recruiter_profiles, remote: true).to_s) %>');

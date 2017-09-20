@@ -1,0 +1,24 @@
+<h1>Fill Out Profile</h1>
+
+<%= form_for @coach_profile do |f| %>
+
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+
+  <%= f.label :institution %>
+  <%= f.text_field :institution %>
+
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+
+  <%= f.hidden_field :coach_id, value: @coach_id %>
+
+  <%= f.submit "Create Profile" %>
+
+<% end %>

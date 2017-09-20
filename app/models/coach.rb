@@ -21,14 +21,15 @@ class Coach < User
   end
 
   def institution
-    self.profile.institution
-  end
+   self.profile.institution
+ end
 
-  def email
-    self.profile.email
-  end
+ def email
+   self.profile.email if self.profile
+ end
 
-  def phone
-    self.profile.phone_number
-  end
+ def phone
+   self.profile.phone_number
+ end
+
 end

@@ -1,15 +1,28 @@
 Rails.application.routes.draw do
 
   root 'home#index'
-  # patch '/player_profiles/:id', to: 'players#update'
+  resources :players, only: [:new, :create, :update, :edit]
+  resources :player_profiles, only: [:new, :create, :show, :index, :edit, :update]
+  resources :coach_profiles, only: [:new, :create, :show, :index]
+
+  resources :recruiters, only: [:new, :create, :update]
+  resources :recruiter_profiles, only: [:new, :create, :show, :index]
+  resources :dashboard, only: [:index]
+
   resources :users, only: [:index]
 
-  get '/auth/twitter/callback', to: 'sessions#create'
+  get '/auth/facebook/callback', to: 'oauth#create'
+  get 'auth/failure', to: redirect('/')
+
+  get '/auth/twitter/callback', to: 'oauth#create'
   get '/auth/twitter', as: :twitter_login
   resources :favorite_players, only: [:create, :new]
 
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+  resources :type_selection, only: [:new, :create]
+
   namespace :users do
-    get '/:id/messages', to: 'conversations#index'
     get '/:id/favorite_player', to: 'favorite_player#create'
   end
 
@@ -17,7 +30,6 @@ Rails.application.routes.draw do
     get '/:id/stats', to: 'stats#index'
   end
 
-  get  '/:id/messages', to: 'conversations#index'
   get  '/:id/favorite_player', to: 'favorite_player#create'
   get  '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
@@ -25,23 +37,18 @@ Rails.application.routes.draw do
   post '/send_text', to: 'twilio#create'
   post '/receive_text', to: 'twilio#update'
 
-
-  resources :players, only: [:new, :create, :update, :edit]
-  resources :player_profiles
-  resources :coach_profiles, only: [:show, :index]
-
-  resources :personal_messages, only: [:new, :create]
-  resources :conversations, only: [:index, :show]
-  resources :recruiters, only: [:new, :create, :update]
-  resources :recruiter_profiles, only: [:new, :create, :show, :index]
-  resources :dashboard, only: [:index]
+  post '/watch_list/:id', to: 'prospects#create', as: :create_watch_list
+  delete '/watch_list/:id', to: 'prospects#destroy', as: :delete_watch_list
 
   # internal api
   namespace :api do
     namespace :v1 do
+      get 'locations', to: "locations#index"
       get 'players/stats', to: 'player_stats#show'
       get 'players/points', to: 'player_points#show'
     end
   end
+
+
 
 end

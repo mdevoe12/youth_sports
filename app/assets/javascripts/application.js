@@ -11,8 +11,6 @@
 // about supported directives.
 //
 //= require jquery
-//= require conversations
 //= require bootstrap-sprockets
 //= require rails-ujs
-//= require turbolinks
 //= require cable

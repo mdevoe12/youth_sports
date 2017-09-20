@@ -1,1 +1,19 @@
-<h1><%= @coach_profile.coach.first_name %></h1>
+<div class="container profile-body">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 column-border">
+        <div class="image">
+          <h3><%= image_tag @images.sample.picture, size: "150x150", class: 'img-circle', style: "border: 1px solid;" %>&emsp;<%= @coach_profile.coach.first_name %> <%=@coach_profile.coach.last_name  %> | Coach</h3>
+        </div>
+      <br>
+
+        <ul lass="list-group">
+          <li class="list-group-item">Representing: <%= @coach_profile.institution %></li>
+          <li class="list-group-item">Email: <%= @coach_profile.email %></li>
+          <li class="list-group-item">Phone: <%= @coach_profile.phone_number %></li>
+        </ul>
+        <br>
+      </div>
+    </div>
+    </div>
+  </div>

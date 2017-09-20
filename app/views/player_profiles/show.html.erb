@@ -1,101 +1,96 @@
-  <head>
-    <style>
-      #map {
-        position: absolute;
-        right: 20px;
-        height: 400px;
-        width: 50%;
-      }
-    </style>
-  </head>
 
-<div class="body-stripe-left"><p>.</p></div>
 <div class="container profile-body">
-  <div class="body-stripe-right"><p>.</p></div>
-<div class="container">
-  <div class="white">
-  <div class="row">
+  <div class="container">
+    <div class="row player-heading-border">
+      <% if flash[:notice] %>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end %>
+      <div class="col-md-10">
+        <h3><%= @player.name %></h3>
+      </div>
+      <div class="col-md-2 recruit-button">
+        <% if current_user.type == "Recruiter" && @player_profile.active? %>
+        <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %></p>
+        <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% elsif current_user.type == "Recruiter" && @player_profile.inactive? %>
+        <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), disabled: :true, method: :post, :class => 'btn btn-warning start-rec' %></p>
+        <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
 
-        <h3 id="id" class="hidden"><%= @player.id %></h3>
+      <div class="col-md-4">
+        <%= image_tag "basketball_player_1.jpg" %>
+      </div>
 
-  </div>
-  <div class="row">
-    <div id="ath-profile-id" class="hidden"><%= @player.id %></div>
-    <div class="col-md-4">
-      <div class="row">
-        <div class=col-md-8>
-          <%= image_tag("players/bball_prof.png", :id => "ath-profile-pic") %>
+      <div class="col-md-8 stats-title stats-border">
+        <h5><%= @player.first_name.upcase %>'s STATS</h5>
+        <div id="ath-profile-id" class="hidden"><%= @player.id %></div>
+          <p id="id" class="hidden"><%= @player.id %></p>
+            <canvas id="ath-profile-stats" width="1000" height="700"></canvas>
+            <%= javascript_include_tag "charts/stats.js" %>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="row">
-          <div class="col-md-12 player-name">
-            <h3><%= @player.name %></h3>
-            </br>
-          </div>
-        </div>
-        <div class="col-md-4 team-name">
-          <h5><%= @player.team.name %></h5>
-          <%= image_tag("players/team_logo.png", :id => "ath-team-logo") %>
-          </div>
-        <div class="col-md-8 prf-sum">
-          <h4><%= @player.school %></h4>
-          <h4><%= @player.grade %></h4>
-          <h4><%= @player.height %></h4>
-          <h4><%= @player.weight %></h4>
-          <h4><%= @player.gpa %></h4>
+
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12 table-border">
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+              <th style="width: 20%">Team</th>
+              <th style="width: 20%">School</th>
+              <th style="width: 10%">Grade</th>
+              <th style="width: 10%">GPA</th>
+              <th style="width: 15%">Height (inches)</th>
+              <th style="width: 15%">Weight (pounds)</th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="width: 20%"><%= @player.team.name %></td>
+                <td style="width: 20%"><%= @player.school %></td>
+                <td style="width: 20%"><%= @player.grade %></td>
+                <td style="width: 5%"><%= @player.gpa %></td>
+                <td style="width: 5%"><%= @player.height %></td>
+                <td style="width: 15%" class="text-center"><%= @player.weight %></td>
+              </tr>
+            </tbody>
+          </table>
           <% if current_user.id == @player.id %>
           <%= link_to "Edit", edit_player_path(@player), :class => "btn edit-btn"%>
           <% end %>
         </div>
       </div>
-      <div class='row'>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-5 upcoming-border">
+        <br>
+        <%= image_tag 'basketball-black-and-white-clipart.gif', size: "150x150", class: "center" %>
+      <br>
+      <div class="game">
         <% unless @player.teams.count == 0 %>
-        <div class="upcoming-games">
-          <h3>Upcoming Games</h3>
-          <div class="row">
-            <div class="col-md-1"> </div>
-            <div class="col-md-10">
-              <div class="list-board">
-                <ul class="upcoming">
-                  <% @player.upcoming.map do |game| %>
-                  <li class="game">
-                    <%= game.when %> VS: <%= game.vs(@player) %>
-                  </li>
-                  <% end %>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-1"> </div>
-          </div>
-        </div>
-        <% end %>
+        <ul class="list-group">
+
+          <% @player.upcoming.map do |game| %>
+          <li class="list-group-item"><%= game.when %>: <%= @player.team.name %> VS: <%= game.vs(@player) %> </li>
+          <% end %>
+        </ul>
+      <% end %>
       </div>
-      <div class='row upcoming-row'>
-        <h3>Upcoming Games</h3>
-      </div>
+     </div>
+      <%= render "upcoming_game_facilities" %>
     </div>
-    <div class="col-md-8 ath-profile-stats">
-      <div class="stats-bar"><p>something</p></div>
-      <div class="recruitment-btn">
-        <% if flash[:notice] %>
-        <div class="notice"><%= flash[:notice] %></div>
-        <% end %>
-        <%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), method: :post, :class => 'btn btn-warning start-rec' %>
-      </div>
-      <div class="row">
-        <div class="col-md-12 stats-title">
-          <h1><%= @player.first_name.upcase %>'s STATS</h1>
-          <canvas id="ath-profile-stats" width="1000" height="700"></canvas>
-          <%= javascript_include_tag "charts/stats.js" %>
-        </div>
-      </div>
-    </hr><br>
-      <div class="stats-row">
-        <p>something</p>
-      </div>
-    </div>
-  </hr>
   </div>
 </div>
-</div>
+
+<br>
+<br>
+<br>
