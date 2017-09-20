@@ -20,6 +20,7 @@ end
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
+gem 'aws-sdk', '~> 2'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
@@ -36,6 +37,7 @@ gem 'pry'
 gem 'rails', '~> 5.1.3'
 gem 'bootstrap-sass'
 gem 'sass-rails', '~> 5.0'
+gem 'sidekiq'
 gem 'twilio-ruby'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'

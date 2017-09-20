@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 
   root 'home#index'
   resources :players, only: [:new, :create, :update, :edit]
@@ -39,6 +41,9 @@ Rails.application.routes.draw do
 
   post '/watch_list/:id', to: 'prospects#create', as: :create_watch_list
   delete '/watch_list/:id', to: 'prospects#destroy', as: :delete_watch_list
+
+
+  resources :uploads, only: [:create]
 
   # internal api
   namespace :api do
