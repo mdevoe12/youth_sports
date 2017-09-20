@@ -1,0 +1,24 @@
+<h1>Edit Profile</h1>
+
+<%= form_for @player_profile do |f| %>
+
+  <%= f.label :school %>
+  <%= f.text_field :school %>
+
+  <%= f.label :height %>
+  <%= f.text_field :height %>
+
+  <%= f.label :weight %>
+  <%= f.text_field :weight %>
+
+  <%= f.label :grade_level %>
+  <%= f.text_field :grade_level %>
+
+  <%= f.label :guardian_phone %>
+  <%= f.text_field :guardian_phone %>
+
+  <%= f.hidden_field :player_id, value: @player_id %>
+
+  <%= f.submit %>
+
+<% end %>
