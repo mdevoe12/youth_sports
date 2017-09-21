@@ -164,6 +164,8 @@ player_count = 1
   favorite_player = FavoritePlayer.create(screen_name: "@KingJames", player_id: player.id)
 
   player_profile = PlayerProfile.create(
+    :first_name => player.first_name,
+    :last_name => player.last_name,
     :school => Faker::HarryPotter.house,
     :height => "#{rand(40..79)}",
     :weight => "#{rand(110...250)}",
