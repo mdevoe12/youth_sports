@@ -1,9 +1,6 @@
-require 'database_cleaner'
-
-DatabaseCleaner.clean_with(:truncation)
-
 AuthenticationProvider.create(name: 'facebook')
 AuthenticationProvider.create(name: 'twitter')
+
 
 start = Time.now
 
@@ -173,7 +170,8 @@ player_count = 1
     :grade_level => rand(1..12),
     :gpa => rand(1.1...4.0).round(2),
     :guardian_phone => "16073426730",
-    :player_id => player.id
+    :player_id => player.id,
+    :status => rand(0..1)
   )
 
   9.times do
