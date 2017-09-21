@@ -21,20 +21,6 @@ class User < ApplicationRecord
     create!(attributes)
   end
 
-  def self.create_with_oauth(auth)
-    user = User.find_or_create_by!(provider: auth.provider, uid: auth.extra.raw_info.id) do |user|
-      user.username           = auth.extra.raw_info.name.split.join.downcase
-      user.password           = auth.credentials.token
-      user.uid                = auth.extra.raw_info.id
-      user.provider           = auth.provider
-      user.oauth_token        = auth.credentials.token
-      user.first_name         = auth.extra.raw_info.name.split[0]
-      user.last_name          = auth.extra.raw_info.name.split[-1]
-      user.save
-    end
-    user
-  end
-
   def self.types
     %w(Coach Player Recruiter Admin)
   end
