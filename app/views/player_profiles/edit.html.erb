@@ -1,24 +1,27 @@
+<div class="container text-center">
+
 <h1>Edit Profile</h1>
 
 <%= form_for @player_profile do |f| %>
 
-  <%= f.label :school %>
-  <%= f.text_field :school %>
+  <%= f.label :school %><br>
+  <%= f.text_field :school %><br>
 
-  <%= f.label :height %>
-  <%= f.text_field :height %>
+  <%= f.label :height %><br>
+  <%= f.text_field :height %><br>
 
-  <%= f.label :weight %>
-  <%= f.text_field :weight %>
+  <%= f.label :weight %><br>
+  <%= f.text_field :weight %><br>
 
-  <%= f.label :grade_level %>
-  <%= f.text_field :grade_level %>
+  <%= f.label :grade_level %><br>
+  <%= f.text_field :grade_level %><br>
 
-  <%= f.label :guardian_phone %>
-  <%= f.text_field :guardian_phone %>
+  <%= f.label :guardian_phone %><br>
+  <%= f.text_field :guardian_phone %><br><br>
 
   <%= f.hidden_field :player_id, value: @player_id %>
 
   <%= f.submit %>
 
 <% end %>
+</div>

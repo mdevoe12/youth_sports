@@ -1,24 +1,27 @@
+<div class="container text-center">
+
+
 <h1>Create New Account</h1>
 
 <%= form_for @recruiter do |f| %>
-  <br>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <br>
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
-  <br>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <br>
-  <%= f.label :confirmation_password %>
-  <%= f.password_field :confirmation_password %>
-  <br>
+  <%= f.label :first_name %><br>
+  <%= f.text_field :first_name %><br>
+
+  <%= f.label :last_name %><br>
+  <%= f.text_field :last_name %><br>
+
+  <%= f.label :username %><br>
+  <%= f.text_field :username %><br>
+
+  <%= f.label :password %><br>
+  <%= f.password_field :password %><br>
+
+  <%= f.label :confirmation_password %><br>
+  <%= f.password_field :confirmation_password %><br>
+
   <%= f.hidden_field :uid, value: @uid %>
-  <br>
   <%= f.submit "Create Account"%>
 
 <% end %>
+
+</div>

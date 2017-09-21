@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by(email: params[:session][:email])
-    if user.valid_password?(params[:session][:password])
+    if user != nil && user.valid_password?(params[:session][:password])
       sign_in(user)
       session[:user_id] = user.id
       redirect_to dashboard_index_path unless user.type.nil?

@@ -35,6 +35,7 @@ class RecruiterProfilesController < ApplicationController
   end
 
   def player_check
+    flash[:message] = "Please login to view recruiter pages."
     redirect_to login_path if current_user.nil? || current_user.type == "Player"
   end
 
