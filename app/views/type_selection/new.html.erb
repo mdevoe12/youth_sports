@@ -1,3 +1,5 @@
+<div class="container text-center">
+
 <h1>Please select your account type:</h1>
 
 <%= form_for @user, url: type_selection_index_path, method: :post do |f| %>
@@ -9,3 +11,4 @@
     <%= label_tag(:type_coach, "Coach") %><br>
     <%= f.submit "Update Account" %>
 <% end %>
+</div>

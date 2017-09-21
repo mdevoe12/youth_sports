@@ -1,6 +1,6 @@
-require 'database_cleaner'
+AuthenticationProvider.create(name: 'facebook')
+AuthenticationProvider.create(name: 'twitter')
 
-DatabaseCleaner.clean_with(:truncation)
 
 start = Time.now
 
@@ -170,7 +170,8 @@ player_count = 1
     :grade_level => rand(1..12),
     :gpa => rand(1.1...4.0).round(2),
     :guardian_phone => "16073426730",
-    :player_id => player.id
+    :player_id => player.id,
+    :status => rand(0..1)
   )
 
   9.times do
@@ -203,6 +204,16 @@ end
     :status => rand(0..3)
   )
 end
+
+25.times do
+  Prospect.create(
+    :recruiter_profile_id => Prospect.pluck(:recruiter_profile_id).sample,
+    :player_profile_id => Prospect.pluck(:player_profile_id).sample,
+    :status => rand(0..3)
+  )
+end
+
+
 
 
 end_time = Time.now

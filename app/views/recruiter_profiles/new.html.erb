@@ -1,24 +1,29 @@
+<div class="container text-center">
+
+
 <h1>Fill Out Profile</h1>
 
 <%= form_for @recruiter_profile do |f| %>
 
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
+  <%= f.label :first_name %><br>
+  <%= f.text_field :first_name %><br>
 
-  <%= f.label :last_name %>
-  <%= f.text_field :last_name %>
+  <%= f.label :last_name %><br>
+  <%= f.text_field :last_name %><br>
 
-  <%= f.label :institution %>
-  <%= f.text_field :institution %>
+  <%= f.label :institution %><br>
+  <%= f.text_field :institution %><br>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.label :email %><br>
+  <%= f.text_field :email %><br>
 
-  <%= f.label :phone_number %>
-  <%= f.text_field :phone_number %>
+  <%= f.label :phone_number %><br>
+  <%= f.text_field :phone_number %><br>
 
   <%= f.hidden_field :recruiter_id, value: @recruiter_id %>
 
   <%= f.submit "Create Profile" %>
 
 <% end %>
+
+</div>

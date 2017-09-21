@@ -7,6 +7,9 @@
       <% end %>
       <div class="col-md-10">
         <h3><%= @player.name %></h3>
+        <% if @hot %>
+          <%= image_tag 'fire_icon.jpg', size: "25x25" %>
+        <% end %>
       </div>
       <div class="col-md-2 recruit-button">
         <% if current_user.type == "Recruiter" && @player_profile.active? %>
@@ -15,6 +18,8 @@
         <% elsif current_user.type == "Recruiter" && @player_profile.inactive? %>
         <p><%= button_to 'Start Recruitment', send_text_path(player_id: @player.id), disabled: :true, method: :post, :class => 'btn btn-warning start-rec' %></p>
         <p><%= button_to "Add to Watchlist", create_watch_list_path(player_id: @player.id), method: :post, class: "btn btn-success start-rec" %></p>
+        <% elsif current_user == @player %>
+          <%= button_to "Edit Your Profile", edit_player_profile_path(current_user), method: :get, class: "btn btn-warning" %>
         <% end %>
       </div>
     </div>
@@ -53,7 +58,13 @@
             </thead>
             <tbody>
               <tr>
-                <td style="width: 20%"><%= @player.team.name %></td>
+                <% if @player.teams != nil %>
+                <td style="width: 20%">
+                <% @player.teams.each do |team| %>
+                  <%= team.name %>
+                  <% end %>
+                </td>
+                <% end %>
                 <td style="width: 20%"><%= @player.school %></td>
                 <td style="width: 20%"><%= @player.grade %></td>
                 <td style="width: 5%"><%= @player.gpa %></td>
@@ -62,9 +73,6 @@
               </tr>
             </tbody>
           </table>
-          <% if current_user.id == @player.id %>
-          <%= link_to "Edit", edit_player_path(@player), :class => "btn edit-btn"%>
-          <% end %>
         </div>
       </div>
     </div>

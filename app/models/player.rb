@@ -2,6 +2,7 @@ class Player < User
   has_many :team_players
   has_many :teams, through: :team_players
   has_many :team_coaches, through: :teams
+  has_many :games, through: :teams
   has_many :coaches, through: :team_coaches
   has_one :profile, class_name: :PlayerProfile, dependent: :destroy
   has_many :player_stats, through: :profile
@@ -15,7 +16,7 @@ class Player < User
       self.first_name + " " + self.last_name
     end
   end
-  
+
   def school
     self.profile.school
   end
@@ -60,8 +61,12 @@ class Player < User
 
   def upcoming
     unless self.teams.count > 1
-      self.team.games.where(status: "upcoming")
+      self.games.where(status: "upcoming")
     end
+  end
+
+  def hot?
+    return true if Prospect.where(player_profile_id: self.profile.id).count > 2
   end
 
 end

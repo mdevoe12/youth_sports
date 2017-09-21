@@ -1,10 +1,13 @@
+<div class="container text-center">
+
 <h3>Enter Your Favorite Player's Twitter Screen Name To Follow Their Tweets</h3>
 
 <%= form_for @favorite_player do |f| %>
 
-  <%= f.label :screen_name %>
-  <%= f.text_field :screen_name %>
+  <%= f.label :screen_name %><br>
+  <%= f.text_field :screen_name %><br>
 
   <%= f.submit "submit favorite player screen name" %>
 
 <% end %>
+</div>

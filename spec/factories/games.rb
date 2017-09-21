@@ -6,7 +6,7 @@ FactoryGirl.define do
 
     trait :with_teams do
       after(:create) do |game|
-        teams = create_list(:team, 3)
+        teams = create_list(:team, 2)
         game.teams << teams
       end
     end
