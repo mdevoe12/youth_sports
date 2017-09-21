@@ -13,7 +13,6 @@ RSpec.describe "Recruiter visits site and" do
       end
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(recruiters.first)
-
       visit player_profile_path(hot_players.first.profile)
 
       expect(page).to have_css("img[src$='/assets/fire_icon-d3a8d6f5860d1b1e278ffccc2cac7b49edde9b521b365030f6704836e66c2003.jpg']")

@@ -10,7 +10,7 @@ RSpec.feature 'user visits athlete showpage' do
       end
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(player)
       visit("/player_profiles/#{player.profile.id}")
-      expect(page).to have_content("#{player.first_name.upcase}'s STATS")
+      expect(page).to have_content("#{player.first_name.upcase}'S STATS")
       expect(page).to have_button("Edit Your Profile")
     end
   end
@@ -28,7 +28,7 @@ RSpec.feature 'user visits athlete showpage' do
 
       visit("/player_profiles/#{player_2.profile.id}")
 
-      expect(page).to have_content("#{player_2.first_name.upcase}'s STATS")
+      expect(page).to have_content("#{player_2.first_name.upcase}'S STATS")
       expect(page).to_not have_link("Edit")
     end
   end

@@ -9,6 +9,8 @@ FactoryGirl.define do
     trait :with_profile do
       after(:create) do |player|
         player_profile = create :player_profile,
+                                first_name: player.first_name,
+                                last_name: player.last_name,
                                 school: "Hogwarts",
                                 height: "1",
                                 weight: "2",
@@ -25,6 +27,8 @@ FactoryGirl.define do
     trait :with_inactive_status do
       after(:create) do |player|
         player_profile = create :player_profile,
+                                first_name: player.first_name,
+                                last_name: player.last_name,
                                 school: "Hogwarts",
                                 height: "1",
                                 weight: "2",
